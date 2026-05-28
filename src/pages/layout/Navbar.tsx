@@ -22,29 +22,21 @@ const Navbar = () => {
 
   return (
     <header className={styles.navbarWrapper}>
-      {/* TOP BAR (SEO TEXT BOOST) */}
       <div className="w-full bg-primary px-4 py-2 text-center text-[10px] md:text-sm text-white">
-          AI That Works. DevOps That Scales. We build intelligent automation
-          systems that run 24/7-chatbots, cloud infrastructure, and AI-powered
-          workflows for businesses ready to move fast.
+        AI That Works. DevOps That Scales. We build intelligent automation
+        systems that run 24/7-chatbots, cloud infrastructure, and AI-powered
+        workflows for businesses ready to move fast.
       </div>
 
-      <nav
-        className={styles.navbar}
-        aria-label="Main Navigation"
-      >
+      <nav className={styles.navbar} aria-label="Main Navigation">
         <div className={styles.container}>
-          
-          {/* LOGO (IMPORTANT SEO LINK) */}
-          <Link
-            to="/"
-            className={styles.logo}
-            aria-label="DevOpsMinders Home"
-          >
-            <img src="/assets/logo.png" alt="DevOpsMinders DevOps Company Logo" />
+          <Link to="/" className={styles.logo} aria-label="DevOpsMinders Home">
+            <img
+              src="/assets/logo.png"
+              alt="DevOpsMinders DevOps Company Logo"
+            />
           </Link>
 
-          {/* DESKTOP MENU */}
           <div className={styles.navbarBody}>
             <ul className={styles.menu}>
               {menuData.map((item, index) => (
@@ -75,11 +67,7 @@ const Navbar = () => {
 
                       <div className={styles.dropdown}>
                         {item.children.map((child, i) => (
-                          <Link
-                            key={i}
-                            to={child.path}
-                            title={child.label}
-                          >
+                          <Link key={i} to={child.path} title={child.label}>
                             {child.label}
                           </Link>
                         ))}
