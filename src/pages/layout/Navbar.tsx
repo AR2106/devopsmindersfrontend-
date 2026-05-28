@@ -86,7 +86,7 @@ const Navbar = () => {
               ))}
             </ul>
 
-            {/* CTA (HIGH SEO VALUE LINK) */}
+      
             <div className={styles.cta}>
               <Link
                 to="/quote"
@@ -98,7 +98,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* MOBILE ICON */}
+
           <button
             className={styles.mobileIcon}
             onClick={() => setMobileOpen(!mobileOpen)}
