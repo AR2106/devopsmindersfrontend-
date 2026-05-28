@@ -47,7 +47,7 @@ export function Navbar() {
                 ),
               )}
             </nav>
-            {/* Mobile Hamburger */}
+   
             <button className="md:hidden" onClick={() => setOpen(true)}>
               <Menu size={20} />
             </button>
@@ -55,7 +55,7 @@ export function Navbar() {
         </header>
       </div>
 
-      {/* Mobile Drawer */}
+
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-black text-white transform transition-transform duration-300 z-150 ${
           open ? "translate-x-0" : "translate-x-full"
