@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { navigation } from '../../constants/navigation'
+import { useState } from "react";
+import { navigation } from "../../constants/navigation";
 import { NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
@@ -19,33 +19,36 @@ export function Navbar() {
 
         <header className="border-b border-white/10 bg-black text-white">
           <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-            <img src="/assets/logo.png" alt="DevOps Minders" className='w-[170px]' />
+            <img
+              src="/assets/logo.png"
+              alt="DevOps Minders"
+              className="w-[170px]"
+            />
 
             <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
-              {navigation.map((item) => (
-                !item?.isButton ?
+              {navigation.map((item) =>
+                !item?.isButton ? (
                   <NavLink
                     key={item.label}
                     to={item.href}
-                    className={`text-sm font-normal transition-colors hover:text-primary ${currentUrl === item.href ? "text-primary" : "text-white"
-                      }`}
+                    className={`text-sm font-normal transition-colors hover:text-primary ${
+                      currentUrl === item.href ? "text-primary" : "text-white"
+                    }`}
                   >
                     {item.label}
                   </NavLink>
-                  :
+                ) : (
                   <a
                     href="/contact"
                     className="rounded-full px-6 py-1 text-sm font-normal text-white transition-all duration-200 hover:scale-105 bg-primary"
                   >
                     {item.label}
                   </a>
-              ))}
+                ),
+              )}
             </nav>
             {/* Mobile Hamburger */}
-            <button
-              className="md:hidden"
-              onClick={() => setOpen(true)}
-            >
+            <button className="md:hidden" onClick={() => setOpen(true)}>
               <Menu size={20} />
             </button>
           </div>
@@ -54,17 +57,17 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-black text-white transform transition-transform duration-300 z-150 ${open ? "translate-x-0" : "translate-x-full"
-          }`}
+        className={`fixed top-0 right-0 h-full w-64 bg-black text-white transform transition-transform duration-300 z-150 ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
       >
-        {/* Close button */}
+
         <div className="flex justify-end p-4">
           <button onClick={() => setOpen(false)}>
             <X size={20} />
           </button>
         </div>
 
-        {/* Menu items */}
         <div className="flex flex-col gap-4 px-6">
           {navigation.map((item) =>
             !item?.isButton ? (
@@ -73,7 +76,8 @@ export function Navbar() {
                 to={item.href}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `text-base transition-colors ${isActive ? "text-primary" : "text-white"
+                  `text-base transition-colors ${
+                    isActive ? "text-primary" : "text-white"
                   }`
                 }
               >
@@ -90,7 +94,7 @@ export function Navbar() {
                   {item.label}
                 </a>
               </>
-            )
+            ),
           )}
         </div>
       </div>
@@ -103,5 +107,5 @@ export function Navbar() {
         />
       )}
     </>
-  )
+  );
 }

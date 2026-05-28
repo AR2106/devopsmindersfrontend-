@@ -11,8 +11,10 @@
 }
 
 :root {
-  --app-font-sans: "Inter", "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
+  --app-font-sans:
+    "Inter", "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
   --background: #000;
+  --primary-background: #0f161c;
   --foreground: #fff;
   --card: #000;
   --card-foreground: #fff;
@@ -67,6 +69,9 @@
 @layer base {
   * {
     @apply border-border;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
 
   html {
