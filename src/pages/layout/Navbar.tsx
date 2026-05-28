@@ -24,7 +24,9 @@ const Navbar = () => {
     <header className={styles.navbarWrapper}>
       {/* TOP BAR (SEO TEXT BOOST) */}
       <div className="w-full bg-primary px-4 py-2 text-center text-[10px] md:text-sm text-white">
-        DevOps Services • Cloud Infrastructure • CI/CD Automation • Kubernetes Experts
+          AI That Works. DevOps That Scales. We build intelligent automation
+          systems that run 24/7-chatbots, cloud infrastructure, and AI-powered
+          workflows for businesses ready to move fast.
       </div>
 
       <nav
