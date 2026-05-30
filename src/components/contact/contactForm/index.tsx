@@ -7,7 +7,7 @@ import type { FormValues } from "../../../types";
 import { Mail, Phone, MapPin, Clock, Shield, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-/* ================= ANIMATIONS ================= */
+
 const container: Variants = {
   hidden: { opacity: 0 },
   show: {
