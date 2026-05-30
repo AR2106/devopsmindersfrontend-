@@ -86,7 +86,6 @@ const Navbar = () => {
               ))}
             </ul>
 
-      
             <div className={styles.cta}>
               <Link
                 to="/quote"
@@ -97,7 +96,6 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
-
 
           <button
             className={styles.mobileIcon}

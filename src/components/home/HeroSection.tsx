@@ -100,9 +100,9 @@ export default function HeroSection() {
                         className="bg-red-600 hover:bg-red-700 text-white font-bold px-10 py-4 rounded-full transition-all hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(220,38,38,0.5)]">
                             Get Free Consultation
                         </button>
-                        <button className="border border-white/20 hover:border-white/50 text-white font-medium px-10 py-4 rounded-full transition-all hover:bg-white/5">
+                        {/* <button className="border border-white/20 hover:border-white/50 text-white font-medium px-10 py-4 rounded-full transition-all hover:bg-white/5">
                             View Our Work
-                        </button>
+                        </button> */}
                     </div>
                 </div>
 
