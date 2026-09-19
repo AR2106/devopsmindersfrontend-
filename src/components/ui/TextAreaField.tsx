@@ -15,21 +15,20 @@ export default function TextAreaField({
 }: Props) {
   return (
     <div>
-      <label className="text-sm font-medium text-gray-300">{label}</label>
+      <label className="block text-sm font-medium text-slate-700">
+        {label}
+      </label>
 
       <textarea
         {...register}
         placeholder={placeholder}
-        className={`mt-2 w-full h-32 rounded-lg border px-3 py-2 text-sm
-        bg-[#121212] border-white/10 text-white
-        placeholder:text-gray-500
-        focus:border-white/30 focus:ring-2 focus:ring-white/10
-        ${error ? "border-red-500" : ""}
-        `}
+        className={`mt-2 h-32 w-full rounded-lg border bg-white px-3 py-2 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-[#E80112] focus:ring-2 focus:ring-[#E80112]/20 ${
+          error ? "border-[#E80112]" : "border-slate-200"
+        }`}
       />
 
       {error && (
-        <p className="text-red-500 text-xs mt-1">{error.message}</p>
+        <p className="mt-1 text-xs text-[#E80112]">{error.message}</p>
       )}
     </div>
   );

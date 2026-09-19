@@ -1,4 +1,3 @@
-
 import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "./pages/layout/MainLayout";
@@ -8,6 +7,8 @@ import Service from "./pages/service/Service";
 import { AboutUs } from "./pages/about-us/AboutUs";
 import Contact from "./pages/Contact";
 import GetQuotePage from "./pages/quote/Quote";
+import AI from "./pages/ai-solutions/AiSolutions";
+// import { PortfolioSection } from "./pages/portfolio/Portfolio";
 
 function App() {
   return (
@@ -15,11 +16,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Service />} />
-        <Route path="/cases-studies" element={<CaseStudies />} />
+        {/* <Route path="/portfolio" element={<PortfolioSection />} /> */}
+        <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/case-studies/:slug" element={<CaseStudyDetails />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/quote" element={<GetQuotePage />} />
+        <Route path="/ai-solution" element={<AI />} />
       </Routes>
     </MainLayout>
   );

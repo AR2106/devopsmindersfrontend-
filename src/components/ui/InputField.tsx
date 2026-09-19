@@ -18,7 +18,7 @@ export default function InputField({
   return (
     <div>
       {/* Label */}
-      <label className="flex items-center gap-2 text-sm font-medium text-gray-300">
+      <label className="flex items-center gap-2 text-sm font-medium text-slate-700">
         {label}
       </label>
 
@@ -27,17 +27,14 @@ export default function InputField({
         type={type}
         placeholder={placeholder}
         {...register}
-        className={`mt-2 h-10 w-full rounded-lg border px-3 text-sm outline-none transition-all
-        bg-[#121212] border-white/10 text-white
-        placeholder:text-gray-500
-        focus:border-white/30 focus:ring-2 focus:ring-white/10
-        ${error ? "border-red-500 focus:ring-red-500/20" : ""}
-        `}
+        className={`mt-2 h-10 w-full rounded-lg border bg-white px-3 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-[#E80112] focus:ring-2 focus:ring-[#E80112]/20 ${
+          error ? "border-[#E80112]" : "border-slate-200"
+        }`}
       />
 
       {/* Error */}
       {error && (
-        <p className="text-red-500 text-xs mt-1">{error.message}</p>
+        <p className="mt-1 text-xs text-[#E80112]">{error.message}</p>
       )}
     </div>
   );

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "./../../styles/Navbar.module.scss";
 import { FaAngleDown, FaBars, FaTimes } from "react-icons/fa";
 
 type MenuItem = {
@@ -10,9 +9,10 @@ type MenuItem = {
 };
 
 const menuData: MenuItem[] = [
-  { label: "DevOps Services", path: "/services" },
-  { label: "About DevOpsMinders", path: "/about-us" },
-  { label: "Case Studies", path: "/cases-studies" },
+  // { label: "Ai Solution", path: "/ai-solution" },
+  { label: "Services", path: "/services" },
+  { label: "About Us", path: "/about-us" },
+  { label: "Case Studies", path: "/case-studies" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -21,53 +21,67 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className={styles.navbarWrapper}>
-      <div className="w-full bg-primary px-4 py-2 text-center text-[10px] md:text-sm text-white">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur-md">
+      {/* Top Accent Banner */}
+      <div className="w-full bg-[#E80112] px-4 py-2 text-center text-[10px] font-medium tracking-wide text-white md:text-xs">
         AI That Works. DevOps That Scales. We build intelligent automation
-        systems that run 24/7-chatbots, cloud infrastructure, and AI-powered
+        systems that run 24/7—chatbots, cloud infrastructure, and AI-powered
         workflows for businesses ready to move fast.
       </div>
 
-      <nav className={styles.navbar} aria-label="Main Navigation">
-        <div className={styles.container}>
-          <Link to="/" className={styles.logo} aria-label="DevOpsMinders Home">
+      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Main Navigation">
+        <div className="flex h-16 items-center justify-between">
+          {/* Logo */}
+          <Link to="/" aria-label="DevOpsMinders Home" className="flex items-center">
             <img
-              src="/assets/logo.png"
+              src="logo.png"
               alt="DevOpsMinders DevOps Company Logo"
+              className="h-8 w-auto md:h-16"
             />
           </Link>
 
-          <div className={styles.navbarBody}>
-            <ul className={styles.menu}>
-              {menuData.map((item, index) => (
+          {/* Desktop Menu */}
+          <div className="hidden md:flex md:items-center md:gap-8">
+            <ul className="flex items-center gap-2">
+              {menuData?.map((item, index) => (
                 <li
                   key={index}
-                  className={`${styles.menuItem} ${
-                    activeIndex === index ? styles.open : ""
-                  }`}
-                  onMouseEnter={() =>
-                    window.innerWidth > 768 && setActiveIndex(index)
-                  }
-                  onMouseLeave={() =>
-                    window.innerWidth > 768 && setActiveIndex(null)
-                  }
+                  className="relative"
+                  onMouseEnter={() => setActiveIndex(index)}
+                  onMouseLeave={() => setActiveIndex(null)}
                 >
-                  {item.children ? (
+                  {item?.children ? (
                     <>
-                      <div
-                        className={styles.menuLink}
+                      <button
+                        type="button"
                         onClick={() =>
-                          window.innerWidth <= 768 &&
                           setActiveIndex(activeIndex === index ? null : index)
                         }
+                        className="flex w-full items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-[#E80112]"
                       >
                         <span>{item.label}</span>
-                        <FaAngleDown className={styles.arrow} />
-                      </div>
+                        <FaAngleDown
+                          className={`text-[10px] transition-transform duration-300 ${
+                            activeIndex === index ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
 
-                      <div className={styles.dropdown}>
-                        {item.children.map((child, i) => (
-                          <Link key={i} to={child.path} title={child.label}>
+                      {/* Desktop Dropdown */}
+                      <div
+                        className={`absolute left-0 top-full mt-1 w-56 origin-top-left rounded-xl border border-slate-200 bg-white p-2 shadow-lg transition-all duration-300 ${
+                          activeIndex === index
+                            ? "visible opacity-100 translate-y-0"
+                            : "invisible opacity-0 translate-y-2"
+                        }`}
+                      >
+                        {item?.children?.map((child, i) => (
+                          <Link
+                            key={i}
+                            to={child.path}
+                            title={child.label}
+                            className="block rounded-lg px-3 py-2 text-sm text-slate-600 transition-colors duration-200 hover:bg-slate-50 hover:text-[#E80112]"
+                          >
                             {child.label}
                           </Link>
                         ))}
@@ -76,7 +90,7 @@ const Navbar = () => {
                   ) : (
                     <Link
                       to={item.path!}
-                      className={styles.menuLink}
+                      className="flex items-center rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-[#E80112]"
                       title={item.label}
                     >
                       {item.label}
@@ -86,75 +100,95 @@ const Navbar = () => {
               ))}
             </ul>
 
-            <div className={styles.cta}>
+            {/* CTA Button (Optional) */}
+            {/* <div className="ml-4">
               <Link
                 to="/quote"
-                className={styles.btn}
-                aria-label="Get DevOps Quote"
+                className="inline-flex items-center justify-center rounded-lg bg-[#E80112] px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#c5010f] hover:shadow-md"
               >
                 Get Quote
               </Link>
-            </div>
+            </div> */}
           </div>
 
+          {/* Mobile Menu Toggle */}
           <button
-            className={styles.mobileIcon}
+            className="inline-flex items-center justify-center rounded-md p-2 text-slate-600 transition-colors hover:bg-slate-100 hover:text-[#E80112] md:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle Menu"
           >
-            {mobileOpen ? <FaTimes /> : <FaBars />}
+            {mobileOpen ? (
+              <FaTimes className="h-5 w-5" />
+            ) : (
+              <FaBars className="h-5 w-5" />
+            )}
           </button>
         </div>
+      </nav>
 
-        {/* MOBILE MENU */}
-        <div
-          className={`${styles.mobileMenu} ${
-            mobileOpen ? styles.showMenu : ""
-          }`}
-        >
-          {menuData.map((item, index) => (
-            <div key={index} className={styles.mobileItem}>
+      {/* MOBILE MENU */}
+      <div
+        className={`md:hidden overflow-hidden border-t border-slate-200 bg-white transition-all duration-300 ease-in-out ${
+          mobileOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="space-y-1 px-4 py-3">
+          {menuData?.map((item, index) => (
+            <div key={index} className="border-b border-slate-100 py-1 last:border-0">
               {item.children ? (
                 <>
-                  <div
-                    className={styles.mobileLink}
+                  <button
+                    type="button"
                     onClick={() =>
                       setActiveIndex(activeIndex === index ? null : index)
                     }
+                    className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-left text-sm font-medium text-slate-800 hover:bg-slate-50"
                   >
                     {item.label}
                     <FaAngleDown
-                      className={activeIndex === index ? styles.rotate : ""}
+                      className={`text-xs transition-transform duration-300 ${
+                        activeIndex === index ? "rotate-180 text-[#E80112]" : ""
+                      }`}
                     />
-                  </div>
+                  </button>
 
-                  {activeIndex === index && (
-                    <div className={styles.mobileDropdown}>
-                      {item.children.map((child, i) => (
-                        <Link key={i} to={child.path}>
-                          {child.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+                  {/* Mobile Dropdown Items */}
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      activeIndex === index ? "max-h-96 mt-1" : "max-h-0"
+                    }`}
+                  >
+                    {item.children.map((child, i) => (
+                      <Link
+                        key={i}
+                        to={child.path}
+                        className="block rounded-lg px-6 py-2 text-sm text-slate-600 transition-colors hover:bg-slate-50 hover:text-[#E80112]"
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
                 </>
               ) : (
-                <Link to={item.path!} className={styles.mobileLink}>
+                <Link
+                  to={item.path!}
+                  className="block rounded-lg px-3 py-3 text-sm font-medium text-slate-800 transition-colors hover:bg-slate-50 hover:text-[#E80112]"
+                >
                   {item.label}
                 </Link>
               )}
             </div>
           ))}
 
-          <Link
-            to="/quote"
-            className={styles.mobileBtn}
-            aria-label="Get DevOps Quote"
+          {/* Mobile CTA (Optional) */}
+          {/* <Link
+            to="/contact"
+            className="mt-3 flex w-full items-center justify-center rounded-lg bg-[#E80112] px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#c5010f]"
           >
-            Get Quote
-          </Link>
+            Contact Us
+          </Link> */}
         </div>
-      </nav>
+      </div>
     </header>
   );
 };

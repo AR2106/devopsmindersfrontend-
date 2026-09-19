@@ -12,22 +12,46 @@ export default function Step3({ back }: Props) {
 
     return (
         <div>
-            <h3 className="text-xl font-bold text-white mb-2">Step 3: Review & Submit</h3>
-            <p className="text-sm text-gray-500">Provide details so we can best assist you.</p>
-            <div className="bg-black border border-white/10 rounded-xl p-6 mb-6 text-sm mt-6">
-                <p><span className="text-gray-400">Name:</span> {data.name}</p>
-                <p><span className="text-gray-400">Email:</span> {data.email}</p>
-                <p><span className="text-gray-400">Service:</span> {data.service}</p>
-                <p><span className="text-gray-400">Budget:</span> {data.budget}</p>
-                <p><span className="text-gray-400">Message:</span> {data.message}</p>
+            <h3 className="mb-2 text-xl font-bold text-slate-900">
+                Step 3: Review & Submit
+            </h3>
+            <p className="text-sm text-slate-600">
+                Please review your details before submitting.
+            </p>
+
+            <div className="mt-6 mb-6 rounded-xl border border-slate-200 bg-slate-50 p-6 text-sm">
+                <div className="grid gap-3">
+                    <p>
+                        <span className="text-slate-500">Name:</span>{" "}
+                        <span className="font-medium text-slate-900">{data.name}</span>
+                    </p>
+                    <p>
+                        <span className="text-slate-500">Email:</span>{" "}
+                        <span className="font-medium text-slate-900">{data.email}</span>
+                    </p>
+                    <p>
+                        <span className="text-slate-500">Service:</span>{" "}
+                        <span className="font-medium text-slate-900">{data.service}</span>
+                    </p>
+                    <p>
+                        <span className="text-slate-500">Budget:</span>{" "}
+                        <span className="font-medium text-slate-900">{data.budget}</span>
+                    </p>
+                    <p>
+                        <span className="text-slate-500">Message:</span>{" "}
+                        <span className="font-medium text-slate-900">{data.message}</span>
+                    </p>
+                </div>
             </div>
 
-            <button type="submit" className="bg-primary text-white px-6 py-2 rounded-lg w-full" >
+            <button
+                type="submit"
+                className="flex w-full items-center justify-center rounded-lg bg-[#E80112] px-6 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#c5010f]"
+            >
                 Submit Request
             </button>
 
-
-            <div className="mt-4 flex justify-between pt-6 border-t border-white/10 mt-6 gap-4">
+            <div className="mt-6 flex justify-between gap-4 border-t border-slate-200 pt-6">
                 <Button variant="secondary" onClick={back}>
                     Back
                 </Button>

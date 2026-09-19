@@ -2,110 +2,712 @@ import { ServiceCard } from "../../components/home/ServiceCard";
 import { services } from "../../constants/services";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
+import {
+  Activity,
+  BrainCircuit,
+  CheckCircle2,
+  Cloud,
+  Code2,
+  GitBranch,
+  Layers3,
+  Server,
+  ShieldCheck,
+  Sparkles,
+  Workflow,
+} from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 const containerVariants: Variants = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.12,
+      staggerChildren: 0.08,
+      delayChildren: 0.05,
     },
   },
 };
 
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 40, scale: 0.96 },
+const cardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 22,
+  },
   show: {
     opacity: 1,
     y: 0,
-    scale: 1,
     transition: {
-      duration: 0.6,
-      ease: [0.25, 0.1, 0.25, 1],
+      duration: 0.55,
+      ease: [0.22, 1, 0.36, 1],
     },
   },
 };
 
+const capabilities = [
+  {
+    icon: Cloud,
+    title: "Cloud infrastructure",
+    text: "Reliable environments for applications, data, and growing workloads.",
+  },
+  {
+    icon: Workflow,
+    title: "Delivery automation",
+    text: "Practical CI/CD workflows that make releases predictable and repeatable.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Security & reliability",
+    text: "Security and operational practices built into the engineering process.",
+  },
+  {
+    icon: Activity,
+    title: "Production visibility",
+    text: "Monitoring and observability that help teams understand what is happening.",
+  },
+];
+
+const process = [
+  {
+    icon: Layers3,
+    title: "Understand",
+    text: "We begin with your product, infrastructure, technical constraints, and business priorities.",
+  },
+  {
+    icon: Code2,
+    title: "Design",
+    text: "We shape an architecture around your actual workload instead of forcing a predefined stack.",
+  },
+  {
+    icon: GitBranch,
+    title: "Build",
+    text: "Applications, infrastructure, integrations, and deployment workflows are implemented for long-term maintainability.",
+  },
+  {
+    icon: Activity,
+    title: "Improve",
+    text: "After launch, we focus on reliability, visibility, security, performance, and continuous improvement.",
+  },
+];
+
+const technologyGroups = [
+  {
+    title: "Cloud",
+    description:
+      "Cloud environments designed around scalability, security, application requirements, and operational efficiency.",
+    technologies: ["AWS", "Azure", "Google Cloud"],
+  },
+  {
+    title: "Infrastructure",
+    description:
+      "Infrastructure managed consistently through automation so environments remain predictable as systems grow.",
+    technologies: ["Kubernetes", "Docker", "Terraform", "Linux"],
+  },
+  {
+    title: "Delivery",
+    description:
+      "Development and release workflows connected through automated testing, integration, and deployment.",
+    technologies: ["GitHub Actions", "GitLab CI", "Jenkins"],
+  },
+  {
+    title: "Application & AI",
+    description:
+      "Modern applications combining software engineering, APIs, automation, data workflows, and AI capabilities.",
+    technologies: ["React", "Next.js", "Node.js", "Python", "OpenAI"],
+  },
+];
+
+const outcomes = [
+  "Infrastructure that is easier to understand and maintain",
+  "More consistent development and deployment workflows",
+  "Better visibility into production systems",
+  "Cloud environments that can adapt as workloads grow",
+  "Security considered throughout the engineering process",
+  "A technical foundation that supports future product changes",
+];
+
 const Service = () => {
   return (
-    <section
-      id="services"
-      aria-label="DevOps Services Section"
-      className="relative py-14 bg-[#0f0f10] text-white overflow-hidden"
-    >
-      {/* Background Glow */}
-      <div className="absolute inset-0 opacity-30 pointer-events-none">
-        <div className="absolute top-[-120px] left-1/2 w-[700px] h-[700px] bg-primary blur-[160px] rounded-full -translate-x-1/2" />
-        <div className="absolute bottom-[-140px] right-[-100px] w-[500px] h-[500px] bg-blue-600 blur-[160px] rounded-full" />
-      </div>
+    <>
+      <Helmet>
+        <title>
+          DevOps Services | AI, Cloud, Kubernetes & DevOps Consulting |
+          DevOpsMinders
+        </title>
 
-      {/* Grid Overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.06)_1px,transparent_0)] bg-[size:38px_38px] opacity-20 pointer-events-none" />
+        <meta
+          name="description"
+          content="Explore DevOpsMinders' professional DevOps services including cloud migration, Kubernetes, CI/CD automation, DevSecOps, AI solutions, infrastructure automation, and software engineering."
+        />
 
-      <div className="container mx-auto px-4 relative z-10">
+        <meta
+          name="keywords"
+          content="DevOps Services, Cloud Migration, Kubernetes, CI/CD, DevSecOps, Docker, AWS, Azure, Google Cloud, AI Automation"
+        />
 
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="flex justify-center mb-6"
-        >
-          <span className="px-5 py-1 text-xs tracking-widest uppercase bg-white/10 border border-white/10 rounded-full text-gray-300">
-            DevOps • Cloud • Automation
-          </span>
-        </motion.div>
+        <link rel="canonical" href="https://www.devopsminders.com/services" />
 
-        {/* Heading */}
-        <motion.header
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="text-center mb-24"
-        >
-          <h2 className="text-4xl md:text-6xl font-bold leading-tight">
-            Scalable{" "}
-            <span className="text-primary">DevOps Solutions</span> for Modern
-            Businesses
-          </h2>
+        <meta property="og:title" content="DevOps Services | DevOpsMinders" />
 
-          <p className="text-gray-400 max-w-3xl mx-auto mt-6 text-lg leading-relaxed">
-            At <span className="text-white font-semibold">DevOps Minders</span>,
-            we design cloud-native architectures, automate CI/CD pipelines,
-            improve infrastructure reliability, and secure production systems
-            for high-growth companies.
-          </p>
-        </motion.header>
+        <meta
+          property="og:description"
+          content="Cloud, DevOps, Kubernetes, AI Automation and Software Engineering Services."
+        />
 
-        {/* Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch"
-        >
-          {services.map((service, index) => (
-            <motion.article
-              key={index}
-              variants={itemVariants}
-              whileHover={{
-                scale: 1.05,
-                rotateX: 2,
-                rotateY: -2,
-              }}
-              className="h-full"
+        <meta
+          property="og:url"
+          content="https://www.devopsminders.com/services"
+        />
+
+        <meta property="og:type" content="website" />
+      </Helmet>
+      <main
+        id="services"
+        className="relative overflow-hidden bg-white text-slate-900"
+      >
+        {/* =========================================================
+GLOBAL BACKGROUND
+========================================================== */}
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-1/2 top-[-260px] h-[560px] w-[720px] -translate-x-1/2 rounded-full bg-slate-100/50 blur-[170px]" />
+          <div className="absolute right-[-260px] top-[38%] h-[500px] w-[500px] rounded-full bg-[#E80112]/[0.02] blur-[160px]" />
+          <div
+            className="absolute inset-0 opacity-[0.4]"
+            style={{
+              backgroundImage: `
+          linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)`,
+              backgroundSize: "72px 72px",
+            }}
+          />
+        </div>
+        {/* =========================================================
+      HERO
+  ========================================================== */}
+        <section className="relative overflow-hidden pb-16 pt-20 sm:pb-20 sm:pt-24 lg:pb-24 lg:pt-32">
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 xl:gap-24">
+              {/* Hero copy */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="mb-5 flex items-center gap-3">
+                  <span className="h-px w-7 bg-[#E80112]" />
+
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#E80112]">
+                    What we do
+                  </span>
+                </div>
+
+                <h1 className="max-w-3xl text-[2.65rem] font-semibold leading-[1.04] tracking-[-0.05em] text-slate-900 sm:text-5xl lg:text-[3.75rem] xl:text-[4.15rem]">
+                  Technology that
+                  <span className="text-slate-400">
+                    {" "}
+                    works for your business.
+                  </span>
+                </h1>
+
+                <p className="mt-6 max-w-2xl text-[15px] leading-7 text-slate-600 sm:text-base sm:leading-8">
+                  DevOps Minders helps businesses build, modernize, and operate
+                  the technology behind their products. We bring together
+                  software engineering, cloud infrastructure, automation, and AI
+                  to solve real technical challenges.
+                </p>
+
+                <div className="mt-7 flex flex-wrap gap-x-5 gap-y-2.5 text-xs text-slate-500">
+                  {[
+                    "Cloud & infrastructure",
+                    "Software engineering",
+                    "Automation",
+                    "AI solutions",
+                  ].map((item) => (
+                    <div key={item} className="flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-[#E80112]" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Engineering panel */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: 0.75,
+                  delay: 0.1,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="relative"
+              >
+                <div className="absolute -inset-6 rounded-full bg-slate-100/50 blur-[70px]" />
+
+                <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_30px_80px_rgba(0,0,0,0.05)]">
+                  {/* Header */}
+                  <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
+                    <div className="flex items-center gap-2.5">
+                      <Sparkles
+                        size={14}
+                        className="text-[#E80112]"
+                        strokeWidth={1.6}
+                      />
+
+                      <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-slate-400">
+                        Engineering approach
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <span className="relative flex h-1.5 w-1.5">
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#E80112] opacity-40" />
+                        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#E80112]" />
+                      </span>
+
+                      <span className="text-[10px] text-slate-300">Active</span>
+                    </div>
+                  </div>
+
+                  {/* Timeline */}
+                  <div className="p-5 sm:p-6">
+                    <div className="relative">
+                      <div className="absolute bottom-5 left-5 top-5 w-px bg-gradient-to-b from-[#E80112]/45 via-slate-200 to-transparent sm:left-[21px]" />
+
+                      <div className="space-y-2">
+                        {[
+                          {
+                            icon: Server,
+                            title: "A clear technical foundation",
+                            text: "Architecture shaped around the product.",
+                          },
+                          {
+                            icon: Workflow,
+                            title: "Less repetitive work",
+                            text: "Automation where it creates real value.",
+                          },
+                          {
+                            icon: ShieldCheck,
+                            title: "Safer production systems",
+                            text: "Security and reliability built in.",
+                          },
+                          {
+                            icon: BrainCircuit,
+                            title: "Room to evolve",
+                            text: "Technology that can adapt as needs change.",
+                          },
+                        ].map((item, index) => {
+                          const Icon = item.icon;
+
+                          return (
+                            <motion.div
+                              key={item.title}
+                              initial={{ opacity: 0, x: 10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{
+                                duration: 0.4,
+                                delay: 0.3 + index * 0.09,
+                              }}
+                              className="relative flex gap-4 rounded-xl px-1 py-3 transition-colors duration-300 hover:bg-slate-50"
+                            >
+                              <div className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 text-[#E80112]">
+                                <Icon size={16} strokeWidth={1.6} />
+                              </div>
+
+                              <div className="min-w-0 pt-0.5">
+                                <h3 className="text-sm font-medium text-slate-900">
+                                  {item.title}
+                                </h3>
+
+                                <p className="mt-1 text-xs leading-5 text-slate-500">
+                                  {item.text}
+                                </p>
+                              </div>
+                            </motion.div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+        {/* ==============================CAPABILITIES=============================== */}
+        <section className="relative pb-20 sm:pb-24 lg:pb-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.55 }}
+              className="overflow-hidden rounded-2xl border border-slate-200 bg-white"
             >
-              <ServiceCard
-                title={service.title}
-                description={service.description}
-                icon={service.icon}
-              />
-            </motion.article>
-          ))}
-        </motion.div>
-      </div>
-    </section>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4">
+                {capabilities.map((item, index) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <motion.div
+                      key={item.title}
+                      whileHover={{
+                        backgroundColor: "rgba(248, 250, 252, 1)", // slate-50
+                      }}
+                      className={`group p-5 transition-colors duration-300 sm:p-6 lg:p-7 ${
+                        index !== capabilities.length - 1
+                          ? "border-b border-slate-200 lg:border-b-0 lg:border-r"
+                          : ""
+                      }`}
+                    >
+                      <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 bg-white text-[#E80112] transition-all duration-300 group-hover:border-[#E80112]/25 group-hover:bg-[#E80112]/[0.05]">
+                        <Icon size={17} strokeWidth={1.6} />
+                      </div>
+
+                      <h2 className="mt-4 text-sm font-semibold text-slate-900">
+                        {item.title}
+                      </h2>
+
+                      <p className="mt-2 text-[13px] leading-6 text-slate-600">
+                        {item.text}
+                      </p>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+        {/* =========================================================
+      SERVICES
+  ========================================================== */}
+        <section
+          aria-labelledby="services-list-heading"
+          className="relative pb-20 sm:pb-24 lg:pb-28"
+        >
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55 }}
+              className="mb-8 max-w-2xl"
+            >
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+                Our services
+              </p>
+
+              <h2
+                id="services-list-heading"
+                className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.04em] sm:text-4xl"
+              >
+                Engineering work built around
+                <span className="text-[#E80112]"> real business needs.</span>
+              </h2>
+
+              <p className="mt-4 max-w-xl text-sm leading-7 text-slate-600 sm:text-[15px]">
+                From cloud infrastructure and DevOps automation to software
+                development and AI solutions, we combine the capabilities needed
+                to move a product forward.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.05 }}
+              className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3"
+            >
+              {services?.map((service, index) => (
+                <motion.article
+                  key={service.title || index}
+                  variants={cardVariants}
+                  whileHover={{ y: -5 }}
+                  className="group relative h-full"
+                >
+                  <div className="h-full overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-500 group-hover:border-[#E80112] group-hover:shadow-lg">
+                    <div className="h-px w-full origin-left scale-x-0 bg-gradient-to-r from-[#E80112]/80 to-transparent transition-transform duration-500 group-hover:scale-x-100" />
+
+                    <ServiceCard
+                      title={service.title}
+                      description={service.description}
+                      icon={service.icon}
+                    />
+                  </div>
+                </motion.article>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+        {/* =========================================================
+      PROCESS
+  ========================================================== */}
+        <section
+          aria-labelledby="process-heading"
+          className="relative overflow-hidden border-y border-slate-200 bg-white py-20 sm:py-24 lg:py-28"
+        >
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-slate-100 blur-[150px]" />
+
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-16 xl:gap-24">
+              {/* Process intro */}
+              <motion.div
+                initial={{ opacity: 0, x: -18 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.55 }}
+                className="lg:sticky lg:top-24"
+              >
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="h-px w-7 bg-[#E80112]" />
+
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#E80112]">
+                    How we work
+                  </span>
+                </div>
+
+                <h2
+                  id="process-heading"
+                  className="max-w-md text-3xl font-semibold leading-[1.08] tracking-[-0.045em] sm:text-4xl"
+                >
+                  A process that stays
+                  <span className="text-slate-400">
+                    {" "}
+                    close to the real problem.
+                  </span>
+                </h2>
+
+                <p className="mt-5 max-w-md text-sm leading-7 text-slate-600 sm:text-[15px] sm:leading-7">
+                  Good engineering starts with understanding the problem. We
+                  keep the process practical, collaborative, and focused on what
+                  needs to work in production.
+                </p>
+              </motion.div>
+
+              {/* Process cards */}
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.08 }}
+                className="relative"
+              >
+                <div className="absolute bottom-7 left-[18px] top-7 w-px bg-gradient-to-b from-[#E80112]/35 via-slate-200 to-transparent sm:left-[21px]" />
+
+                <div className="space-y-3">
+                  {process?.map((item, index) => {
+                    const Icon = item.icon;
+
+                    return (
+                      <motion.article
+                        key={item.title}
+                        variants={cardVariants}
+                        className="group relative flex gap-4 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-300 hover:border-[#E80112] hover:bg-slate-50 sm:gap-5 sm:p-5"
+                      >
+                        <div className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-[#E80112] transition-all duration-300 group-hover:border-[#E80112]/30 group-hover:bg-[#E80112]/[0.05]">
+                          <Icon size={16} strokeWidth={1.6} />
+                        </div>
+
+                        <div className="min-w-0 pt-0.5">
+                          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                            <h3 className="text-sm font-semibold text-slate-900 sm:text-[15px]">
+                              {item.title}
+                            </h3>
+
+                            <span className="text-[10px] uppercase tracking-[0.15em] text-slate-400">
+                              {String(index + 1).padStart(2, "0")}
+                            </span>
+                          </div>
+
+                          <p className="mt-1.5 max-w-2xl text-[13px] leading-6 text-slate-500 sm:text-sm sm:leading-6">
+                            {item.text}
+                          </p>
+                        </div>
+                      </motion.article>
+                    );
+                  })}
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+        {/* ==================================TECHNOLO============================== */}
+        <section
+          aria-labelledby="technology-heading"
+          className="relative py-20 sm:py-24 lg:py-28"
+        >
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <motion.header
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55 }}
+              className="max-w-2xl"
+            >
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+                Technology we work with
+              </p>
+
+              <h2
+                id="technology-heading"
+                className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.04em] sm:text-4xl"
+              >
+                Tools selected for
+                <span className="text-[#E80112]"> the job at hand.</span>
+              </h2>
+
+              <p className="mt-4 max-w-xl text-sm leading-7 text-slate-600 sm:text-[15px]">
+                We work across cloud platforms, infrastructure tooling, modern
+                application frameworks, and AI services. Technology choices are
+                based on the product and operational requirements.
+              </p>
+            </motion.header>
+
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.08 }}
+              className="mt-9 grid gap-3 md:grid-cols-2"
+            >
+              {technologyGroups.map((group) => (
+                <motion.article
+                  key={group.title}
+                  variants={cardVariants}
+                  className="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-colors duration-300 hover:border-slate-300 sm:p-6"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#E80112] shadow-[0_0_10px_#E80112]" />
+
+                    <h3 className="text-base font-semibold text-slate-900">
+                      {group.title}
+                    </h3>
+                  </div>
+
+                  <p className="mt-2.5 text-[13px] leading-6 text-slate-600 sm:text-sm">
+                    {group.description}
+                  </p>
+
+                  <div className="mt-5 flex flex-wrap gap-1.5">
+                    {group?.technologies?.map((technology) => (
+                      <span
+                        key={technology}
+                        className="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-[10px] text-slate-500 sm:text-[11px]"
+                      >
+                        {technology}
+                      </span>
+                    ))}
+                  </div>
+                </motion.article>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+        {/* ================================OUTCOMES==================================== */}
+        <section
+          aria-labelledby="outcomes-heading"
+          className="border-y border-slate-200 bg-white py-20 sm:py-24 lg:py-28"
+        >
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-16 xl:gap-24">
+              <motion.div
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55 }}
+              >
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="h-px w-7 bg-[#E80112]" />
+
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#E80112]">
+                    What this means
+                  </span>
+                </div>
+
+                <h2
+                  id="outcomes-heading"
+                  className="max-w-md text-3xl font-semibold leading-[1.08] tracking-[-0.045em] sm:text-4xl"
+                >
+                  Technology should make
+                  <span className="text-slate-400">
+                    {" "}
+                    the business easier to move forward.
+                  </span>
+                </h2>
+
+                <p className="mt-5 max-w-md text-sm leading-7 text-slate-600 sm:text-[15px]">
+                  The goal is not to add more technology. It is to remove
+                  unnecessary friction and give your team a dependable
+                  foundation for building, releasing, and operating software.
+                </p>
+              </motion.div>
+
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.08 }}
+                className="grid gap-2.5 sm:grid-cols-2"
+              >
+                {outcomes.map((item) => (
+                  <motion.div
+                    key={item}
+                    variants={cardVariants}
+                    className="group flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-300 hover:border-[#E80112] hover:bg-slate-50"
+                  >
+                    <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-red-50 text-[#E80112]">
+                      <CheckCircle2 size={14} strokeWidth={1.6} />
+                    </div>
+
+                    <p className="text-[13px] leading-6 text-slate-600 transition-colors duration-300 group-hover:text-slate-800">
+                      {item}
+                    </p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+        </section>
+        {/* =========================================================
+      CLOSING
+  ========================================================== */}
+        <section className="relative overflow-hidden py-20 sm:py-24 lg:py-28">
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[620px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-slate-100 blur-[150px]" />
+          <div className="relative z-10 mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.65 }}
+            >
+              <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl border border-[#E80112]/20 bg-[#E80112]/[0.05]">
+                <BrainCircuit
+                  size={18}
+                  className="text-[#E80112]"
+                  strokeWidth={1.5}
+                />
+              </div>
+
+              <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.24em] text-slate-500">
+                DevOps Minders
+              </p>
+
+              <h2 className="mt-3 text-3xl font-semibold leading-[1.08] tracking-[-0.045em] sm:text-4xl lg:text-[2.8rem]">
+                Build technology that
+                <span className="text-[#E80112]"> keeps working.</span>
+              </h2>
+
+              <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 sm:text-[15px] sm:leading-8">
+                From cloud migration and deployment automation to software
+                development and AI-powered workflows, we focus on solutions that
+                remain useful long after the initial project is complete.
+              </p>
+
+              <div className="mx-auto mt-8 h-px max-w-xs bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+            </motion.div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 };
 

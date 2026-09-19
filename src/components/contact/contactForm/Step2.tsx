@@ -17,16 +17,21 @@ export default function Step2({ next, back }: Props) {
 
     return (
         <div>
-            <h3 className="text-xl font-bold text-white mb-2">Step 2: Project Details</h3>
-            <p className="text-sm text-gray-500">Provide details so we can best assist you.</p>
-            <div className="grid md:grid-cols-2 gap-6 mt-6">
+            <h3 className="mb-2 text-xl font-bold text-slate-900">
+                Step 2: Project Details
+            </h3>
+            <p className="text-sm text-slate-600">
+                Provide details so we can best assist you.
+            </p>
+
+            <div className="mt-6 grid gap-6 md:grid-cols-2">
                 <SelectField
                     label="Service Needed"
                     options={[
                         "Cloud Migration",
                         "CI/CD Setup",
                         "Kubernetes",
-                        "laC",
+                        "IaC",
                         "DevSecOps",
                         "Monitoring",
                         "Other",
@@ -79,7 +84,7 @@ export default function Step2({ next, back }: Props) {
                 />
             </div>
 
-            <div className="mt-4 flex justify-between pt-6 border-t border-white/10 mt-6 gap-4">
+            <div className="mt-6 flex justify-between gap-4 border-t border-slate-200 pt-6">
                 <Button variant="secondary" onClick={back}>
                     Back
                 </Button>

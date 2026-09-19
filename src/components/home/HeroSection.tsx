@@ -1,152 +1,173 @@
-import { useEffect, useRef, useState } from "react";
-import { Cloud, GitBranch, Container, Code2 } from "lucide-react";
+import { useRef, useState } from "react";
+import robotImage from "./../../assets/caseStudy/robot(1).png";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-const ORBIT_ICONS = [
-    { Icon: Cloud, label: "Docker" },
-    { Icon: GitBranch, label: "Terraform" },
-    { Icon: Container, label: "Jenkins" },
-    { Icon: Code2, label: "Kubernetes" },
+const STATS = [
+  { value: "98%", label: "UPTIME" },
+  { value: "50+", label: "CLIENTS" },
+  { value: "24/7", label: "SUPPORT" },
 ];
 
 const TECH_STACK = [
-    "Azure", "GCP", "Docker", "Kubernetes", "Jenkins",
-    "Terraform", "Ansible", "GitHub Actions", "ArgoCD", "AWS",
-];
-
-const STATS = [
-    { value: "500+", label: "PROJECTS" },
-    { value: "98%", label: "UPTIME" },
-    { value: "50+", label: "CLIENTS" },
-    { value: "24/7", label: "SUPPORT" },
+  "AWS",
+  "Azure",
+  "Google Cloud",
+  "OpenAI",
+  "Docker",
+  "Kubernetes",
+  "LangChain",
+  "Terraform",
+  "GitHub Actions",
+  "ArgoCD",
 ];
 
 export default function HeroSection() {
-    const navigate = useNavigate();
-    const [angle, setAngle] = useState(0);
-    const rafRef = useRef<number>(0);
-    const lastRef = useRef<number>(0);
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        const tick = (now: number) => {
-            const dt = (now - (lastRef.current || now)) / 1000;
-            lastRef.current = now;
-            // Set the speed of the orbit here
-            setAngle((a) => (a + (360 / 40) * dt) % 360);
-            rafRef.current = requestAnimationFrame(tick);
-        };
-        rafRef.current = requestAnimationFrame(tick);
-        return () => cancelAnimationFrame(rafRef.current);
-    }, []);
+  return (
+    <section
+      id="brand"
+      className="relative min-h-screen overflow-hidden bg-white text-slate-900 selection:bg-red-500/20"
+    >
+      {/* ==============BACKGROUND===================== */}
+      <div className="pointer-events-none absolute inset-0">
+        {/* Subtle ambient glows for depth */}
+        <div className="absolute right-0 top-0 h-[600px] w-[600px] rounded-full bg-red-500/5 blur-[120px]" />
+        <div className="absolute left-0 bottom-0 h-[500px] w-[500px] rounded-full bg-[#010C1F]/5 blur-[100px]" />
+        
+        {/* Subtle Grid Pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.4]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        />
+      </div>
 
-    // Increased Radius to overlap the header and text
-    const RADIUS = 450;
+      {/* ======================FIXED ROBOT IMAGE (Top Right) ==================== */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8, x: 20 }}
+        animate={{ opacity: 1, scale: 1, x: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="fixed top-28 right-8 z-40 hidden md:block pointer-events-none"
+      >
+        <motion.div
+          className="relative w-48 lg:w-64"
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <div className="absolute -inset-4 rounded-full bg-red-500/10 blur-2xl" />
+          <img
+            src={robotImage}
+            alt="AI Robot Assistant"
+            className="relative z-10 h-auto w-full drop-shadow-xl opacity-90"
+          />
+        </motion.div>
+      </motion.div>
 
-    return (
-        <section className="relative min-h-screen bg-[#0a0a0a] flex flex-col overflow-hidden" id="brand">
+      {/* ======================MAIN CONTAINER===================== */}
+      {/* CHANGE: Removed mx-auto to align content to the left */}
+      <div className="relative z-20 flex min-h-screen flex-col justify-center px-4 py-24 sm:px-6 lg:px-8 lg:py-0">
+        <div className="max-w-4xl w-full text-left">
+          
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-red-100 bg-red-50 px-4 py-1.5 backdrop-blur-sm"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#FF0000] opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#FF0000]" />
+            </span>
+            <span className="text-[10px] font-semibold uppercase tracking-widest text-red-700">
+              AI & Cloud Solutions
+            </span>
+          </motion.div>
 
-            {/* Red radial glow */}
-            <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-                <div className="w-[800px] h-[800px] rounded-full bg-red-600/5 blur-[120px]" />
-            </div>
+          {/* Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-4xl font-extrabold leading-[1.15] tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-6xl"
+          >
+            Transform your infrastructure with <span className="text-[#FF0000]">DevOps</span> excellence
+          </motion.h1>
 
-            {/* Main content container */}
-            <div className="relative flex-1 flex flex-col items-center justify-center px-6 pt-20 pb-32">
+          {/* Subhead */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mt-6 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg"
+          >
+            6+ years of certified DevOps since 2021. We build cloud infrastructure and AI - powered workflows that scale 24/7.
+          </motion.p>
 
-                {/* Orbit Ring - Now using the same RADIUS for perfect alignment */}
-                <div
-                    className="absolute rounded-full border border-dashed border-red-800/20 pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                    style={{ width: RADIUS * 2, height: RADIUS * 2 }}
-                />
+          {/* Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mt-10"
+          >
+            <button
+              type="button"
+              onClick={() => navigate("/contact")}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#FF0000] px-8 py-3.5 text-sm font-bold text-white shadow-[0_10px_30px_rgba(255,0,0,0.3)] transition-all duration-300 hover:scale-105 hover:bg-red-600 hover:shadow-[0_15px_35px_rgba(255,0,0,0.4)] sm:px-10"
+            >
+              Get Free Consultation
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            </button>
+          </motion.div>
 
-                {/* Orbiting icons - Positioned exactly ON the dashed line */}
-                {ORBIT_ICONS.map(({ Icon, label }, i) => {
-                    const deg = ((i * 90 + angle) * Math.PI) / 180;
-                    const x = Math.cos(deg) * RADIUS;
-                    const y = Math.sin(deg) * RADIUS;
-                    return (
-                        <div
-                            key={label}
-                            className="absolute w-14 h-14 rounded-xl bg-black border border-red-700/40 flex items-center justify-center shadow-[0_0_20px_rgba(220,38,38,0.3)] backdrop-blur-md z-10 transition-all hover:scale-110"
-                            style={{
-                                top: "50%",
-                                left: "50%",
-                                transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
-                            }}
-                        >
-                            <Icon size={24} className="text-red-500" />
-                        </div>
-                    );
-                })}
-
-                {/* Hero text */}
-                <div className="relative z-30 text-center max-w-5xl">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white max-w-5xl leading-tight tracking-tight mb-6">
-                        Transform Your<br />
-                        Infrastructure with{" "}
-                        <span className="text-red-500">DevOps</span>
-                        <br />Excellence
-                    </h1>
-
-                    <p className="text-white/60 text-base md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto font-light">
-                        6+ years of certified DevOps experience since 2021. Scalable,
-                        secure, and reliable cloud solutions.
-                    </p>
-
-                    <div className="flex flex-wrap gap-4 justify-center">
-                        <button 
-                        onClick={() => navigate("/contact")}
-                        className="bg-red-600 hover:bg-red-700 text-white font-bold px-10 py-4 rounded-full transition-all hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(220,38,38,0.5)]">
-                            Get Free Consultation
-                        </button>
-            
-                    </div>
+          {/* Stats Row - 3 Columns */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-16 w-full max-w-2xl"
+          >
+            <div className="grid grid-cols-2 gap-8 border-t border-slate-200 pt-8 sm:grid-cols-3">
+              {STATS.map(({ value, label }) => (
+                <div key={label}>
+                  <div className="text-2xl font-bold text-slate-900 sm:text-3xl">
+                    {value}
+                  </div>
+                  <div className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">
+                    {label}
+                  </div>
                 </div>
-
-                {/* Stats */}
-                <div className="relative z-10 container mx-auto px-4 py-20">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                        {STATS.map(({ value, label }) => (
-                            <div key={label} className="flex flex-col items-center">
-                                <span className="text-4xl md:text-5xl font-bold text-white mb-2">
-                                    {value}
-                                </span>
-                                <span className="text-sm md:text-base text-gray-400 font-medium uppercase tracking-wider">
-                                    {label}
-                                </span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+              ))}
             </div>
+          </motion.div>
+        </div>
+      </div>
 
-            <div className="absolute bottom-0 left-0 right-0 h-14 bg-red-600 flex items-center overflow-hidden z-30">
-                <motion.div
-                    className="flex items-center"
-                    animate={{
-                        x: ["0%", "-33.33%"],
-                    }}
-                    transition={{
-                        x: {
-                            repeat: Infinity,
-                            repeatType: "loop",
-                            duration: 30,
-                            ease: "linear",
-                        },
-                    }}
-                >
-                    {[...TECH_STACK, ...TECH_STACK, ...TECH_STACK].map((tech, i) => (
-                        <span
-                            key={i}
-                            className="inline-flex items-center gap-6 whitespace-nowrap text-white text-lg font-semibold tracking-tighter px-8"
-                        >
-                            {tech}
-                            <div className="w-1.5 h-1.5 bg-white/40 rounded-full" />
-                        </span>
-                    ))}
-                </motion.div>
-            </div>
-        </section>
-    );
+      {/* ======================TECHNOLOGY MARQUEE===================== */}
+      <div className="absolute bottom-0 left-0 right-0 z-30 h-16 border-t border-slate-200 bg-slate-50 sm:h-20">
+        <motion.div
+          className="flex h-full w-max items-center"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ x: { repeat: Infinity, repeatType: "loop", duration: 40, ease: "linear" } }}
+        >
+          {[...TECH_STACK, ...TECH_STACK].map((tech, i) => (
+            <span
+              key={`${tech}-${i}`}
+              className="inline-flex items-center gap-4 whitespace-nowrap px-8 text-sm font-semibold text-slate-500 sm:px-10 sm:text-base"
+            >
+              {tech}
+              <span className="h-1 w-1 rounded-full bg-slate-300" />
+            </span>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
 }

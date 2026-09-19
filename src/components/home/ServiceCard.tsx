@@ -2,26 +2,29 @@ export const ServiceCard = ({ title, description, icon }: any) => {
   return (
     <div
       className="
-        group relative bg-[#1c1c1e] rounded-2xl p-7 cursor-pointer
-        border border-[#2a2a2a]
+        group relative bg-white rounded-2xl p-8 cursor-pointer
+        border border-slate-200
         transition-all duration-300 ease-in-out
-        hover:-translate-y-1 hover:bg-[#1f1b1b]
-        hover:border-[#e03232]
-        hover:shadow-[0_0_0_1px_rgba(224,50,50,0.35),0_0_20px_rgba(224,50,50,0.18),0_8px_32px_rgba(0,0,0,0.5)]
+        hover:-translate-y-1 
+        hover:border-[#E80112]
+        hover:shadow-[0_10px_40px_-5px_rgba(0,0,0,0.08),0_0_0_1px_rgba(232,1,18,0.3)]
 
-        /* ✅ IMPORTANT: equal height fix */
+        /* Equal height fix */
         h-full flex flex-col
       "
     >
-      <div className="w-14 h-14 rounded-xl bg-white/5 flex items-center justify-center mb-5 transition-colors duration-300 group-hover:bg-[#3a1a1a]">
-        <span className="text-[#e03232] w-6 h-6">{icon}</span>
+      {/* Icon Container - Custom Red Tint (#E80112) */}
+      <div className="w-14 h-14 rounded-xl bg-[#E80112]/10 flex items-center justify-center mb-6 transition-colors duration-300 group-hover:bg-[#E80112]/20">
+        <span className="text-[#E80112] w-6 h-6">{icon}</span>
       </div>
 
-      <h3 className="text-xl font-semibold mb-2 tracking-tight transition-colors duration-300">
+      {/* Title - Dark Text */}
+      <h3 className="text-xl font-semibold mb-3 tracking-tight text-slate-900 transition-colors duration-300">
         {title}
       </h3>
 
-      <p className="text-gray-400 text-base leading-relaxed flex-1">
+      {/* Description - Dark Gray Text */}
+      <p className="text-slate-600 text-base leading-relaxed flex-1">
         {description}
       </p>
 

@@ -15,23 +15,26 @@ export default function SelectField({
 }: Props) {
   return (
     <div>
-      <label className="text-sm font-medium text-gray-300">{label}</label>
+      <label className="block text-sm font-medium text-slate-700">
+        {label}
+      </label>
 
       <select
         {...register}
-        className={`mt-2 w-full h-10 rounded-lg border px-3 text-sm
-        bg-[#121212] border-white/10 text-white
-        focus:border-white/30 focus:ring-2 focus:ring-white/10
-        ${error ? "border-red-500" : ""}`}
+        className={`mt-2 w-full h-10 rounded-lg border bg-white px-3 text-sm text-slate-900 outline-none transition-colors duration-200 focus:border-[#E80112] focus:ring-2 focus:ring-[#E80112]/20 ${
+          error ? "border-[#E80112]" : "border-slate-200"
+        }`}
       >
         <option value="">Select</option>
         {options.map((opt) => (
-          <option key={opt}>{opt}</option>
+          <option key={opt} className="text-slate-900">
+            {opt}
+          </option>
         ))}
       </select>
 
       {error && (
-        <p className="text-red-500 text-xs mt-1">{error.message}</p>
+        <p className="mt-1 text-xs text-[#E80112]">{error.message}</p>
       )}
     </div>
   );
