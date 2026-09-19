@@ -182,8 +182,9 @@ GLOBAL BACKGROUND
         {/* =========================================================
       HERO
   ========================================================== */}
-        <section className="relative overflow-hidden pb-16 pt-20 sm:pb-20 sm:pt-24 lg:pb-24 lg:pt-32">
-          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* CHANGE: Reduced padding to pb-[10px] */}
+        <section className="relative overflow-hidden pb-[10px] pt-20 sm:pb-[10px] sm:pt-24 lg:pb-10 lg:pt-14">
+          <div className="relative z-10 mx-auto 2xxl:max-w-7xl px-4 sm:px-6 lg:px-20">
             <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 xl:gap-24">
               {/* Hero copy */}
               <motion.div
@@ -201,7 +202,7 @@ GLOBAL BACKGROUND
 
                 <h1 className="max-w-3xl text-[2.65rem] font-semibold leading-[1.04] tracking-[-0.05em] text-slate-900 sm:text-5xl lg:text-[3.75rem] xl:text-[4.15rem]">
                   Technology that
-                  <span className="text-slate-400">
+                  <span className="text-[#E80112]">
                     {" "}
                     works for your business.
                   </span>
@@ -333,8 +334,9 @@ GLOBAL BACKGROUND
           </div>
         </section>
         {/* ==============================CAPABILITIES=============================== */}
-        <section className="relative pb-20 sm:pb-24 lg:pb-28">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* CHANGE: Reduced padding to py-[10px] */}
+        <section className="relative py-[10px]">
+          <div className="mx-auto 2xxl:max-w-7xl px-4 sm:px-6 lg:px-20">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -379,11 +381,12 @@ GLOBAL BACKGROUND
         {/* =========================================================
       SERVICES
   ========================================================== */}
+        {/* CHANGE: Reduced padding to py-[10px] */}
         <section
           aria-labelledby="services-list-heading"
-          className="relative pb-20 sm:pb-24 lg:pb-28"
+          className="relative py-14"
         >
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto 2xxl:max-w-7xl px-4 sm:px-6 lg:px-20">
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -441,13 +444,14 @@ GLOBAL BACKGROUND
         {/* =========================================================
       PROCESS
   ========================================================== */}
+        {/* CHANGE: Reduced padding to py-[10px] */}
         <section
           aria-labelledby="process-heading"
-          className="relative overflow-hidden border-y border-slate-200 bg-white py-20 sm:py-24 lg:py-28"
+          className="relative overflow-hidden border-y border-slate-200 bg-white py-14"
         >
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-slate-100 blur-[150px]" />
 
-          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="relative z-10 mx-auto 2xxl:max-w-7xl px-4 sm:px-6 lg:px-20">
             <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-16 xl:gap-24">
               {/* Process intro */}
               <motion.div
@@ -470,7 +474,7 @@ GLOBAL BACKGROUND
                   className="max-w-md text-3xl font-semibold leading-[1.08] tracking-[-0.045em] sm:text-4xl"
                 >
                   A process that stays
-                  <span className="text-slate-400">
+                  <span className="text-[#E80112]">
                     {" "}
                     close to the real problem.
                   </span>
@@ -531,11 +535,12 @@ GLOBAL BACKGROUND
           </div>
         </section>
         {/* ==================================TECHNOLO============================== */}
+        {/* CHANGE: Reduced padding to py-[10px] */}
         <section
           aria-labelledby="technology-heading"
-          className="relative py-20 sm:py-24 lg:py-28"
+          className="relative py-[10px]"
         >
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto 2xxl:max-w-7xl px-4 sm:px-6 lg:px-20">
             <motion.header
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -603,11 +608,12 @@ GLOBAL BACKGROUND
           </div>
         </section>
         {/* ================================OUTCOMES==================================== */}
+        {/* CHANGE: Reduced padding to py-[10px] */}
         <section
           aria-labelledby="outcomes-heading"
-          className="border-y border-slate-200 bg-white py-20 sm:py-24 lg:py-28"
+          className="border-y border-slate-200 bg-white py-10"
         >
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto 2xxl:max-w-7xl px-4 sm:px-6 lg:px-20">
             <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-16 xl:gap-24">
               <motion.div
                 initial={{ opacity: 0, y: 18 }}
@@ -628,7 +634,7 @@ GLOBAL BACKGROUND
                   className="max-w-md text-3xl font-semibold leading-[1.08] tracking-[-0.045em] sm:text-4xl"
                 >
                   Technology should make
-                  <span className="text-slate-400">
+                  <span className="text-[#E80112]">
                     {" "}
                     the business easier to move forward.
                   </span>
@@ -670,7 +676,8 @@ GLOBAL BACKGROUND
         {/* =========================================================
       CLOSING
   ========================================================== */}
-        <section className="relative overflow-hidden py-20 sm:py-24 lg:py-28">
+        {/* CHANGE: Reduced padding to py-[10px] */}
+        <section className="relative overflow-hidden py-10">
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[620px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-slate-100 blur-[150px]" />
           <div className="relative z-10 mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
             <motion.div

@@ -1,15 +1,16 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaAngleDown, FaBars, FaTimes } from "react-icons/fa";
 
 type MenuItem = {
   label: string;
   path?: string;
+  cta?: boolean;
   children?: { label: string; path: string }[];
 };
 
 const menuData: MenuItem[] = [
-  // { label: "Ai Solution", path: "/ai-solution" },
+  { label: "Ai Solution", path: "/ai-solutions", cta: true },
   { label: "Services", path: "/services" },
   { label: "About Us", path: "/about-us" },
   { label: "Case Studies", path: "/case-studies" },
@@ -19,20 +20,28 @@ const menuData: MenuItem[] = [
 const Navbar = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur-md">
       {/* Top Accent Banner */}
-      <div className="w-full bg-[#E80112] px-4 py-2 text-center text-[10px] font-medium tracking-wide text-white md:text-xs">
+      <div className="w-full bg-[#E80112] px-6 py-2 text-center text-[10px] font-medium tracking-wide text-white sm:px-8 lg:px-12 md:text-xs">
         AI That Works. DevOps That Scales. We build intelligent automation
         systems that run 24/7—chatbots, cloud infrastructure, and AI-powered
         workflows for businesses ready to move fast.
       </div>
 
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Main Navigation">
+      <nav
+        className="mx-auto 2xl:max-w-7xl px-6 sm:px-8 lg:px-12"
+        aria-label="Main Navigation"
+      >
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" aria-label="DevOpsMinders Home" className="flex items-center">
+          <Link
+            to="/"
+            aria-label="DevOpsMinders Home"
+            className="flex items-center"
+          >
             <img
               src="logo.png"
               alt="DevOpsMinders DevOps Company Logo"
@@ -41,8 +50,8 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex md:items-center md:gap-8">
-            <ul className="flex items-center gap-2">
+          <div className="hidden md:flex md:items-center md:gap-6">
+            <ul className="flex items-center gap-1.5">
               {menuData?.map((item, index) => (
                 <li
                   key={index}
@@ -50,7 +59,20 @@ const Navbar = () => {
                   onMouseEnter={() => setActiveIndex(index)}
                   onMouseLeave={() => setActiveIndex(null)}
                 >
-                  {item?.children ? (
+                  {item?.cta ? (
+                    // ===== AI SOLUTION BUTTON =====
+                    <Link
+                      to={item.path!}
+                      title={item.label}
+                      className={`inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:shadow-md ${
+                        location.pathname === item.path
+                          ? "bg-[#c5010f]"
+                          : "bg-[#E80112] hover:bg-[#c5010f]"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  ) : item?.children ? (
                     <>
                       <button
                         type="button"
@@ -80,7 +102,11 @@ const Navbar = () => {
                             key={i}
                             to={child.path}
                             title={child.label}
-                            className="block rounded-lg px-3 py-2 text-sm text-slate-600 transition-colors duration-200 hover:bg-slate-50 hover:text-[#E80112]"
+                            className={`block rounded-lg px-3 py-2 text-sm transition-colors duration-200 hover:bg-slate-50 hover:text-[#E80112] ${
+                              location.pathname === child.path
+                                ? "text-[#E80112] font-semibold"
+                                : "text-slate-600"
+                            }`}
                           >
                             {child.label}
                           </Link>
@@ -88,9 +114,14 @@ const Navbar = () => {
                       </div>
                     </>
                   ) : (
+                    // ===== STANDARD LINKS =====
                     <Link
                       to={item.path!}
-                      className="flex items-center rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-[#E80112]"
+                      className={`flex items-center rounded-md px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                        location.pathname === item.path
+                          ? "text-[#E80112]" 
+                          : "text-slate-600 hover:text-[#E80112]"
+                      }`}
                       title={item.label}
                     >
                       {item.label}
@@ -99,16 +130,6 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-
-            {/* CTA Button (Optional) */}
-            {/* <div className="ml-4">
-              <Link
-                to="/quote"
-                className="inline-flex items-center justify-center rounded-lg bg-[#E80112] px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#c5010f] hover:shadow-md"
-              >
-                Get Quote
-              </Link>
-            </div> */}
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -132,10 +153,25 @@ const Navbar = () => {
           mobileOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="space-y-1 px-4 py-3">
+        <div className="space-y-1 px-6 py-3 sm:px-8 lg:px-12">
           {menuData?.map((item, index) => (
-            <div key={index} className="border-b border-slate-100 py-1 last:border-0">
-              {item.children ? (
+            <div
+              key={index}
+              className="border-b border-slate-100 py-1 last:border-0"
+            >
+              {item?.cta ? (
+                // ===== AI SOLUTION BUTTON (MOBILE) =====
+                <Link
+                  to={item.path!}
+                  className={`block w-full rounded-lg px-3 py-3 text-center text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:shadow-md ${
+                    location.pathname === item.path
+                      ? "bg-[#c5010f]"
+                      : "bg-[#E80112] hover:bg-[#c5010f]"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ) : item.children ? (
                 <>
                   <button
                     type="button"
@@ -162,7 +198,11 @@ const Navbar = () => {
                       <Link
                         key={i}
                         to={child.path}
-                        className="block rounded-lg px-6 py-2 text-sm text-slate-600 transition-colors hover:bg-slate-50 hover:text-[#E80112]"
+                        className={`block rounded-lg px-6 py-2 text-sm transition-colors hover:bg-slate-50 hover:text-[#E80112] ${
+                          location.pathname === child.path
+                            ? "text-[#E80112] font-semibold"
+                            : "text-slate-600"
+                        }`}
                       >
                         {child.label}
                       </Link>
@@ -170,23 +210,20 @@ const Navbar = () => {
                   </div>
                 </>
               ) : (
+                // ===== STANDARD LINKS (MOBILE) =====
                 <Link
                   to={item.path!}
-                  className="block rounded-lg px-3 py-3 text-sm font-medium text-slate-800 transition-colors hover:bg-slate-50 hover:text-[#E80112]"
+                  className={`block rounded-lg px-3 py-3 text-sm font-medium transition-colors hover:bg-slate-50 ${
+                    location.pathname === item.path
+                      ? "text-[#E80112]"
+                      : "text-slate-800 hover:text-[#E80112]"
+                  }`}
                 >
                   {item.label}
                 </Link>
               )}
             </div>
           ))}
-
-          {/* Mobile CTA (Optional) */}
-          {/* <Link
-            to="/contact"
-            className="mt-3 flex w-full items-center justify-center rounded-lg bg-[#E80112] px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#c5010f]"
-          >
-            Contact Us
-          </Link> */}
         </div>
       </div>
     </header>

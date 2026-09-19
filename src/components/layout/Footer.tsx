@@ -21,9 +21,9 @@ export const Footer = () => {
       </div>
 
       {/* Top Accent */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#E80112]/40 to-transparent" />
+      {/* <div className="h-px w-full bg-gradient-to-r from-transparent via-[#E80112]/40 to-transparent" /> */}
 
-      <div className="relative z-10 container mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="relative z-10 container 2xxl:mx-auto  lg:px-20  px-4 py-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* BRAND */}
         <div>
           <div className="flex items-center gap-3 mb-4">

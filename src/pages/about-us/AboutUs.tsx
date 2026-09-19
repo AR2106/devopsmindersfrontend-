@@ -86,7 +86,8 @@ export function AboutUs() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="relative overflow-hidden bg-white py-20 text-slate-900 sm:py-24 lg:py-32"
+      // CHANGE: Adjusted padding to py-12 (Tailwind 12 = 48px)
+      className="relative overflow-hidden bg-white py-12 text-slate-900 sm:py-12 lg:py-12"
     >
       {/* =====================================================
       BACKGROUND
@@ -130,7 +131,7 @@ export function AboutUs() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto 2xxl:max-w-7xl px-4 sm:px-6 lg:px-20">
         {/* =====================================================
             INTRO
         ====================================================== */}
@@ -175,7 +176,7 @@ export function AboutUs() {
         {/* =====================================================
             ENGINEERING OVERVIEW
         ====================================================== */}
-        <div className="mt-16 grid gap-6 lg:mt-20 lg:grid-cols-[1.4fr_0.6fr]">
+        <div className="mt-4 grid gap-6 lg:mt-12 lg:grid-cols-[1.4fr_0.6fr]">
           {/* Capabilities */}
           <motion.div
             initial={{ opacity: 0, y: 18 }}
@@ -338,7 +339,7 @@ export function AboutUs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.65 }}
-          className="relative mt-24 overflow-hidden border-y border-slate-200 py-16 sm:py-20"
+          className="relative mt-12 overflow-hidden py-12"
         >
           <div className="absolute left-1/2 top-1/2 h-[260px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-slate-100 blur-[110px]" />
 
@@ -354,7 +355,7 @@ export function AboutUs() {
 
               <h3 className="text-3xl font-semibold leading-[1.08] tracking-[-0.04em] sm:text-4xl">
                 Everything needs to work
-                <span className="text-slate-400">
+                <span className="text-[#E80112]">
                   {" "}
                   together.
                 </span>
@@ -457,7 +458,7 @@ export function AboutUs() {
         {/* =====================================================
             ENGINEERING MINDSET
         ====================================================== */}
-        <div className="mt-24 grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
+        <div className="mt-12 grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
           <motion.div
             initial={{ opacity: 0, x: -18 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -474,7 +475,7 @@ export function AboutUs() {
 
             <h3 className="max-w-md text-3xl font-semibold leading-[1.08] tracking-[-0.04em] sm:text-4xl">
               Good infrastructure should
-              <span className="text-slate-400">
+              <span className="text-[#E80112]">
                 {" "}
                 make the next decision easier.
               </span>
@@ -554,7 +555,7 @@ export function AboutUs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.6 }}
-          className="mt-24"
+          className="mt-12"
         >
           <div className="flex flex-col gap-8 border-t border-slate-200 pt-8 lg:flex-row lg:items-start lg:justify-between">
             <div className="max-w-md">
@@ -568,7 +569,7 @@ export function AboutUs() {
 
               <h3 className="mt-5 text-2xl font-semibold leading-tight tracking-[-0.035em] sm:text-3xl">
                 From infrastructure
-                <span className="text-slate-400">
+                <span className="text-[#E80112]">
                   {" "}
                   to production.
                 </span>
@@ -615,7 +616,7 @@ export function AboutUs() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mt-16 border-t border-slate-200 pt-8 sm:mt-20"
+          className="mt-12 border-t border-slate-200 pt-8 sm:mt-12"
         >
           <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-12">
             <p className="max-w-4xl text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">

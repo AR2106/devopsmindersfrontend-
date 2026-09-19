@@ -62,15 +62,16 @@ const CaseStudyDetails = () => {
         Standardized the wrapper to max-w-7xl, 
         but constrained inner sections to max-w-4xl to align text and images perfectly 
       */}
-      <div className="relative mx-auto max-w-7xl px-4 pb-24 pt-24 sm:px-6 sm:pt-28 lg:px-8 lg:pb-32 lg:pt-36">
+      {/* CHANGE: Updated horizontal padding to px-8 sm:px-10 lg:px-10 (40px) */}
+      <div className="relative mx-auto 2xxl:max-w-7xl px-8 sm:px-10 lg:px-10 pb-24 pt-10 sm:pt-28 lg:pb-14 lg:pt-14">
         
         {/* Hero - max-w-4xl aligns with the image and content below */}
-        <header className="mx-auto max-w-4xl">
-          <h1 className="max-w-4xl text-4xl font-semibold leading-[1.1] tracking-[-0.04em] text-slate-900 sm:text-5xl lg:text-6xl">
+        <header className="mx-auto xl:max-w-4xl">
+          <h1 className="2xx:max-w-4xl text-4xl font-semibold leading-[1.1] tracking-[-0.04em] text-slate-900 sm:text-5xl lg:text-6xl">
             {study.title}
           </h1>
 
-          <p className="mt-7 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
+          <p className="mt-7 2xxl:max-w-3xl text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
             {study.description}
           </p>
 

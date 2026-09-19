@@ -49,17 +49,22 @@ const CaseStudies = () => {
             className="absolute inset-0 opacity-[0.4]"
             style={{
               backgroundImage: `
-                            linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
-                            linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)
-                        `,
+                linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)
+              `,
               backgroundSize: "72px 72px",
             }}
           />
-
-          <div className="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-[#E80112]/20 via-slate-200 to-transparent" />
+          {/* Removed the vertical red center line from here */}
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-24 sm:px-6 sm:pb-24 sm:pt-28 lg:px-8 lg:pb-32 lg:pt-36">
+        {/* 
+          Updated Container: 
+          - max-w-6xl reduces the overall horizontal width on desktop
+          - pt-10 pb-10 applies 40px padding top and bottom
+          - lg:px-[40px] explicitly gives 40px horizontal space on desktop
+        */}
+        <div className="relative mx-auto 2xxl:max-w-6xl px-4 pt-10 pb-10 sm:px-6 lg:px-20">
           {/* Header */}
           <header className="relative mb-14 max-w-4xl sm:mb-16 lg:mb-20">
             <div className="mb-6 flex items-center gap-3">
@@ -98,7 +103,8 @@ const CaseStudies = () => {
 
           {/* Case studies */}
           <section aria-label="Selected case studies">
-            <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-12">
+            {/* Also reduced the horizontal space (gap) between the grid columns to 40px */}
+            <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-x-[40px] lg:gap-y-12">
               {caseStudies?.map((item, index) => (
                 <div key={item.slug} className="group relative">
                   {/* Project index */}

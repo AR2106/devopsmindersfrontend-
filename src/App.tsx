@@ -22,7 +22,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/quote" element={<GetQuotePage />} />
-        <Route path="/ai-solution" element={<AI />} />
+        <Route path="/ai-solutions" element={<AI />} />
       </Routes>
     </MainLayout>
   );

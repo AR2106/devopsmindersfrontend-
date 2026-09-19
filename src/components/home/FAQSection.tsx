@@ -14,7 +14,7 @@ export function FAQSection() {
         <section
             id="faq"
             aria-labelledby="faq-heading"
-            className="relative overflow-hidden bg-white py-24 md:py-28"
+            className="relative overflow-hidden bg-white py-24 md:py-10"
         >
             {/* =====================================================
                 BACKGROUND
@@ -35,7 +35,7 @@ export function FAQSection() {
                 />
             </div>
 
-            <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="relative z-10 mx-auto 2xxl:max-w-7xl px-4 sm:px-6 lg:px-20">
                 <div className="grid gap-12 lg:grid-cols-[0.8fr_1.4fr] lg:items-start lg:gap-16 xl:grid-cols-[0.85fr_1.45fr] xl:gap-24">
                     {/* =================================================
                         LEFT CONTENT

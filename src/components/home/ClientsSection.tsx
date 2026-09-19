@@ -24,7 +24,7 @@ const ClientsSection: React.FC = () => {
         <section
             id="clients"
             aria-labelledby="clients-heading"
-            className="relative overflow-hidden bg-white py-16 md:py-20"
+            className="relative overflow-hidden bg-white py-16 md:py-10"
         >
             {/* =====================================================
                 BACKGROUND

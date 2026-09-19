@@ -37,7 +37,7 @@ export function WhyUsSection() {
             icon: ServerCog,
             title: "24/7 IT Support",
             description:
-                "Reliable technical support for infrastructure, applications, cloud, and DevOps environments.",
+                "Reliable technical support for infrastructure, applications, cloud, and business systems.",
         },
     ];
 
@@ -47,7 +47,7 @@ export function WhyUsSection() {
             icon: ServerCog,
             title: "IT Solutions",
             description:
-                "Modern IT infrastructure, cloud services, automation, cybersecurity, and DevOps consulting.",
+                "Modern IT infrastructure, cloud services, automation, cybersecurity, and consulting.",
         },
         {
             number: "02",
@@ -61,7 +61,7 @@ export function WhyUsSection() {
             icon: GraduationCap,
             title: "IT Training",
             description:
-                "Practical training in DevOps, cloud computing, software development, automation, and modern technologies.",
+                "Practical training in cloud computing, software development, automation, and modern technologies.",
         },
     ];
 
@@ -69,7 +69,7 @@ export function WhyUsSection() {
         "IT Solutions",
         "Software Development",
         "Cloud Computing",
-        "DevOps Consulting",
+        "Cloud Automation",
         "Cloud Infrastructure",
         "CI/CD Automation",
         "Cybersecurity",
@@ -81,7 +81,7 @@ export function WhyUsSection() {
         <section
             id="why-us"
             aria-labelledby="why-us-heading"
-            className="relative w-full overflow-hidden bg-white py-24 md:py-32"
+            className="relative w-full overflow-hidden bg-white py-12 md:py-4"
         >
             {/* =========================================================
                 BACKGROUND
@@ -106,7 +106,8 @@ export function WhyUsSection() {
                 <div className="absolute left-1/2 top-[42%] h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-[#E80112]/[0.02] blur-[140px]" />
             </div>
 
-            <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
+            {/* CHANGE: Reduced desktop horizontal padding to 40px (lg:px-10) */}
+            <div className="relative z-10 mx-auto 2xxl:max-w-7xl px-6 md:px-10 lg:px-14">
                 {/* =========================================================
                     INTRO
                 ========================================================== */}
@@ -116,13 +117,13 @@ export function WhyUsSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.7 }}
-                    className="mx-auto mb-16 max-w-4xl text-center"
+                    className="mx-auto mb-10 max-w-4xl text-center"
                 >
                     <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#E80112]/20 bg-[#E80112]/[0.05] px-4 py-2">
                         <Sparkles className="h-4 w-4 text-[#E80112]" />
 
                         <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E80112]">
-                            Why DevOps Minders
+                            Why Choose Us
                         </span>
                     </div>
 
@@ -141,7 +142,7 @@ export function WhyUsSection() {
                         DevOps Minders delivers{" "}
                         <span className="font-medium text-slate-900">
                             IT solutions, software development, cloud infrastructure,
-                            DevOps consulting, automation, and technology training
+                            automation, and technology training
                         </span>{" "}
                         for startups, growing businesses, and enterprises across India.
                     </p>
@@ -408,7 +409,7 @@ export function WhyUsSection() {
 
                                     <div className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-3">
                                         <p className="text-sm font-bold text-slate-900">
-                                            DevOps
+                                            Cloud
                                         </p>
 
                                         <p className="mt-1 text-[9px] uppercase tracking-wider text-slate-500">

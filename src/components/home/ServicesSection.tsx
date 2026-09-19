@@ -7,7 +7,7 @@ export function ServicesSection() {
     return (
         <section
             id="services"
-            className="relative w-full overflow-hidden bg-white py-24 md:py-32"
+            className="relative w-full overflow-hidden bg-white py-16 md:py-16"
         >
             {/* =========================================================
                 BACKGROUND
@@ -32,7 +32,8 @@ export function ServicesSection() {
                 <div className="absolute left-1/2 top-[45%] h-[500px] w-[600px] -translate-x-1/2 rounded-full bg-[#E80112]/[0.02] blur-[140px]" />
             </div>
 
-            <div className="relative z-10 container mx-auto px-6 md:px-10 lg:px-12">
+            {/* CHANGE: Reduced horizontal padding on desktop to px-10 (40px) */}
+            <div className="relative z-10 container mx-auto px-8 sm:px-10 lg:px-10">
                 {/* =====================================================
                     SECTION HEADER
                 ====================================================== */}

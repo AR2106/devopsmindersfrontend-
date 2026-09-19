@@ -155,7 +155,7 @@ export default function ContactForm() {
         <div className="absolute left-0 top-1/3 h-px w-full bg-gradient-to-r from-transparent via-slate-300 to-transparent" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto 2xxl:max-w-6xl px-4 sm:px-6 lg:px-20">
         <motion.header
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}

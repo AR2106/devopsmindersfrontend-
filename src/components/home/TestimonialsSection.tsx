@@ -8,7 +8,7 @@ export function TestimonialsSection() {
         <section
             id="client-testimonials"
             aria-labelledby="testimonials-heading"
-            className="relative overflow-hidden bg-white py-24 md:py-28"
+            className="relative overflow-hidden bg-white py-24 md:py-10"
         >
             {/* Background */}
             <div className="pointer-events-none absolute inset-0">

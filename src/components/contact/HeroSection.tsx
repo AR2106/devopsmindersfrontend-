@@ -52,7 +52,7 @@ const technologies = [
 export default function HeroSection() {
   return (
     <section
-      className="relative isolate overflow-hidden bg-white pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-28"
+      className="relative isolate overflow-hidden bg-white pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-12 lg:pb-14"
       aria-labelledby="contact-hero-title"
     >
       {/* =========================================================
