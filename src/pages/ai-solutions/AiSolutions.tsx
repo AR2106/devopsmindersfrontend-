@@ -8,7 +8,6 @@ import {
   Mic,
   Sparkles,
   WandSparkles,
-  Zap,
   FileText,
   Network,
 } from "lucide-react";
