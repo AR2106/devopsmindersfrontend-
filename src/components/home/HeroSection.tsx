@@ -48,19 +48,22 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* ======================GLOBE IMAGE (Right Side Background) ==================== */}
-      <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 0.6, x: 0 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-        className="absolute top-[35%] -translate-y-1/2 right-0 w-[35%] lg:w-[30%] h-auto z-10 pointer-events-none hidden lg:block"
-      >
-        <img
-          src={globe}
-          alt="Global Network"
-          className="w-full h-full object-contain opacity-80"
-        />
-      </motion.div>
+<motion.div
+  initial={{ opacity: 0, x: 100, y: "-50%" }} // Added y: "-50%" here
+  animate={{ opacity: 0.9, x: 0, y: "-50%" }} // Keep y: "-50%" during animation
+  transition={{ duration: 1.2, ease: "easeOut" }}
+  // Removed -translate-y-1/2 from className to prevent conflict
+  // Added will-change-transform to force GPU rendering and reduce blur
+  className="absolute top-[35%] right-20 w-[35%] lg:w-[30%] h-auto z-10 pointer-events-none hidden lg:block will-change-transform"
+>
+  <img
+    src={globe}
+    alt="Global Network"
+    // Changed h-full to h-auto to prevent stretching/distortion
+    // Removed opacity-80 since the parent is already handling opacity
+    className="w-full h-auto object-contain" 
+  />
+</motion.div>
 
       {/* ======================ROBOT IMAGE (Fixed Sticky Position - Bottom Right) ==================== */}
       <motion.div
