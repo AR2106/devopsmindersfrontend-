@@ -3,7 +3,6 @@ import {
   ArrowRight,
   Bot,
   Brain,
-  Cloud,
   Code2,
   Image as ImageIcon,
   Mic,

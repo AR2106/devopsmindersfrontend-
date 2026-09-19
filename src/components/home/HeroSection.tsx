@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+
 import robotImage from "./../../assets/caseStudy/robot(1).png";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";

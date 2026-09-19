@@ -10,7 +10,6 @@ import {
   ShieldCheck,
   Sparkles,
   Workflow,
-  Zap,
 } from "lucide-react";
 import RotatingText from "./RotatingText";
 
