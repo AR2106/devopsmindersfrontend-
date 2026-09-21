@@ -86,7 +86,6 @@ export function AboutUs() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      // CHANGE: Adjusted padding to py-12 (Tailwind 12 = 48px)
       className="relative overflow-hidden bg-white py-12 text-slate-900 sm:py-12 lg:py-12"
     >
       {/* =====================================================
@@ -131,52 +130,70 @@ export function AboutUs() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto 2xxl:max-w-7xl px-4 sm:px-6 lg:px-20">
+      <div className="relative z-10 mx-auto w-full max-w-[1480px] px-4 sm:px-5 md:px-6">
         {/* =====================================================
             INTRO
         ====================================================== */}
-        <motion.div
-          initial={{ opacity: 0, y: 22 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.65 }}
-          className="max-w-4xl"
-        >
-          <div className="mb-7 flex items-center gap-3">
-            <span className="h-px w-8 bg-[#E80112]" />
-
-            <span className="text-xs font-medium uppercase tracking-[0.22em] text-[#E80112]">
-              About DevOps Minders
-            </span>
-          </div>
-
-          <h2
-            id="about-heading"
-            className="max-w-4xl text-4xl font-semibold leading-[1.08] tracking-[-0.045em] sm:text-5xl lg:text-6xl"
+        {/* CHANGE: Widened left column to 1.4fr and reduced right column to 0.6fr to fill empty space */}
+        <div className="grid items-start gap-12 lg:grid-cols-[1.4fr_0.6fr] lg:gap-10 xl:gap-16">
+          {/* Left Column: Text */}
+          <motion.div
+            initial={{ opacity: 0, y: 22 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.65 }}
           >
-            Engineering the infrastructure
-            <span className="text-[#E80112]"> behind modern software.</span>
-          </h2>
+            <div className="mb-7 flex items-center gap-3">
+              <span className="h-px w-8 bg-[#E80112]" />
 
-          <p className="mt-7 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
-            DevOps Minders helps businesses build, modernize, and operate
-            reliable digital infrastructure. We bring together cloud
-            engineering, DevOps automation, security, monitoring, and software
-            engineering to create systems that are easier to deploy, operate,
-            and scale.
-          </p>
+              <span className="text-xs font-medium uppercase tracking-[0.22em] text-[#E80112]">
+                About DevOps Minders
+              </span>
+            </div>
 
-          <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-500 sm:text-[15px] sm:leading-8">
-            Our work is grounded in practical engineering — understanding how
-            technology is used today, identifying where it creates friction,
-            and improving the foundation without adding unnecessary complexity.
-          </p>
-        </motion.div>
+            <h2
+              id="about-heading"
+              className="text-4xl font-semibold leading-[1.08] tracking-[-0.045em] sm:text-5xl lg:text-6xl"
+            >
+              Engineering the infrastructure
+              <span className="text-[#E80112]"> behind modern software.</span>
+            </h2>
+
+            <p className="mt-7 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
+              DevOps Minders helps businesses build, modernize, and operate
+              reliable digital infrastructure. We bring together cloud
+              engineering, DevOps automation, security, monitoring, and software
+              engineering to create systems that are easier to deploy, operate,
+              and scale.
+            </p>
+
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-500 sm:text-[15px] sm:leading-8">
+              Our work is grounded in practical engineering — understanding how
+              technology is used today, identifying where it creates friction,
+              and improving the foundation without adding unnecessary complexity.
+            </p>
+          </motion.div>
+
+          {/* Right Column: Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="relative hidden lg:mt-8 lg:block"
+          >
+            <img
+              src="/assets/about-image.png"
+              alt="DevOps Minders engineering team collaborating on cloud infrastructure"
+              className="relative h-auto max-h-[450px] w-full object-contain"
+            />
+          </motion.div>
+        </div>
 
         {/* =====================================================
             ENGINEERING OVERVIEW
         ====================================================== */}
-        <div className="mt-4 grid gap-6 lg:mt-12 lg:grid-cols-[1.4fr_0.6fr]">
+        <div className="mt-12 grid gap-6 lg:mt-16 lg:grid-cols-[1.4fr_0.6fr]">
           {/* Capabilities */}
           <motion.div
             initial={{ opacity: 0, y: 18 }}

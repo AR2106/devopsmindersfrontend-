@@ -25,32 +25,36 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur-md">
       {/* Top Accent Banner */}
-      <div className="w-full bg-[#E80112] px-6 py-2 text-center text-[10px] font-medium tracking-wide text-white sm:px-8 lg:px-12 md:text-xs">
-        AI That Works. DevOps That Scales. We build intelligent automation
-        systems that run 24/7—chatbots, cloud infrastructure, and AI-powered
-        workflows for businesses ready to move fast.
+      <div className="w-full bg-[#E80112]">
+        {/* Reduced horizontal padding here */}
+        <div className="mx-auto max-w-[1480px] px-4 py-2 text-center text-[10px] font-medium tracking-wide text-white sm:px-5 md:px-6 md:text-xs">
+          AI That Works. DevOps That Scales. We build intelligent automation
+          systems that run 24/7—chatbots, cloud infrastructure, and AI-powered
+          workflows for businesses ready to move fast.
+        </div>
       </div>
 
       <nav
-        className="mx-auto 2xl:max-w-7xl px-6 sm:px-8 lg:px-12"
+        // Reduced horizontal padding here (16px on mobile, 20px on sm, 24px on md+)
+        className="mx-auto w-full max-w-[1480px] px-4 sm:px-5 md:px-6"
         aria-label="Main Navigation"
       >
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
           <Link
             to="/"
             aria-label="DevOpsMinders Home"
-            className="flex items-center"
+            className="flex flex-shrink-0 items-center"
           >
             <img
               src="logo.png"
               alt="DevOpsMinders DevOps Company Logo"
-              className="h-8 w-auto md:h-16"
+              className="h-8 w-auto md:h-10 lg:h-12"
             />
           </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex md:items-center md:gap-6">
+          {/* Desktop Menu (Visible on Large Screens and up) */}
+          <div className="hidden lg:flex lg:items-center lg:gap-6">
             <ul className="flex items-center gap-1.5">
               {menuData?.map((item, index) => (
                 <li
@@ -64,7 +68,7 @@ const Navbar = () => {
                     <Link
                       to={item.path!}
                       title={item.label}
-                      className={`inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:shadow-md ${
+                      className={`inline-flex whitespace-nowrap items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:shadow-md ${
                         location.pathname === item.path
                           ? "bg-[#c5010f]"
                           : "bg-[#E80112] hover:bg-[#c5010f]"
@@ -117,9 +121,9 @@ const Navbar = () => {
                     // ===== STANDARD LINKS =====
                     <Link
                       to={item.path!}
-                      className={`flex items-center rounded-md px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                      className={`flex whitespace-nowrap items-center rounded-md px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                         location.pathname === item.path
-                          ? "text-[#E80112]" 
+                          ? "text-[#E80112]"
                           : "text-slate-600 hover:text-[#E80112]"
                       }`}
                       title={item.label}
@@ -134,14 +138,14 @@ const Navbar = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="inline-flex items-center justify-center rounded-md p-2 text-slate-600 transition-colors hover:bg-slate-100 hover:text-[#E80112] md:hidden"
+            className="inline-flex flex-shrink-0 items-center justify-center rounded-md p-2 text-slate-600 transition-colors hover:bg-slate-100 hover:text-[#E80112] lg:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle Menu"
           >
             {mobileOpen ? (
-              <FaTimes className="h-5 w-5" />
+              <FaTimes className="h-6 w-6" />
             ) : (
-              <FaBars className="h-5 w-5" />
+              <FaBars className="h-6 w-6" />
             )}
           </button>
         </div>
@@ -149,11 +153,14 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       <div
-        className={`md:hidden overflow-hidden border-t border-slate-200 bg-white transition-all duration-300 ease-in-out ${
-          mobileOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
+        className={`lg:hidden overflow-y-auto border-t border-slate-200 bg-white transition-all duration-300 ease-in-out ${
+          mobileOpen
+            ? "max-h-[calc(100vh-80px)] opacity-100"
+            : "max-h-0 opacity-0"
         }`}
       >
-        <div className="space-y-1 px-6 py-3 sm:px-8 lg:px-12">
+        {/* Reduced horizontal padding here */}
+        <div className="space-y-1 px-4 py-3 sm:px-5 md:px-6">
           {menuData?.map((item, index) => (
             <div
               key={index}
@@ -163,6 +170,7 @@ const Navbar = () => {
                 // ===== AI SOLUTION BUTTON (MOBILE) =====
                 <Link
                   to={item.path!}
+                  onClick={() => setMobileOpen(false)}
                   className={`block w-full rounded-lg px-3 py-3 text-center text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:shadow-md ${
                     location.pathname === item.path
                       ? "bg-[#c5010f]"
@@ -198,6 +206,7 @@ const Navbar = () => {
                       <Link
                         key={i}
                         to={child.path}
+                        onClick={() => setMobileOpen(false)}
                         className={`block rounded-lg px-6 py-2 text-sm transition-colors hover:bg-slate-50 hover:text-[#E80112] ${
                           location.pathname === child.path
                             ? "text-[#E80112] font-semibold"
@@ -213,6 +222,7 @@ const Navbar = () => {
                 // ===== STANDARD LINKS (MOBILE) =====
                 <Link
                   to={item.path!}
+                  onClick={() => setMobileOpen(false)}
                   className={`block rounded-lg px-3 py-3 text-sm font-medium transition-colors hover:bg-slate-50 ${
                     location.pathname === item.path
                       ? "text-[#E80112]"

@@ -55,56 +55,63 @@ const CaseStudies = () => {
               backgroundSize: "72px 72px",
             }}
           />
-          {/* Removed the vertical red center line from here */}
         </div>
 
-        {/* 
-          Updated Container: 
-          - max-w-6xl reduces the overall horizontal width on desktop
-          - pt-10 pb-10 applies 40px padding top and bottom
-          - lg:px-[40px] explicitly gives 40px horizontal space on desktop
-        */}
-        <div className="relative mx-auto 2xxl:max-w-6xl px-4 pt-10 pb-10 sm:px-6 lg:px-20">
+        {/* Updated Container - Matches Service.tsx exactly */}
+        <div className="relative z-10 mx-auto w-full max-w-[1480px] px-4 pt-20 pb-[10px] sm:px-5 md:px-6 sm:pt-24 lg:pb-10 lg:pt-14">
           {/* Header */}
-          <header className="relative mb-14 max-w-4xl sm:mb-16 lg:mb-20">
-            <div className="mb-6 flex items-center gap-3">
-              <span className="h-px w-8 bg-[#E80112] sm:w-10" />
+          <header className="relative mb-4 sm:mb-6 lg:mb-0">
+            {/* 2-column layout for text and image matching Service.tsx */}
+            <div className="grid items-start gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 xl:gap-24">
+              {/* Left Column: Text */}
+              <div className="max-w-3xl">
+                <div className="mb-6 flex items-center gap-3">
+                  <span className="h-px w-8 bg-[#E80112] sm:w-10" />
 
-              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#E80112]">
-                Our Work
-              </span>
-            </div>
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#E80112]">
+                    Our Work
+                  </span>
+                </div>
 
-            <h1 className="max-w-4xl text-4xl font-semibold leading-[1.05] tracking-[-0.04em] text-slate-900 sm:text-5xl lg:text-7xl">
-              Building digital products
-              <span className="block text-[#E80112]">
-                that solve real problems.
-              </span>
-            </h1>
+                <h1 className="max-w-4xl text-[2.65rem] font-semibold leading-[1.04] tracking-[-0.05em] text-slate-900 sm:text-5xl lg:text-[3.75rem] xl:text-[4.15rem]">
+                  Building digital products
+                  <span className="block text-[#E80112]">
+                    that solve real problems.
+                  </span>
+                </h1>
 
-            <div className="mt-7 flex flex-col gap-6 sm:mt-8 lg:flex-row lg:items-end lg:justify-between">
-              <p className="max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-                Explore selected projects where thoughtful engineering,
-                intelligent technology, and scalable digital experiences come
-                together to solve complex business challenges.
-              </p>
+                <p className="mt-6 max-w-2xl text-[15px] leading-7 text-slate-600 sm:text-base sm:leading-8">
+                  Explore selected projects where thoughtful engineering,
+                  intelligent technology, and scalable digital experiences come
+                  together to solve complex business challenges.
+                </p>
 
-              <div className="hidden shrink-0 items-center gap-3 lg:flex">
-                <span className="h-2 w-2 rounded-full bg-[#E80112] shadow-[0_0_14px_rgba(232,1,18,0.5)]" />
-                <span className="text-[10px] uppercase tracking-[0.2em] text-slate-500">
-                  Selected Projects
-                </span>
+                <div className="mt-7 flex flex-wrap gap-x-5 gap-y-2.5 text-xs text-slate-500">
+                  <div className="flex items-center gap-2">
+                    <span className="h-1 w-1 rounded-full bg-[#E80112]" />
+                    Selected Projects
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Image */}
+              <div className="relative hidden lg:mt-8 lg:block">
+                {/* UPDATE YOUR IMAGE PATH HERE */}
+                <img
+                  src="/assets/case-studies-hero.png"
+                  alt="DevOps Minders Case Studies and Project Portfolio"
+                  className="relative mx-auto h-auto max-h-[420px] w-full max-w-md object-contain"
+                />
               </div>
             </div>
 
-            {/* Header divider */}
-            <div className="mt-10 h-px w-full bg-gradient-to-r from-[#E80112]/40 via-slate-200 to-transparent sm:mt-12" />
+
           </header>
 
           {/* Case studies */}
           <section aria-label="Selected case studies">
-            {/* Also reduced the horizontal space (gap) between the grid columns to 40px */}
-            <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-x-[40px] lg:gap-y-12">
+            {/* Grid setup to handle responsiveness correctly */}
+            <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-12">
               {caseStudies?.map((item, index) => (
                 <div key={item.slug} className="group relative">
                   {/* Project index */}

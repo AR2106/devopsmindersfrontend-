@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import {
   Activity,
+  Boxes,
   BrainCircuit,
   CheckCircle2,
   Cloud,
@@ -12,7 +13,6 @@ import {
   Layers3,
   Server,
   ShieldCheck,
-  Sparkles,
   Workflow,
 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
@@ -182,10 +182,10 @@ GLOBAL BACKGROUND
         {/* =========================================================
       HERO
   ========================================================== */}
-        {/* CHANGE: Reduced padding to pb-[10px] */}
         <section className="relative overflow-hidden pb-[10px] pt-20 sm:pb-[10px] sm:pt-24 lg:pb-10 lg:pt-14">
-          <div className="relative z-10 mx-auto 2xxl:max-w-7xl px-4 sm:px-6 lg:px-20">
-            <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 xl:gap-24">
+          <div className="relative z-10 mx-auto w-full max-w-[1480px] px-4 sm:px-5 md:px-6">
+            {/* CHANGE: Changed to items-start so content aligns at the top */}
+            <div className="grid items-start gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 xl:gap-24">
               {/* Hero copy */}
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
@@ -230,7 +230,7 @@ GLOBAL BACKGROUND
                 </div>
               </motion.div>
 
-              {/* Engineering panel */}
+              {/* Right Column: Image */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -239,104 +239,22 @@ GLOBAL BACKGROUND
                   delay: 0.1,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="relative"
+                className="relative hidden lg:mt-8 lg:block"
               >
-                <div className="absolute -inset-6 rounded-full bg-slate-100/50 blur-[70px]" />
-
-                <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_30px_80px_rgba(0,0,0,0.05)]">
-                  {/* Header */}
-                  <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
-                    <div className="flex items-center gap-2.5">
-                      <Sparkles
-                        size={14}
-                        className="text-[#E80112]"
-                        strokeWidth={1.6}
-                      />
-
-                      <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-slate-400">
-                        Engineering approach
-                      </span>
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                      <span className="relative flex h-1.5 w-1.5">
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#E80112] opacity-40" />
-                        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#E80112]" />
-                      </span>
-
-                      <span className="text-[10px] text-slate-300">Active</span>
-                    </div>
-                  </div>
-
-                  {/* Timeline */}
-                  <div className="p-5 sm:p-6">
-                    <div className="relative">
-                      <div className="absolute bottom-5 left-5 top-5 w-px bg-gradient-to-b from-[#E80112]/45 via-slate-200 to-transparent sm:left-[21px]" />
-
-                      <div className="space-y-2">
-                        {[
-                          {
-                            icon: Server,
-                            title: "A clear technical foundation",
-                            text: "Architecture shaped around the product.",
-                          },
-                          {
-                            icon: Workflow,
-                            title: "Less repetitive work",
-                            text: "Automation where it creates real value.",
-                          },
-                          {
-                            icon: ShieldCheck,
-                            title: "Safer production systems",
-                            text: "Security and reliability built in.",
-                          },
-                          {
-                            icon: BrainCircuit,
-                            title: "Room to evolve",
-                            text: "Technology that can adapt as needs change.",
-                          },
-                        ].map((item, index) => {
-                          const Icon = item.icon;
-
-                          return (
-                            <motion.div
-                              key={item.title}
-                              initial={{ opacity: 0, x: 10 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{
-                                duration: 0.4,
-                                delay: 0.3 + index * 0.09,
-                              }}
-                              className="relative flex gap-4 rounded-xl px-1 py-3 transition-colors duration-300 hover:bg-slate-50"
-                            >
-                              <div className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 text-[#E80112]">
-                                <Icon size={16} strokeWidth={1.6} />
-                              </div>
-
-                              <div className="min-w-0 pt-0.5">
-                                <h3 className="text-sm font-medium text-slate-900">
-                                  {item.title}
-                                </h3>
-
-                                <p className="mt-1 text-xs leading-5 text-slate-500">
-                                  {item.text}
-                                </p>
-                              </div>
-                            </motion.div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                {/* UPDATE YOUR IMAGE PATH HERE */}
+                {/* CHANGE: Removed bg, border, blur. Used object-contain and max-h to prevent cropping and control size */}
+                <img
+                  src="../../assets/services-hero.png"
+                  alt="DevOps and Cloud Infrastructure Services"
+                  className="relative mx-auto h-auto max-h-[420px] w-full max-w-md object-contain"
+                />
               </motion.div>
             </div>
           </div>
         </section>
         {/* ==============================CAPABILITIES=============================== */}
-        {/* CHANGE: Reduced padding to py-[10px] */}
         <section className="relative py-[10px]">
-          <div className="mx-auto 2xxl:max-w-7xl px-4 sm:px-6 lg:px-20">
+          <div className="mx-auto w-full max-w-[1480px] px-4 sm:px-5 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -381,12 +299,11 @@ GLOBAL BACKGROUND
         {/* =========================================================
       SERVICES
   ========================================================== */}
-        {/* CHANGE: Reduced padding to py-[10px] */}
         <section
           aria-labelledby="services-list-heading"
           className="relative py-14"
         >
-          <div className="mx-auto 2xxl:max-w-7xl px-4 sm:px-6 lg:px-20">
+          <div className="mx-auto w-full max-w-[1480px] px-4 sm:px-5 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -444,14 +361,13 @@ GLOBAL BACKGROUND
         {/* =========================================================
       PROCESS
   ========================================================== */}
-        {/* CHANGE: Reduced padding to py-[10px] */}
         <section
           aria-labelledby="process-heading"
           className="relative overflow-hidden border-y border-slate-200 bg-white py-14"
         >
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-slate-100 blur-[150px]" />
 
-          <div className="relative z-10 mx-auto 2xxl:max-w-7xl px-4 sm:px-6 lg:px-20">
+          <div className="relative z-10 mx-auto w-full max-w-[1480px] px-4 sm:px-5 md:px-6">
             <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-16 xl:gap-24">
               {/* Process intro */}
               <motion.div
@@ -535,12 +451,11 @@ GLOBAL BACKGROUND
           </div>
         </section>
         {/* ==================================TECHNOLO============================== */}
-        {/* CHANGE: Reduced padding to py-[10px] */}
         <section
           aria-labelledby="technology-heading"
           className="relative py-[10px]"
         >
-          <div className="mx-auto 2xxl:max-w-7xl px-4 sm:px-6 lg:px-20">
+          <div className="mx-auto w-full max-w-[1480px] px-4 sm:px-5 md:px-6">
             <motion.header
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -608,12 +523,11 @@ GLOBAL BACKGROUND
           </div>
         </section>
         {/* ================================OUTCOMES==================================== */}
-        {/* CHANGE: Reduced padding to py-[10px] */}
         <section
           aria-labelledby="outcomes-heading"
           className="border-y border-slate-200 bg-white py-10"
         >
-          <div className="mx-auto 2xxl:max-w-7xl px-4 sm:px-6 lg:px-20">
+          <div className="mx-auto w-full max-w-[1480px] px-4 sm:px-5 md:px-6">
             <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-16 xl:gap-24">
               <motion.div
                 initial={{ opacity: 0, y: 18 }}
@@ -676,10 +590,9 @@ GLOBAL BACKGROUND
         {/* =========================================================
       CLOSING
   ========================================================== */}
-        {/* CHANGE: Reduced padding to py-[10px] */}
         <section className="relative overflow-hidden py-10">
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[620px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-slate-100 blur-[150px]" />
-          <div className="relative z-10 mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+          <div className="relative z-10 mx-auto w-full max-w-[1480px] px-4 text-center sm:px-5 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
