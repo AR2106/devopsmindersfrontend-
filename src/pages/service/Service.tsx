@@ -4,14 +4,12 @@ import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import {
   Activity,
-  Boxes,
   BrainCircuit,
   CheckCircle2,
   Cloud,
   Code2,
   GitBranch,
   Layers3,
-  Server,
   ShieldCheck,
   Workflow,
 } from "lucide-react";
