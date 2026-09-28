@@ -170,7 +170,8 @@ export function AboutUs() {
             <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-500 sm:text-[15px] sm:leading-8">
               Our work is grounded in practical engineering — understanding how
               technology is used today, identifying where it creates friction,
-              and improving the foundation without adding unnecessary complexity.
+              and improving the foundation without adding unnecessary
+              complexity.
             </p>
           </motion.div>
 
@@ -243,10 +244,7 @@ export function AboutUs() {
                       }}
                       className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 text-[#E80112] transition-colors duration-300 group-hover:border-[#E80112]/30 group-hover:bg-[#E80112]/[0.08]"
                     >
-                      <Icon
-                        className="h-[19px] w-[19px]"
-                        strokeWidth={1.7}
-                      />
+                      <Icon className="h-[19px] w-[19px]" strokeWidth={1.7} />
                     </motion.div>
 
                     <div>
@@ -372,16 +370,13 @@ export function AboutUs() {
 
               <h3 className="text-3xl font-semibold leading-[1.08] tracking-[-0.04em] sm:text-4xl">
                 Everything needs to work
-                <span className="text-[#E80112]">
-                  {" "}
-                  together.
-                </span>
+                <span className="text-[#E80112]"> together.</span>
               </h3>
 
               <p className="mt-5 max-w-xl text-sm leading-7 text-slate-600 sm:text-[15px]">
-                Applications, infrastructure, security, delivery, and
-                monitoring are not isolated pieces. Reliable products come
-                from making those layers work as one system.
+                Applications, infrastructure, security, delivery, and monitoring
+                are not isolated pieces. Reliable products come from making
+                those layers work as one system.
               </p>
             </div>
 
@@ -586,18 +581,15 @@ export function AboutUs() {
 
               <h3 className="mt-5 text-2xl font-semibold leading-tight tracking-[-0.035em] sm:text-3xl">
                 From infrastructure
-                <span className="text-[#E80112]">
-                  {" "}
-                  to production.
-                </span>
+                <span className="text-[#E80112]"> to production.</span>
               </h3>
             </div>
 
             <div className="max-w-2xl">
               <p className="text-sm leading-7 text-slate-600 sm:text-[15px]">
-                We look beyond individual tools and consider how
-                infrastructure, applications, delivery workflows, and
-                production operations work together.
+                We look beyond individual tools and consider how infrastructure,
+                applications, delivery workflows, and production operations work
+                together.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-x-6 gap-y-4">
@@ -637,8 +629,8 @@ export function AboutUs() {
         >
           <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-12">
             <p className="max-w-4xl text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-              From modernizing existing infrastructure to supporting new
-              digital products, our focus is on building secure architecture,
+              From modernizing existing infrastructure to supporting new digital
+              products, our focus is on building secure architecture,
               predictable delivery workflows, and dependable systems that can
               grow with the business.
             </p>
