@@ -13,6 +13,7 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 const capabilities = [
   {
@@ -83,6 +84,34 @@ const focusAreas = [
 
 export function AboutUs() {
   return (
+   <>
+      <Helmet>
+    <title>About Us | DevOps Minders</title>
+
+    <meta
+      name="description"
+      content="Learn about DevOps Minders, a DevOps, Cloud and AI automation company helping businesses build scalable, secure and reliable software infrastructure."
+    />
+
+    <link
+      rel="canonical"
+      href="https://www.devopsminders.com/about-us"
+    />
+
+    <meta property="og:title" content="About Us | DevOps Minders" />
+
+    <meta
+      property="og:description"
+      content="Learn about DevOps Minders and our expertise in DevOps, Cloud, Kubernetes and AI."
+    />
+
+    <meta
+      property="og:url"
+      content="https://www.devopsminders.com/about-us"
+    />
+
+    <meta property="og:type" content="website" />
+  </Helmet>
     <section
       id="about"
       aria-labelledby="about-heading"
@@ -642,6 +671,6 @@ export function AboutUs() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </section></>
   );
 }
