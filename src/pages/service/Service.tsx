@@ -121,7 +121,6 @@ const outcomes = [
   "Security considered throughout the engineering process",
   "A technical foundation that supports future product changes",
 ];
-
 const Service = () => {
   return (
     <>
