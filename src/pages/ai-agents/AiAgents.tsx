@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { Bot, Mic, Workflow, Code2 } from "lucide-react";
+import {  Mic, Workflow, Code2 } from "lucide-react";
 
 export default function AiAgents() {
   const agentTypes = [

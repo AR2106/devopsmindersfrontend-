@@ -9,7 +9,6 @@ import {
   ShieldCheck,
   Sparkles,
   Workflow,
-  Zap,
   BrainCircuit, // Added for AI
 } from "lucide-react";
 import { motion } from "framer-motion";
