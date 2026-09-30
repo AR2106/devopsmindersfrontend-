@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
     <footer
       className="relative overflow-hidden border-t border-slate-200 bg-white pt-12 text-slate-900"
-      aria-label="DevOpsMinders Website Footer"
+      aria-label="DevOps Minders Website Footer"
     >
       {/* Background grid & glow */}
       <div className="pointer-events-none absolute inset-0">
@@ -20,9 +20,6 @@ export const Footer = () => {
         />
       </div>
 
-      {/* Top Accent */}
-      {/* <div className="h-px w-full bg-gradient-to-r from-transparent via-[#E80112]/40 to-transparent" /> */}
-
       <div className="relative z-10 container 2xxl:mx-auto  lg:px-20  px-4 py-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* BRAND */}
         <div>
@@ -30,26 +27,27 @@ export const Footer = () => {
             <div className="bg-[#E80112] text-white font-bold px-3 py-2 rounded-lg shadow-sm">
               DM
             </div>
-            <h2 className="text-lg md:text-xl font-semibold">DevOpsMinders</h2>
+            <h2 className="text-lg md:text-xl font-semibold">DevOps Minders</h2>
           </div>
 
+          {/* EXACT SEO Team Description */}
           <p className="text-slate-600 text-sm leading-relaxed mb-6">
-            DevOpsMinders is a leading DevOps consulting company specializing in
-            cloud infrastructure, CI/CD automation, Kubernetes, and DevSecOps
-            solutions. We help startups and enterprises scale securely and
-            efficiently.
+            DevOps Minders AI & Cloud Solution is an AI development and
+            automation company building AI agents, LLM applications, machine
+            learning solutions and intelligent business workflows, supported by
+            cloud, DevOps and MLOps expertise.
           </p>
 
           {/* SOCIAL BACKLINKS */}
           <div className="flex gap-4">
             <a
-              href="https://www.linkedin.com/company/devopsminders/"
+              href="https://in.linkedin.com/company/devopsminders"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
                 src="/assets/icons/linkedin.svg"
-                alt="DevOpsMinders LinkedIn profile"
+                alt="DevOps Minders LinkedIn profile"
                 className="w-5 h-5 cursor-pointer opacity-70 hover:opacity-100 transition"
               />
             </a>
@@ -61,20 +59,20 @@ export const Footer = () => {
             >
               <img
                 src="/assets/icons/insta.svg"
-                alt="DevOpsMinders Instagram page"
+                alt="DevOps Minders Instagram page"
                 className="w-5 h-5 cursor-pointer opacity-70 hover:opacity-100 transition"
               />
             </a>
 
             <a
-              href="https://github.com/Ahujakaur"
+              href="https://x.com/devopsminders"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
                 src="/assets/icons/github.svg"
-                alt="DevOpsMinders GitHub projects"
-                className="w-5 h-5 cursor-pointer opacity-70 hover:opaciwty-100 transition"
+                alt="DevOps Minders X Profile"
+                className="w-5 h-5 cursor-pointer opacity-70 hover:opacity-100 transition"
               />
             </a>
           </div>
@@ -92,7 +90,7 @@ export const Footer = () => {
             </li>
             <li>
               <Link to="/about-us" className="hover:text-[#E80112] transition">
-                About DevOpsMinders
+                About DevOps Minders
               </Link>
             </li>
             <li>
@@ -113,27 +111,35 @@ export const Footer = () => {
 
         <div>
           <h3 className="text-base md:text-lg font-semibold mb-4">
-            DevOps Solutions
+            AI & Cloud Solutions
           </h3>
 
+          {/* ADDED LINKS: All pointing to existing App.tsx routes */}
           <ul className="space-y-3 text-slate-600 text-sm">
-            <li className="transition hover:text-slate-900">
-              Cloud Migration Services
+            <li>
+              <Link to="/ai-development" className="hover:text-[#E80112] transition">
+                AI Development & Automation
+              </Link>
             </li>
-            <li className="transition hover:text-slate-900">
-              CI/CD Pipeline Automation
+            <li>
+              <Link to="/ai-agents" className="hover:text-[#E80112] transition">
+                AI Agents & LLM Applications
+              </Link>
             </li>
-            <li className="transition hover:text-slate-900">
-              Kubernetes Deployment
+            <li>
+              <Link to="/ai-solutions" className="hover:text-[#E80112] transition">
+                Generative AI & ML Solutions
+              </Link>
             </li>
-            <li className="transition hover:text-slate-900">
-              Infrastructure as Code (Terraform)
+            <li>
+              <Link to="/services" className="hover:text-[#E80112] transition">
+                Cloud Migration & DevOps
+              </Link>
             </li>
-            <li className="transition hover:text-slate-900">
-              DevSecOps Implementation
-            </li>
-            <li className="transition hover:text-slate-900">
-              24/7 Cloud Monitoring
+            <li>
+              <Link to="/services" className="hover:text-[#E80112] transition">
+                Kubernetes & DevSecOps
+              </Link>
             </li>
           </ul>
         </div>
@@ -148,7 +154,7 @@ export const Footer = () => {
             <div className="flex items-start gap-3">
               <MapPin className="text-[#E80112] mt-1 shrink-0" size={18} />
               <p>
-                DevOpsMinders, India <br />
+                DevOps Minders, India <br />
                 Serving clients globally
               </p>
             </div>
@@ -176,23 +182,10 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* BOTTOM */}
+      {/* BOTTOM - Removed Privacy/Terms links as they are not in App.tsx routes */}
       <div className="relative z-10 border-t border-slate-200 py-6">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© 2026 DevOpsMinders Tech Pvt Ltd. All rights reserved.</p>
-
-          <div className="flex gap-4">
-            <Link
-              to="/privacy-policy"
-              className="hover:text-[#E80112] transition"
-            >
-              Privacy Policy
-            </Link>
-
-            <Link to="/terms" className="hover:text-[#E80112] transition">
-              Terms of Service
-            </Link>
-          </div>
+        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-4 text-xs text-slate-500">
+          <p>© 2024 DevOps Minders Tech Pvt Ltd. All rights reserved.</p>
         </div>
       </div>
     </footer>

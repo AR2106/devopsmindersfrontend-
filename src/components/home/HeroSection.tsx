@@ -5,9 +5,9 @@ import { useNavigate } from "react-router-dom";
 import globe from "./../../assets/globe.png";
 
 const STATS = [
-  { value: "98%", label: "UPTIME" },
-  { value: "50+", label: "CLIENTS" },
-  { value: "24/7", label: "SUPPORT" },
+  { value: "200+", label: "PROJECTS" },
+  { value: "30+", label: "CLIENTS" },
+  { value: "10×", label: "ROI" },
 ];
 
 const TECH_STACK = [
@@ -25,7 +25,6 @@ const TECH_STACK = [
 
 export default function HeroSection() {
   const navigate = useNavigate();
-
   return (
     <section
       id="brand"
@@ -48,22 +47,18 @@ export default function HeroSection() {
         />
       </div>
 
-<motion.div
-  initial={{ opacity: 0, x: 100, y: "-50%" }} // Added y: "-50%" here
-  animate={{ opacity: 0.9, x: 0, y: "-50%" }} // Keep y: "-50%" during animation
-  transition={{ duration: 1.2, ease: "easeOut" }}
-  // Removed -translate-y-1/2 from className to prevent conflict
-  // Added will-change-transform to force GPU rendering and reduce blur
-  className="absolute top-[35%] right-20 w-[35%] lg:w-[30%] h-auto z-10 pointer-events-none hidden lg:block will-change-transform"
->
-  <img
-    src={globe}
-    alt="Global Network"
-    // Changed h-full to h-auto to prevent stretching/distortion
-    // Removed opacity-80 since the parent is already handling opacity
-    className="w-full h-auto object-contain" 
-  />
-</motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: 100, y: "-50%" }}
+        animate={{ opacity: 0.9, x: 0, y: "-50%" }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        className="absolute top-[35%] right-20 w-[35%] lg:w-[30%] h-auto z-10 pointer-events-none hidden lg:block will-change-transform"
+      >
+        <img
+          src={globe}
+          alt="Global Network"
+          className="w-full h-auto object-contain"
+        />
+      </motion.div>
 
       {/* ======================ROBOT IMAGE (Fixed Sticky Position - Bottom Right) ==================== */}
       <motion.div
@@ -90,7 +85,6 @@ export default function HeroSection() {
       </motion.div>
 
       {/* ======================MAIN CONTAINER===================== */}
-      {/* CHANGE: Increased pb-24 to prevent stats from hiding behind the marquee */}
       <div className="relative z-20 flex min-h-[80vh] flex-col justify-start px-8 pt-16 pb-24 sm:px-10 lg:px-12">
         <div className="max-w-4xl w-full text-left">
           {/* Badge */}
@@ -109,18 +103,16 @@ export default function HeroSection() {
             </span>
           </motion.div>
 
-          {/* Headline */}
+          {/* Headline - EXACT H1 AS PER SEO TEAM */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-3xl font-extrabold leading-[1.2] tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-5xl"
           >
-            {/* CHANGE: Highlighted "AI and ML" in red */}
-            From <span className="text-[#FF0000]">AI </span> and{" "}
-            <span className="text-[#FF0000]">ML </span> to cloud and automation,
-            we build tailored solutions that solve real business problems,
-            streamline operations and help your business scale.
+            <span className="text-[#FF0000]">AI Development</span>,{" "}
+            <span className="text-[#FF0000]">AI Agents</span> & Intelligent
+            Automation
           </motion.h1>
 
           {/* Subhead */}
@@ -154,7 +146,7 @@ export default function HeroSection() {
             </button>
           </motion.div>
 
-          {/* Stats Row - 3 Columns */}
+          {/* Stats Row - EXACT STATS AS PER SEO TEAM */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

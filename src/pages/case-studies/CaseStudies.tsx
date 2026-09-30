@@ -6,16 +6,17 @@ const CaseStudies = () => {
   return (
     <>
       <Helmet>
-        <title>Case Studies | DevOpsMinders</title>
+        {/* SEO Tags: AI First + Correct Company Name */}
+        <title>AI & Cloud Case Studies | DevOps Minders</title>
 
         <meta
           name="description"
-          content="Explore DevOpsMinders case studies showcasing successful DevOps, cloud, AI automation, Kubernetes, and software engineering projects delivered for businesses."
+          content="Explore DevOps Minders case studies showcasing successful AI development, intelligent automation, AI agents, cloud migration, and DevOps projects delivered for businesses."
         />
 
         <meta
           name="keywords"
-          content="DevOps Case Studies, AI Projects, Cloud Migration, Kubernetes Projects, DevOps Portfolio"
+          content="AI Case Studies, AI Development Projects, Cloud Migration Case Studies, DevOps Portfolio, AI Automation Projects, DevOps Minders"
         />
 
         <link
@@ -23,11 +24,11 @@ const CaseStudies = () => {
           href="https://www.devopsminders.com/case-studies"
         />
 
-        <meta property="og:title" content="Case Studies | DevOpsMinders" />
+        <meta property="og:title" content="AI & Cloud Case Studies | DevOps Minders" />
 
         <meta
           property="og:description"
-          content="Discover real-world DevOps, cloud infrastructure, AI automation, and software engineering projects by DevOpsMinders."
+          content="Discover real-world AI development, intelligent automation, cloud infrastructure, and DevOps projects by DevOps Minders."
         />
 
         <meta
@@ -73,33 +74,32 @@ const CaseStudies = () => {
                   </span>
                 </div>
 
+                {/* H1 Updated: AI Focus */}
                 <h1 className="max-w-4xl text-[2.65rem] font-semibold leading-[1.04] tracking-[-0.05em] text-slate-900 sm:text-5xl lg:text-[3.75rem] xl:text-[4.15rem]">
-                  Building digital products
+                  AI & Cloud Projects that
                   <span className="block text-[#E80112]">
-                    that solve real problems.
+                    solve real problems.
                   </span>
                 </h1>
 
                 <p className="mt-6 max-w-2xl text-[15px] leading-7 text-slate-600 sm:text-base sm:leading-8">
-                  Explore selected projects where thoughtful engineering,
-                  intelligent technology, and scalable digital experiences come
-                  together to solve complex business challenges.
+                  Explore selected projects where AI development, intelligent automation, 
+                  and scalable cloud infrastructure come together to solve complex business challenges.
                 </p>
 
                 <div className="mt-7 flex flex-wrap gap-x-5 gap-y-2.5 text-xs text-slate-500">
                   <div className="flex items-center gap-2">
                     <span className="h-1 w-1 rounded-full bg-[#E80112]" />
-                    Selected Projects
+                    AI & Cloud Projects
                   </div>
                 </div>
               </div>
 
               {/* Right Column: Image */}
               <div className="relative hidden lg:mt-8 lg:block">
-                {/* UPDATE YOUR IMAGE PATH HERE */}
                 <img
                   src="/assets/case-studies-hero.png"
-                  alt="DevOps Minders Case Studies and Project Portfolio"
+                  alt="DevOps Minders AI Case Studies and Project Portfolio"
                   className="relative mx-auto h-auto max-h-[420px] w-full max-w-md object-contain"
                 />
               </div>

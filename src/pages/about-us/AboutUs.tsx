@@ -11,15 +11,17 @@ import {
   LockKeyhole,
   Gauge,
   ArrowUpRight,
+  BrainCircuit, // Added for AI
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 
+// REORDERED: AI First
 const capabilities = [
   {
-    title: "DevOps & CI/CD Automation",
-    desc: "Reliable delivery pipelines using GitHub Actions, Jenkins, and GitLab CI to automate testing, releases, and infrastructure workflows.",
-    icon: Workflow,
+    title: "AI Development & Automation",
+    desc: "Building custom AI agents, LLM applications, and intelligent business workflows that automate operations and solve complex challenges.",
+    icon: BrainCircuit,
   },
   {
     title: "Cloud Infrastructure",
@@ -27,27 +29,29 @@ const capabilities = [
     icon: Cloud,
   },
   {
+    title: "DevOps & CI/CD Automation",
+    desc: "Reliable delivery pipelines using GitHub Actions, Jenkins, and GitLab CI to automate testing, releases, and infrastructure workflows.",
+    icon: Workflow,
+  },
+  {
     title: "DevSecOps & Cloud Security",
     desc: "Security integrated into development and infrastructure workflows through access controls, vulnerability management, and secure deployment practices.",
     icon: ShieldCheck,
   },
-  {
-    title: "Monitoring & Reliability",
-    desc: "Production monitoring, alerting, observability, and incident-response workflows that provide better visibility across critical systems.",
-    icon: Activity,
-  },
 ];
 
+// REORDERED: AI Tech First
 const technologies = [
+  "OpenAI",
+  "LangChain",
+  "Python",
   "AWS",
   "Azure",
   "Google Cloud",
   "Kubernetes",
   "Docker",
   "Terraform",
-  "Jenkins",
   "GitHub Actions",
-  "GitLab CI",
 ];
 
 const principles = [
@@ -73,24 +77,31 @@ const principles = [
   },
 ];
 
+// REORDERED: AI Focus First
 const focusAreas = [
+  "AI workflow automation",
+  "LLM applications",
   "Cloud architecture",
   "Infrastructure automation",
   "Continuous delivery",
-  "Container platforms",
   "Production observability",
-  "Security engineering",
 ];
 
 export function AboutUs() {
   return (
    <>
       <Helmet>
-    <title>About Us | DevOps Minders</title>
+    {/* SEO Tags: AI First */}
+    <title>About Us | AI Development & Cloud Company | DevOps Minders</title>
 
     <meta
       name="description"
-      content="Learn about DevOps Minders, a DevOps, Cloud and AI automation company helping businesses build scalable, secure and reliable software infrastructure."
+      content="DevOps Minders AI & Cloud Solution is an AI development and automation company building AI agents, LLM applications, and intelligent workflows, supported by cloud and DevOps expertise."
+    />
+
+    <meta
+      name="keywords"
+      content="About DevOps Minders, AI Development Company India, AI Automation Company, Cloud Solutions India, DevOps Consulting, Founded in 2019"
     />
 
     <link
@@ -98,11 +109,11 @@ export function AboutUs() {
       href="https://www.devopsminders.com/about-us"
     />
 
-    <meta property="og:title" content="About Us | DevOps Minders" />
+    <meta property="og:title" content="About Us | AI & Cloud Company | DevOps Minders" />
 
     <meta
       property="og:description"
-      content="Learn about DevOps Minders and our expertise in DevOps, Cloud, Kubernetes and AI."
+      content="Learn about DevOps Minders AI & Cloud Solution, an AI development and automation company building intelligent workflows and scalable cloud infrastructure."
     />
 
     <meta
@@ -163,7 +174,6 @@ export function AboutUs() {
         {/* =====================================================
             INTRO
         ====================================================== */}
-        {/* CHANGE: Widened left column to 1.4fr and reduced right column to 0.6fr to fill empty space */}
         <div className="grid items-start gap-12 lg:grid-cols-[1.4fr_0.6fr] lg:gap-10 xl:gap-16">
           {/* Left Column: Text */}
           <motion.div
@@ -180,19 +190,19 @@ export function AboutUs() {
               </span>
             </div>
 
+            {/* H2 Updated: AI Focus */}
             <h2
               id="about-heading"
               className="text-4xl font-semibold leading-[1.08] tracking-[-0.045em] sm:text-5xl lg:text-6xl"
             >
-              Engineering the infrastructure
+              Engineering AI & Cloud infrastructure
               <span className="text-[#E80112]"> behind modern software.</span>
             </h2>
 
             <p className="mt-7 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
               DevOps Minders helps businesses build, modernize, and operate
-              reliable digital infrastructure. We bring together cloud
-              engineering, DevOps automation, security, monitoring, and software
-              engineering to create systems that are easier to deploy, operate,
+              reliable digital infrastructure. We bring together AI development, 
+              intelligent automation, cloud engineering, and DevOps to create systems that are easier to deploy, operate,
               and scale.
             </p>
 
@@ -214,7 +224,7 @@ export function AboutUs() {
           >
             <img
               src="/assets/about-image.png"
-              alt="DevOps Minders engineering team collaborating on cloud infrastructure"
+              alt="DevOps Minders AI and Cloud engineering team"
               className="relative h-auto max-h-[450px] w-full object-contain"
             />
           </motion.div>
@@ -242,7 +252,7 @@ export function AboutUs() {
               </div>
 
               <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600">
-                Practical engineering across infrastructure, deployment,
+                Practical engineering across AI, infrastructure, deployment,
                 security, and production reliability.
               </p>
             </div>
@@ -332,10 +342,9 @@ export function AboutUs() {
               </h3>
 
               <p className="mt-4 text-sm leading-7 text-slate-600">
-                We use proven cloud and infrastructure technologies to build
-                environments that support continuous delivery, containerized
-                workloads, infrastructure as code, and modern production
-                operations.
+                We use proven AI, cloud and infrastructure technologies to build
+                environments that support intelligent automation, continuous delivery, containerized
+                workloads, and modern production operations.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-2">
@@ -365,7 +374,7 @@ export function AboutUs() {
                     <Boxes className="mt-0.5 h-4 w-4 shrink-0 text-[#E80112]/70" />
 
                     <p className="text-xs leading-6 text-slate-500">
-                      Cloud architecture, automation, containerization,
+                      AI development, cloud architecture, automation, containerization,
                       security, observability, and continuous delivery.
                     </p>
                   </div>
@@ -403,7 +412,7 @@ export function AboutUs() {
               </h3>
 
               <p className="mt-5 max-w-xl text-sm leading-7 text-slate-600 sm:text-[15px]">
-                Applications, infrastructure, security, delivery, and monitoring
+                AI, applications, infrastructure, security, delivery, and monitoring
                 are not isolated pieces. Reliable products come from making
                 those layers work as one system.
               </p>
@@ -428,8 +437,8 @@ export function AboutUs() {
               <div className="grid gap-7 md:grid-cols-5">
                 {[
                   {
-                    title: "Product",
-                    icon: Code2,
+                    title: "AI & Product",
+                    icon: BrainCircuit,
                   },
                   {
                     title: "Application",
@@ -609,14 +618,14 @@ export function AboutUs() {
               </div>
 
               <h3 className="mt-5 text-2xl font-semibold leading-tight tracking-[-0.035em] sm:text-3xl">
-                From infrastructure
+                From AI & Infrastructure
                 <span className="text-[#E80112]"> to production.</span>
               </h3>
             </div>
 
             <div className="max-w-2xl">
               <p className="text-sm leading-7 text-slate-600 sm:text-[15px]">
-                We look beyond individual tools and consider how infrastructure,
+                We look beyond individual tools and consider how AI, infrastructure,
                 applications, delivery workflows, and production operations work
                 together.
               </p>
@@ -658,8 +667,7 @@ export function AboutUs() {
         >
           <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-12">
             <p className="max-w-4xl text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-              From modernizing existing infrastructure to supporting new digital
-              products, our focus is on building secure architecture,
+              From building AI-powered applications to modernizing existing infrastructure, our focus is on creating intelligent automation, secure architecture,
               predictable delivery workflows, and dependable systems that can
               grow with the business.
             </p>

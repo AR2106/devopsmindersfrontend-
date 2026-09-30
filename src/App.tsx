@@ -8,6 +8,8 @@ import { AboutUs } from "./pages/about-us/AboutUs";
 import Contact from "./pages/Contact";
 import GetQuotePage from "./pages/quote/Quote";
 import AI from "./pages/ai-solutions/AiSolutions";
+import AiDevelopment from "./pages/ai-development/AiDevelopment";
+import AiAgents from "./pages/ai-agents/AiAgents";
 // import { PortfolioSection } from "./pages/portfolio/Portfolio";
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Service />} />
+        <Route path="/ai-development" element={<AiDevelopment />} />
+        <Route path="/ai-agents" element={<AiAgents />} />
         {/* <Route path="/portfolio" element={<PortfolioSection />} /> */}
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/case-studies/:slug" element={<CaseStudyDetails />} />

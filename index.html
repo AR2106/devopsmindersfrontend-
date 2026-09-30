@@ -16,6 +16,7 @@
       gtag("config", "G-D6WTSLZSP4");
     </script>
 
+    <!-- FAVICONS -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -24,6 +25,12 @@
       type="image/png"
       sizes="192x192"
       href="/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/android-chrome-512x512.png"
     />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
@@ -34,21 +41,16 @@
     <!-- LANGUAGE & REGION -->
     <meta http-equiv="content-language" content="en-IN" />
 
-    <!-- ✅ PRIMARY SEO — Title in YOUR requested format -->
-    <title>DevOps Minders | DevOps, Cloud & AI Automation Company</title>
+    <!-- 
+      ---------------------------------------------------------------------
+      SEO NOTE: Title, Meta Description, Canonical, OG & Twitter Tags 
+      are REMOVED from here. We are using react-helmet-async in React 
+      components to inject them dynamically to avoid duplicate tags.
+      ---------------------------------------------------------------------
+    -->
 
-    <!-- Meta Description — Service keywords, compelling CTR copy -->
-    <meta
-      name="description"
-      content="DevOps Minders is a trusted DevOps, Cloud & AI automation company serving businesses across India. We specialise in CI/CD pipelines, Kubernetes orchestration, AWS & Azure cloud migration, DevSecOps, and AI-powered business automation."
-    />
-
-    <!-- Keywords -->
-    <meta
-      name="keywords"
-      content="DevOps company in India, cloud automation company India, AI automation solutions India, Kubernetes consulting company India, CI/CD pipeline automation services, DevSecOps company India, AWS cloud migration India, Azure cloud solutions India, AI-powered DevOps company India, software automation company, cloud infrastructure services, DevOps consulting company in India, digital transformation company, IT automation services India, Kubernetes orchestration company, cloud solutions provider, DevOps as a service India, GCP consulting company, business automation solutions India, software development company, DevOps Minders, DevOps Minders AI and Cloud Solution"
-    />
-    <meta name="author" content="DevOps Minders" />
+    <!-- KEYWORDS — Primary, Secondary & Brand -->
+    <meta name="keywords" content="IT Company in Ludhiana, Software Development Company in Ludhiana, AI Development Company in Ludhiana, AI Automation Company in Ludhiana, DevOps Company in Ludhiana, Cloud Solutions Company in Ludhiana, AI/ML Company in Ludhiana, Custom Software Development Company in Ludhiana, AI Solutions Company in Ludhiana, DevOps and Cloud Company in Ludhiana, DevOps Minders, DevOps Minders AI & Cloud Solution" />
 
     <!-- ROBOTS — Enhanced for rich results -->
     <meta
@@ -64,42 +66,6 @@
       href="https://www.devopsminders.com/sitemap.xml"
     />
 
-    <!-- OPEN GRAPH — LinkedIn & Facebook sharing -->
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_IN" />
-    <meta
-      property="og:title"
-      content="DevOps Minders | DevOps, Cloud & AI Automation Company"
-    />
-    <meta
-      property="og:description"
-      content="India's specialist DevOps & AI automation company — CI/CD pipelines, Kubernetes, AWS, Azure, GCP cloud migration, DevSecOps, and intelligent business automation for growth-focused companies."
-    />
-    <meta property="og:url" content="https://www.devopsminders.com/" />
-    <meta
-      property="og:image"
-      content="https://www.devopsminders.com/assets/og-image.png"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="DevOps Minders" />
-
-    <!-- TWITTER CARD -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@devopsminders" />
-    <meta
-      name="twitter:title"
-      content="DevOps Minders | DevOps, Cloud & AI Automation Company"
-    />
-    <meta
-      name="twitter:description"
-      content="CI/CD automation, Kubernetes, AWS & Azure cloud migration, DevSecOps & AI business automation — DevOps Minders, India's DevOps specialists."
-    />
-    <meta
-      name="twitter:image"
-      content="https://www.devopsminders.com/assets/og-image.png"
-    />
-
     <!-- THEME COLOR -->
     <meta name="theme-color" content="#0b0b0d" />
 
@@ -108,178 +74,220 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- ═══════════════════════════════════════════════
-         STRUCTURED DATA SCHEMAS
+         STRUCTURED DATA SCHEMAS (AI-FIRST + LUDHIANA UPDATES)
     ════════════════════════════════════════════════ -->
 
-    <!-- 1. Organization Schema — SINGLE authoritative schema -->
+    <!-- 1. Organization Schema — Updated as per SEO Audit + Local SEO -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": ["Organization", "ProfessionalService"],
-      "name": "DevOps Minders AI & Cloud Solution",
-      "alternateName": "DevOps Minders",
-      "url": "https://www.devopsminders.com/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.devopsminders.com/assets/logo.png"
-      },
-      "description": "DevOps Minders is a DevOps, Cloud & AI automation company. We deliver CI/CD automation, Kubernetes consulting, AWS/Azure/GCP cloud migration, DevSecOps, and AI-powered business automation solutions.",
-      "telephone": "+91-8872781496",
-      "email": "info@devopsminders.com",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91-8872781496",
-        "contactType": "customer service",
-        "areaServed": "IN",
-        "availableLanguage": ["English", "Hindi", "Punjabi"]
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "India"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "DevOps, Cloud & AI Services",
-        "itemListElement": [
+      {
+        "@context": "https://schema.org",
+        "@type": ["Organization", "ProfessionalService"],
+        "name": "DevOps Minders AI & Cloud Solution",
+        "alternateName": "DevOps Minders",
+        "url": "https://www.devopsminders.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.devopsminders.com/assets/logo.png"
+        },
+        "description": "DevOps Minders AI & Cloud Solution is an AI development and automation company building AI agents, LLM applications, machine learning solutions and intelligent business workflows, supported by cloud, DevOps and MLOps expertise.",
+        "telephone": "+91 88727 81496",
+        "email": "info@devopsminders.com",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91 88727 81496",
+          "contactType": "customer service",
+          "areaServed": "IN",
+          "availableLanguage": ["English", "Hindi", "Punjabi"]
+        },
+        "areaServed": [
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "CI/CD Pipeline Automation"
-            }
+            "@type": "City",
+            "name": "Ludhiana"
           },
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Kubernetes Orchestration & Consulting"
-            }
+            "@type": "State",
+            "name": "Punjab"
           },
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "AWS Cloud Migration & Consulting"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Azure Cloud Solutions"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Google Cloud Platform (GCP) Consulting"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "DevSecOps Implementation"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "AI & ML Business Automation"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Cloud Infrastructure Management"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Digital Transformation Consulting"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Software Development & Automation"
-            }
+            "@type": "Country",
+            "name": "India"
           }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "AI, Cloud & DevOps Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AI Development"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AI Agents"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AI Automation"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Generative AI"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "LLM Development"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "RAG Applications"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Machine Learning"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "MLOps"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Cloud & DevOps"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AWS Cloud Migration"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Kubernetes Orchestration"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Terraform Infrastructure"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "CI/CD Pipeline Automation"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "DevSecOps Implementation"
+              }
+            }
+          ]
+        },
+        "sameAs": [
+          "https://in.linkedin.com/company/devopsminders",
+          "https://clutch.co/profile/devopsminders-ai-cloud-solutions",
+          "https://www.goodfirms.co/company/devops-minders",
+          "https://www.crunchbase.com/organization/devops-minders-ai-and-cloud-solution",
+          "https://techbehemoths.com/company/devops-minders-ai-and-cloud-solution",
+          "https://x.com/devopsminders",
+          "https://www.instagram.com/devopsminders/",
+          "https://www.facebook.com/people/DevopsMinders-Technology-Private-Limited/61587518322045/"
         ]
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/devopsminders",
-        "https://clutch.co/profile/devops-minders",
-        "https://www.goodfirms.co/company/devops-minders",
-        "https://techbehemoths.com/company/devops-minders"
-      ]
-    }
+      }
     </script>
 
     <!-- 2. WebSite Schema — Enables Google Sitelinks Search Box -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "DevOps Minders",
-      "url": "https://www.devopsminders.com",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://www.devopsminders.com/?s={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "DevOps Minders AI & Cloud Solution",
+        "url": "https://www.devopsminders.com",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.devopsminders.com/?s={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
       }
-    }
     </script>
 
-    <!-- 3. FAQ Schema — Captures "People Also Ask" boxes on Google -->
+    <!-- 3. FAQ Schema — AI-First FAQs for Google Rich Results -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What DevOps services does DevOps Minders offer?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "DevOps Minders offers CI/CD pipeline automation, Kubernetes orchestration, AWS/Azure/GCP cloud migration, DevSecOps, and AI-powered business automation solutions for companies across India."
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What AI development services does DevOps Minders offer in Ludhiana?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "DevOps Minders builds AI-powered applications, custom AI agents, LLM and RAG applications, generative AI solutions, and intelligent business workflow automation for companies in Ludhiana and across India."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does DevOps Minders provide AI automation for businesses?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, DevOps Minders specializes in AI and ML-powered business automation, including customer support automation, lead qualification, document processing, and intelligent workflows."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is DevOps Minders a cloud and DevOps consulting company?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, alongside AI solutions, DevOps Minders provides expert Cloud and DevOps services including AWS/Azure/GCP migration, Kubernetes orchestration, CI/CD pipelines, DevSecOps, and MLOps."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I contact DevOps Minders?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can reach DevOps Minders at +91 88727 81496 or email info@devopsminders.com or visit https://www.devopsminders.com."
+            }
           }
-        },
-        {
-          "@type": "Question",
-          "name": "Is DevOps Minders a cloud solutions company?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, DevOps Minders is a cloud solutions and DevOps company providing AWS, Azure, and Google Cloud (GCP) consulting and migration services across India."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does DevOps Minders provide AI automation solutions?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, DevOps Minders specialises in AI and ML-powered business automation, intelligent workflows, and AI-driven DevOps pipelines for companies across India."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How can I contact DevOps Minders?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You can reach DevOps Minders at +91-8872781496 or email info@devopsminders.com or visit https://www.devopsminders.com."
-          }
-        }
-      ]
-    }
+        ]
+      }
     </script>
   </head>
   <body>

@@ -40,16 +40,17 @@ const cardVariants: Variants = {
   },
 };
 
+// TEXT UPDATED: AI First priority
 const capabilities = [
   {
-    icon: Cloud,
-    title: "Cloud infrastructure",
-    text: "Reliable environments for applications, data, and growing workloads.",
+    icon: Cloud, // Kept existing icon
+    title: "AI & Cloud Solutions",
+    text: "AI development, intelligent automation, and reliable cloud environments for growing workloads.",
   },
   {
     icon: Workflow,
-    title: "Delivery automation",
-    text: "Practical CI/CD workflows that make releases predictable and repeatable.",
+    title: "AI Automation & CI/CD",
+    text: "AI-driven business workflows and practical CI/CD pipelines that make releases predictable.",
   },
   {
     icon: ShieldCheck,
@@ -86,7 +87,14 @@ const process = [
   },
 ];
 
+// ORDER UPDATED: AI & Application moved to TOP
 const technologyGroups = [
+  {
+    title: "AI & Applications",
+    description:
+      "Intelligent AI solutions, LLMs, RAG applications, and modern software engineering tailored for business automation.",
+    technologies: ["OpenAI", "LangChain", "React", "Next.js", "Node.js", "Python"],
+  },
   {
     title: "Cloud",
     description:
@@ -105,15 +113,10 @@ const technologyGroups = [
       "Development and release workflows connected through automated testing, integration, and deployment.",
     technologies: ["GitHub Actions", "GitLab CI", "Jenkins"],
   },
-  {
-    title: "Application & AI",
-    description:
-      "Modern applications combining software engineering, APIs, automation, data workflows, and AI capabilities.",
-    technologies: ["React", "Next.js", "Node.js", "Python", "OpenAI"],
-  },
 ];
 
 const outcomes = [
+  "AI solutions that automate workflows and reduce manual effort",
   "Infrastructure that is easier to understand and maintain",
   "More consistent development and deployment workflows",
   "Better visibility into production systems",
@@ -121,32 +124,33 @@ const outcomes = [
   "Security considered throughout the engineering process",
   "A technical foundation that supports future product changes",
 ];
+
 const Service = () => {
   return (
     <>
       <Helmet>
+        {/* SEO Tags: AI First */}
         <title>
-          DevOps Services | AI, Cloud, Kubernetes & DevOps Consulting |
-          DevOpsMinders
+          AI Development & Cloud Solutions | DevOps Minders AI & Cloud Solution
         </title>
 
         <meta
           name="description"
-          content="Explore DevOpsMinders' professional DevOps services including cloud migration, Kubernetes, CI/CD automation, DevSecOps, AI solutions, infrastructure automation, and software engineering."
+          content="DevOps Minders provides AI development, custom AI agents, LLM applications, and intelligent automation, alongside expert Cloud, DevOps, and MLOps services."
         />
 
         <meta
           name="keywords"
-          content="DevOps Services, Cloud Migration, Kubernetes, CI/CD, DevSecOps, Docker, AWS, Azure, Google Cloud, AI Automation"
+          content="AI Development Company, AI Automation Services, Custom AI Agents, LLM Development, Cloud Migration, Kubernetes, CI/CD, DevSecOps, MLOps, DevOps Minders"
         />
 
         <link rel="canonical" href="https://www.devopsminders.com/services" />
 
-        <meta property="og:title" content="DevOps Services | DevOpsMinders" />
+        <meta property="og:title" content="AI & Cloud Solutions | DevOps Minders" />
 
         <meta
           property="og:description"
-          content="Cloud, DevOps, Kubernetes, AI Automation and Software Engineering Services."
+          content="AI development, custom AI agents, LLM applications, intelligent automation, Cloud, DevOps, and MLOps services."
         />
 
         <meta
@@ -181,7 +185,6 @@ GLOBAL BACKGROUND
   ========================================================== */}
         <section className="relative overflow-hidden pb-[10px] pt-20 sm:pb-[10px] sm:pt-24 lg:pb-10 lg:pt-14">
           <div className="relative z-10 mx-auto w-full max-w-[1480px] px-4 sm:px-5 md:px-6">
-            {/* CHANGE: Changed to items-start so content aligns at the top */}
             <div className="grid items-start gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 xl:gap-24">
               {/* Hero copy */}
               <motion.div
@@ -197,27 +200,29 @@ GLOBAL BACKGROUND
                   </span>
                 </div>
 
+                {/* H1 UPDATED: AI First */}
                 <h1 className="max-w-3xl text-[2.65rem] font-semibold leading-[1.04] tracking-[-0.05em] text-slate-900 sm:text-5xl lg:text-[3.75rem] xl:text-[4.15rem]">
-                  Technology that
+                  AI & Cloud Solutions that
                   <span className="text-[#E80112]">
                     {" "}
-                    works for your business.
+                    work for your business.
                   </span>
                 </h1>
 
                 <p className="mt-6 max-w-2xl text-[15px] leading-7 text-slate-600 sm:text-base sm:leading-8">
                   DevOps Minders helps businesses build, modernize, and operate
                   the technology behind their products. We bring together
-                  software engineering, cloud infrastructure, automation, and AI
+                  AI development, intelligent automation, cloud infrastructure, and DevOps
                   to solve real technical challenges.
                 </p>
 
+                {/* Bullets UPDATED: AI First */}
                 <div className="mt-7 flex flex-wrap gap-x-5 gap-y-2.5 text-xs text-slate-500">
                   {[
+                    "AI & Automation",
                     "Cloud & infrastructure",
                     "Software engineering",
-                    "Automation",
-                    "AI solutions",
+                    "DevOps & MLOps",
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-2">
                       <span className="h-1 w-1 rounded-full bg-[#E80112]" />
@@ -238,11 +243,9 @@ GLOBAL BACKGROUND
                 }}
                 className="relative hidden lg:mt-8 lg:block"
               >
-                {/* UPDATE YOUR IMAGE PATH HERE */}
-                {/* CHANGE: Removed bg, border, blur. Used object-contain and max-h to prevent cropping and control size */}
                 <img
                   src="../../assets/services-hero.png"
-                  alt="DevOps and Cloud Infrastructure Services"
+                  alt="AI Development and Cloud Infrastructure Services"
                   className="relative mx-auto h-auto max-h-[420px] w-full max-w-md object-contain"
                 />
               </motion.div>
@@ -267,7 +270,7 @@ GLOBAL BACKGROUND
                     <motion.div
                       key={item.title}
                       whileHover={{
-                        backgroundColor: "rgba(248, 250, 252, 1)", // slate-50
+                        backgroundColor: "rgba(248, 250, 252, 1)",
                       }}
                       className={`group p-5 transition-colors duration-300 sm:p-6 lg:p-7 ${
                         index !== capabilities.length - 1
@@ -321,8 +324,8 @@ GLOBAL BACKGROUND
               </h2>
 
               <p className="mt-4 max-w-xl text-sm leading-7 text-slate-600 sm:text-[15px]">
-                From cloud infrastructure and DevOps automation to software
-                development and AI solutions, we combine the capabilities needed
+                From AI development and intelligent automation to cloud
+                infrastructure and DevOps, we combine the capabilities needed
                 to move a product forward.
               </p>
             </motion.div>
@@ -473,8 +476,8 @@ GLOBAL BACKGROUND
               </h2>
 
               <p className="mt-4 max-w-xl text-sm leading-7 text-slate-600 sm:text-[15px]">
-                We work across cloud platforms, infrastructure tooling, modern
-                application frameworks, and AI services. Technology choices are
+                We work across AI platforms, cloud infrastructure, DevOps tooling, and modern
+                application frameworks. Technology choices are
                 based on the product and operational requirements.
               </p>
             </motion.header>
@@ -605,17 +608,17 @@ GLOBAL BACKGROUND
               </div>
 
               <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.24em] text-slate-500">
-                DevOps Minders
+                DevOps Minders AI & Cloud Solution
               </p>
 
               <h2 className="mt-3 text-3xl font-semibold leading-[1.08] tracking-[-0.045em] sm:text-4xl lg:text-[2.8rem]">
-                Build technology that
+                Build AI & Technology that
                 <span className="text-[#E80112]"> keeps working.</span>
               </h2>
 
               <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 sm:text-[15px] sm:leading-8">
-                From cloud migration and deployment automation to software
-                development and AI-powered workflows, we focus on solutions that
+                From AI development and intelligent automation to cloud
+                migration and DevOps, we focus on solutions that
                 remain useful long after the initial project is complete.
               </p>
 
