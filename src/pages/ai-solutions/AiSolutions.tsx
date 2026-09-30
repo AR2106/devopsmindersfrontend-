@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom"; // Added Link
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Bot,
@@ -19,37 +19,37 @@ const solutions = [
     icon: Mic,
     title: "AI Voice Assistant",
     description: "Speak naturally with an intelligent AI assistant that understands and responds instantly.",
-    link: "/ai-agents", // Added Link
+    link: "/ai-agents",
   },
   {
     icon: Brain,
     title: "AI Infrastructure Assessment",
     description: "Analyze your infrastructure and discover opportunities for AI-powered optimization.",
-    link: "/ai-development", // Added Link
+    link: "/ai-development",
   },
   {
     icon: Sparkles,
     title: "AI Case Study Finder",
     description: "Find relevant AI use cases and solutions for your business challenges.",
-    link: "/case-studies", // Added Link
+    link: "/case-studies",
   },
   {
     icon: Bot,
     title: "AI Automation Advisor",
     description: "Identify repetitive workflows and discover automation opportunities.",
-    link: "/ai-development", // Added Link
+    link: "/ai-development",
   },
   {
     icon: FileText,
     title: "AI Document Processing",
     description: "Extract, analyze and organize data from documents with intelligent automation.",
-    link: "/ai-solutions", // Added Link
+    link: "/ai-solutions",
   },
   {
     icon: Code2,
     title: "AI Consultant",
     description: "Improve deployment, monitoring and infrastructure workflows using AI.",
-    link: "/ai-solutions", // Added Link
+    link: "/ai-solutions",
   },
 ];
 
@@ -102,7 +102,6 @@ export default function AISolutionsPage() {
                   Talk with our AI Assistant or try Generative AI tools — get instant answers, create images, and automate your business workflows.
                 </p>
 
-                {/* CHANGED: Button to Link */}
                 <div className="mt-9">
                   <Link to="/contact" className="group inline-flex items-center gap-2 rounded-xl bg-red-600 px-7 py-3.5 text-sm font-semibold text-white shadow-xl shadow-red-600/25 transition hover:bg-red-500">
                     Start with AI <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
@@ -129,7 +128,6 @@ export default function AISolutionsPage() {
           {/* AI SHOWCASE */}
           <section className="mx-auto 2xxl:max-w-7xl px-5 py-16 sm:px-8 lg:px-20 lg:py-20">
             <div className="grid gap-6 lg:grid-cols-2">
-              {/* Linked to /ai-agents */}
               <Link to="/ai-agents" className="block">
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }} className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-200/50">
                   <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-red-500/5 blur-[60px]" />
@@ -150,7 +148,6 @@ export default function AISolutionsPage() {
                 </motion.div>
               </Link>
 
-              {/* Linked to /ai-development */}
               <Link to="/ai-development" className="block">
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5, delay: 0.1 }} className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-200/50">
                   <div className="pointer-events-none absolute -left-16 -top-16 h-40 w-40 rounded-full bg-red-500/5 blur-[60px]" />
@@ -188,7 +185,6 @@ export default function AISolutionsPage() {
             <SectionHeading eyebrow="CREATE WITH AI" title="Generative AI Studio" description="Create, transform and experiment with powerful generative AI tools." />
 
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {/* Added Links to StudioCards */}
               <StudioCard icon={<WandSparkles />} title="Text → Image" description="Generate stunning visuals from simple text prompts." link="/ai-development" />
               <StudioCard icon={<ImageIcon />} title="Image → Text" description="Extract meaningful information from your images." link="/ai-development" />
               <StudioCard icon={<Mic />} title="Text → Speech" description="Convert written text into natural-sounding AI voice." link="/ai-agents" />
@@ -208,7 +204,6 @@ export default function AISolutionsPage() {
                     <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600 sm:text-base">Explore our collection of intelligent AI tools built to help businesses create, automate and innovate.</p>
                   </div>
                 </div>
-                {/* CHANGED: Button to Link */}
                 <Link to="/contact" className="group inline-flex shrink-0 items-center gap-2 rounded-xl bg-red-600 px-7 py-3.5 text-sm font-semibold text-white shadow-xl shadow-red-600/25 transition hover:bg-red-500">
                   Start with AI <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -220,8 +215,8 @@ export default function AISolutionsPage() {
           <section className="relative mx-auto 2xxl:max-w-7xl px-5 py-16 sm:px-8 lg:px-20 lg:py-20">
             <SectionHeading eyebrow="WHAT WE BUILD" title="Our AI-Powered Solutions" description="Intelligent tools to solve your cloud and infrastructure challenges." />
             <div className="relative mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {solutions.map((solution, index) => (
-                <SolutionCard key={solution.title} {...solution} index={index} />
+              {solutions?.map((solution) => (
+                <SolutionCard key={solution.title} {...solution} />
               ))}
             </div>
           </section>
@@ -231,7 +226,7 @@ export default function AISolutionsPage() {
             <div className="mx-auto 2xxl:max-w-7xl px-5 py-14 sm:px-8 lg:px-20">
               <SectionHeading eyebrow="TECHNOLOGY STACK" title="Trusted Cloud & AI Technology Ecosystem" description="Built with modern cloud and AI technologies." />
               <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-                {technologies.map((technology, index) => (
+                {technologies?.map((technology, index) => (
                   <motion.div key={technology} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: index * 0.05 }} className="rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-red-300 hover:text-red-600 hover:shadow-md">
                     {technology}
                   </motion.div>
@@ -259,7 +254,6 @@ function SectionHeading({ eyebrow, title, description }: { eyebrow: string; titl
   );
 }
 
-// Added link prop
 function StudioCard({ icon, title, description, link }: { icon: React.ReactNode; title: string; description: string; link: string }) {
   return (
     <Link to={link} className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-red-300 hover:shadow-xl hover:shadow-red-100/50 block">
@@ -274,8 +268,7 @@ function StudioCard({ icon, title, description, link }: { icon: React.ReactNode;
   );
 }
 
-// Added link from solutions array
-function SolutionCard({ icon: Icon, title, description, index = 0, link }: { icon: React.ElementType; title: string; description: string; index?: number; link: string }) {
+function SolutionCard({ icon: Icon, title, description, link }: { icon: React.ElementType; title: string; description: string; link: string }) {
   return (
     <Link to={link} className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-red-300 hover:shadow-xl hover:shadow-red-100/50 block">
       <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-red-500/5 blur-[40px] transition group-hover:bg-red-500/10" />
