@@ -49,7 +49,7 @@ const Navbar = () => {
             <img
               src="logo.png"
               alt="DevOpsMinders DevOps Company Logo"
-              className="h-8 w-auto md:h-10 lg:h-12"
+              className="h-8 w-auto md:h-22 lg:h-22"
             />
           </Link>
 
