@@ -15,26 +15,66 @@ export default function AiDevelopment() {
   return (
     <>
       <Helmet>
-        <title>AI Development Company India | Custom AI Solutions | DevOps Minders</title>
+        <title>DevOps Minders AI Development | Custom AI Solutions &amp; Agents</title>
         <meta
           name="description"
-          content="DevOps Minders is a leading AI development company in India providing custom AI development, AI agents, LLM applications, and intelligent automation services."
+          content="DevOps Minders is a custom AI development company building enterprise AI agents, LLM applications, RAG architecture, and intelligent workflow automation."
         />
         <meta
           name="keywords"
-          content="AI development company, AI development services, custom AI development, AI software development, AI solutions company, AI development company India, DevOps Minders"
+          content="DevOps Minders AI Development, AI Development Company, Custom AI Solutions, AI Agents, LLM Applications, AI Automation Company, IT Solutions, DevOps Minders"
         />
-        <link rel="canonical" href="https://www.devopsminders.com/ai-development/" />
+        <link rel="canonical" href="https://www.devopsminders.com/ai-development" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="DevOps Minders" />
+        <meta property="og:title" content="DevOps Minders AI Development | Custom AI Solutions &amp; Agents" />
+        <meta
+          property="og:description"
+          content="DevOps Minders builds enterprise AI applications, autonomous AI agents, and intelligent workflow automation systems."
+        />
+        <meta property="og:url" content="https://www.devopsminders.com/ai-development" />
+        <meta property="og:image" content="https://www.devopsminders.com/assets/og-image.png" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@devopsminders" />
+        <meta name="twitter:title" content="DevOps Minders AI Development | Custom AI Solutions &amp; Agents" />
+        <meta
+          name="twitter:description"
+          content="DevOps Minders builds enterprise AI applications, autonomous AI agents, and intelligent workflow automation systems."
+        />
+        <meta name="twitter:image" content="https://www.devopsminders.com/assets/og-image.png" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "DevOps Minders AI Development",
+            "serviceType": "AI Development & Custom AI Solutions",
+            "provider": {
+              "@type": "Organization",
+              "name": "DevOps Minders",
+              "url": "https://www.devopsminders.com"
+            },
+            "areaServed": "Global",
+            "description": "Custom AI development, autonomous AI agents, LLM applications, RAG architecture, and intelligent business automation."
+          })}
+        </script>
       </Helmet>
 
       <main className="relative min-h-screen overflow-hidden bg-white text-slate-900">
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
+          {/* Badge */}
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-4 py-1.5 text-xs font-semibold text-red-600">
+            DevOps Minders AI Development
+          </div>
+
           {/* H1 as per SEO Audit */}
           <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            AI Development Company
+            Custom AI Development &amp; Intelligent Automation
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-            DevOps Minders builds custom AI-powered applications, intelligent agents, and automation systems that solve real business challenges.
+            DevOps Minders AI Development builds custom AI-powered applications, autonomous AI agents, LLM integrations, and enterprise automation systems that solve real business challenges.
           </p>
 
           {/* What We Build */}

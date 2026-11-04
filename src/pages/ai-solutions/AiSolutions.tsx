@@ -68,14 +68,22 @@ export default function AISolutionsPage() {
   return (
     <>
       <Helmet>
-        <title>AI Solutions & Intelligent Automation | DevOps Minders AI & Cloud Solution</title>
+        <title>AI Solutions & Intelligent Automation | DevOps Minders</title>
         <meta name="description" content="DevOps Minders provides AI solutions, custom AI agents, generative AI, LLM applications, and intelligent workflow automation for businesses." />
-        <meta name="keywords" content="AI Solutions Company, AI Development, AI Agents, Generative AI, LLM Applications, AI Automation, DevOps Minders, India" />
+        <meta name="keywords" content="AI Solutions Company, AI Development Company, AI Agents, Generative AI, LLM Applications, AI Automation, DevOps Minders" />
         <link rel="canonical" href="https://www.devopsminders.com/ai-solutions" />
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="DevOps Minders" />
         <meta property="og:url" content="https://www.devopsminders.com/ai-solutions" />
         <meta property="og:title" content="AI Solutions & Intelligent Automation | DevOps Minders" />
         <meta property="og:description" content="Explore AI solutions, custom AI agents, generative AI, and intelligent workflow automation for businesses." />
+        <meta property="og:image" content="https://www.devopsminders.com/assets/og-image.png" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@devopsminders" />
+        <meta name="twitter:title" content="AI Solutions & Intelligent Automation | DevOps Minders" />
+        <meta name="twitter:description" content="Explore AI solutions, custom AI agents, generative AI, and intelligent workflow automation for businesses." />
+        <meta name="twitter:image" content="https://www.devopsminders.com/assets/og-image.png" />
       </Helmet>
 
       <main className="relative min-h-screen overflow-hidden bg-white text-slate-900">
@@ -120,7 +128,7 @@ export default function AISolutionsPage() {
 
               <motion.div initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="relative flex items-center justify-center">
                 <div className="absolute inset-0 rounded-[36px] bg-gradient-to-br from-red-500/10 via-transparentA-transparent to-red-500/10" />
-                <img src="/assets/ai-image.png" alt="DevOps Minders AI Solutions and Automation" className="relative z-10 h-auto w-full max-w-md rounded-[30px] border border-slate-200 object-cover shadow-2xl shadow-slate-300/40" />
+                <img src="/assets/ai-image.webp" alt="DevOps Minders AI Solutions and Automation" loading="lazy" decoding="async" className="relative z-10 h-auto w-full max-w-md rounded-[30px] border border-slate-200 object-cover shadow-2xl shadow-slate-300/40" />
               </motion.div>
             </div>
           </section>

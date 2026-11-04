@@ -1,5 +1,5 @@
 import Home from "./pages/Home";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import MainLayout from "./pages/layout/MainLayout";
 import CaseStudies from "./pages/case-studies/CaseStudies";
 import CaseStudyDetails from "./pages/case-studies/CaseStudyDetails";
@@ -10,6 +10,7 @@ import GetQuotePage from "./pages/quote/Quote";
 import AI from "./pages/ai-solutions/AiSolutions";
 import AiDevelopment from "./pages/ai-development/AiDevelopment";
 import AiAgents from "./pages/ai-agents/AiAgents";
+import NotFound from "./pages/NotFound";
 // import { PortfolioSection } from "./pages/portfolio/Portfolio";
 
 function App() {
@@ -25,8 +26,10 @@ function App() {
         <Route path="/case-studies/:slug" element={<CaseStudyDetails />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/about" element={<Navigate to="/about-us" replace />} />
         <Route path="/quote" element={<GetQuotePage />} />
         <Route path="/ai-solutions" element={<AI />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </MainLayout>
   );

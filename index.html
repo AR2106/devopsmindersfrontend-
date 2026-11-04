@@ -2,55 +2,73 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-D6WTSLZSP4"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-D6WTSLZSP4");
-    </script>
-
-    <!-- FAVICONS -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="/android-chrome-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="512x512"
-      href="/android-chrome-512x512.png"
-    />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-
     <!-- VIEWPORT -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FAVICONS & BRAND ICONS (GOOGLE SEARCH & BROWSERS) -->
+    <!-- Unconditional Primary Favicons for Google Search & General Crawlers (Original Bright Mode Brand Icon) -->
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Dark Theme Browser Tab Icon (Original Dark Mode Brand Icon) -->
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-dark-48x48.png" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-dark-32x32.png" media="(prefers-color-scheme: dark)" />
+
+    <!-- Light Theme Browser Tab Icon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- LANGUAGE & REGION -->
     <meta http-equiv="content-language" content="en-IN" />
 
-    <!-- 
-      ---------------------------------------------------------------------
-      SEO NOTE: Title, Meta Description, Canonical, OG & Twitter Tags 
-      are REMOVED from here. We are using react-helmet-async in React 
-      components to inject them dynamically to avoid duplicate tags.
-      ---------------------------------------------------------------------
-    -->
+    <!-- PRIMARY BASELINE METADATA -->
+    <title>DevOps Minders | IT Solutions, AI Development &amp; Cloud Solutions</title>
+    <meta
+      name="description"
+      content="DevOps Minders is an IT solutions company delivering custom AI development, enterprise cloud solutions, software engineering, and DevOps consulting."
+    />
+    <link rel="canonical" href="https://www.devopsminders.com/" />
+
+    <!-- OPEN GRAPH (WhatsApp, LinkedIn, Facebook) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DevOps Minders" />
+    <meta
+      property="og:title"
+      content="DevOps Minders | IT Solutions, AI Development &amp; Cloud Solutions"
+    />
+    <meta
+      property="og:description"
+      content="DevOps Minders delivers custom IT solutions, AI development, AWS and Azure cloud solutions, and enterprise DevOps consulting."
+    />
+    <meta property="og:url" content="https://www.devopsminders.com/" />
+    <meta
+      property="og:image"
+      content="https://www.devopsminders.com/assets/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- TWITTER / X CARDS -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@devopsminders" />
+    <meta
+      name="twitter:title"
+      content="DevOps Minders | IT Solutions, AI Development &amp; Cloud Solutions"
+    />
+    <meta
+      name="twitter:description"
+      content="DevOps Minders delivers custom IT solutions, AI development, AWS and Azure cloud solutions, and enterprise DevOps consulting."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.devopsminders.com/assets/og-image.png"
+    />
 
     <!-- KEYWORDS — Primary, Secondary & Brand -->
-    <meta name="keywords" content="IT Company in Ludhiana, Software Development Company in Ludhiana, AI Development Company in Ludhiana, AI Automation Company in Ludhiana, DevOps Company in Ludhiana, Cloud Solutions Company in Ludhiana, AI/ML Company in Ludhiana, Custom Software Development Company in Ludhiana, AI Solutions Company in Ludhiana, DevOps and Cloud Company in Ludhiana, DevOps Minders, DevOps Minders AI & Cloud Solution" />
+    <meta name="keywords" content="DevOps Minders, DevOps Minders IT Solutions, DevOps Minders AI Development, DevOps Minders Cloud Solutions, DevOps Minders DevOps Consulting, IT Solutions Company, AI Development Company, Cloud Solutions, DevOps Consulting" />
 
     <!-- ROBOTS — Enhanced for rich results -->
     <meta
@@ -69,9 +87,40 @@
     <!-- THEME COLOR -->
     <meta name="theme-color" content="#0b0b0d" />
 
-    <!-- PRECONNECT FOR PERFORMANCE -->
+    <!-- PRECONNECT & NON-BLOCKING FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      />
+    </noscript>
+
+    <!-- GOOGLE ANALYTICS (GTAG.JS) — DEFERRED FOR CORE WEB VITALS -->
+    <script
+      defer
+      src="https://www.googletagmanager.com/gtag/js?id=G-D6WTSLZSP4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-D6WTSLZSP4");
+    </script>
 
     <!-- ═══════════════════════════════════════════════
          STRUCTURED DATA SCHEMAS (AI-FIRST + LUDHIANA UPDATES)
@@ -89,7 +138,7 @@
           "@type": "ImageObject",
           "url": "https://www.devopsminders.com/assets/logo.png"
         },
-        "description": "DevOps Minders AI & Cloud Solution is an AI development and automation company building AI agents, LLM applications, machine learning solutions and intelligent business workflows, supported by cloud, DevOps and MLOps expertise.",
+        "description": "DevOps Minders is an IT services, software development, cloud, and AI solutions company providing enterprise digital transformation, custom software engineering, AI automation, and DevOps consulting.",
         "telephone": "+91 88727 81496",
         "email": "info@devopsminders.com",
         "contactPoint": {
@@ -115,8 +164,43 @@
         ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "AI, Cloud & DevOps Services",
+          "name": "IT Services, Software, Cloud & AI Solutions",
           "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "IT Services & Technology Consulting"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Custom Software Development"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Cloud Solutions & Migration"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "DevOps Consulting & Automation"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AI Development & AI Agents"
+              }
+            },
             {
               "@type": "Offer",
               "itemOffered": {
@@ -230,63 +314,14 @@
       }
     </script>
 
-    <!-- 2. WebSite Schema — Enables Google Sitelinks Search Box -->
+    <!-- 2. WebSite Schema -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "DevOps Minders AI & Cloud Solution",
-        "url": "https://www.devopsminders.com",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://www.devopsminders.com/?s={search_term_string}"
-          },
-          "query-input": "required name=search_term_string"
-        }
-      }
-    </script>
-
-    <!-- 3. FAQ Schema — AI-First FAQs for Google Rich Results -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What AI development services does DevOps Minders offer in Ludhiana?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "DevOps Minders builds AI-powered applications, custom AI agents, LLM and RAG applications, generative AI solutions, and intelligent business workflow automation for companies in Ludhiana and across India."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does DevOps Minders provide AI automation for businesses?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, DevOps Minders specializes in AI and ML-powered business automation, including customer support automation, lead qualification, document processing, and intelligent workflows."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is DevOps Minders a cloud and DevOps consulting company?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, alongside AI solutions, DevOps Minders provides expert Cloud and DevOps services including AWS/Azure/GCP migration, Kubernetes orchestration, CI/CD pipelines, DevSecOps, and MLOps."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How can I contact DevOps Minders?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You can reach DevOps Minders at +91 88727 81496 or email info@devopsminders.com or visit https://www.devopsminders.com."
-            }
-          }
-        ]
+        "name": "DevOps Minders",
+        "alternateName": "DevOps Minders AI & Cloud Solution",
+        "url": "https://www.devopsminders.com/"
       }
     </script>
   </head>

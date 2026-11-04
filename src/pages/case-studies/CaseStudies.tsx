@@ -6,17 +6,16 @@ const CaseStudies = () => {
   return (
     <>
       <Helmet>
-        {/* SEO Tags: AI First + Correct Company Name */}
-        <title>AI & Cloud Case Studies | DevOps Minders</title>
+        <title>Software Development, AI & Cloud Case Studies | DevOps Minders</title>
 
         <meta
           name="description"
-          content="Explore DevOps Minders case studies showcasing successful AI development, intelligent automation, AI agents, cloud migration, and DevOps projects delivered for businesses."
+          content="Explore DevOps Minders case studies showcasing custom software development, AI platform engineering, cloud migration, and DevOps implementations for global brands."
         />
 
         <meta
           name="keywords"
-          content="AI Case Studies, AI Development Projects, Cloud Migration Case Studies, DevOps Portfolio, AI Automation Projects, DevOps Minders"
+          content="Software Development Case Studies, AI Projects, Cloud Migration Case Studies, DevOps Portfolio, IT Solutions Case Studies, DevOps Minders"
         />
 
         <link
@@ -24,19 +23,35 @@ const CaseStudies = () => {
           href="https://www.devopsminders.com/case-studies"
         />
 
-        <meta property="og:title" content="AI & Cloud Case Studies | DevOps Minders" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="DevOps Minders" />
+        <meta property="og:title" content="Software Development, AI & Cloud Case Studies | DevOps Minders" />
 
         <meta
           property="og:description"
-          content="Discover real-world AI development, intelligent automation, cloud infrastructure, and DevOps projects by DevOps Minders."
+          content="Explore DevOps Minders case studies showcasing custom software development, AI platform engineering, cloud migration, and DevOps implementations for global brands."
         />
 
         <meta
           property="og:url"
           content="https://www.devopsminders.com/case-studies"
         />
+        <meta
+          property="og:image"
+          content="https://www.devopsminders.com/assets/og-image.png"
+        />
 
-        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@devopsminders" />
+        <meta name="twitter:title" content="Software Development, AI & Cloud Case Studies | DevOps Minders" />
+        <meta
+          name="twitter:description"
+          content="Explore DevOps Minders case studies showcasing custom software development, AI platform engineering, cloud migration, and DevOps implementations for global brands."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.devopsminders.com/assets/og-image.png"
+        />
       </Helmet>
       <main className="relative min-h-screen overflow-hidden bg-white text-slate-900 selection:bg-[#E80112] selection:text-white">
         {/* Ambient background */}
@@ -98,8 +113,10 @@ const CaseStudies = () => {
               {/* Right Column: Image */}
               <div className="relative hidden lg:mt-8 lg:block">
                 <img
-                  src="/assets/case-studies-hero.png"
+                  src="/assets/case-studies-hero.webp"
                   alt="DevOps Minders AI Case Studies and Project Portfolio"
+                  loading="lazy"
+                  decoding="async"
                   className="relative mx-auto h-auto max-h-[420px] w-full max-w-md object-contain"
                 />
               </div>

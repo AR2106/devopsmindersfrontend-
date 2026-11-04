@@ -44,23 +44,23 @@ const cardVariants: Variants = {
 const capabilities = [
   {
     icon: Cloud, // Kept existing icon
-    title: "AI & Cloud Solutions",
-    text: "AI development, intelligent automation, and reliable cloud environments for growing workloads.",
+    title: "Cloud Solutions & Migration",
+    text: "AWS, Azure, and GCP cloud solutions, secure infrastructure migration, and high-availability architecture for growing business workloads.",
   },
   {
     icon: Workflow,
-    title: "AI Automation & CI/CD",
-    text: "AI-driven business workflows and practical CI/CD pipelines that make releases predictable.",
+    title: "DevOps Consulting & CI/CD",
+    text: "Enterprise DevOps consulting, CI/CD automation, and GitOps workflows that make software delivery fast, secure, and predictable.",
   },
   {
     icon: ShieldCheck,
-    title: "Security & reliability",
-    text: "Security and operational practices built into the engineering process.",
+    title: "Security & DevSecOps",
+    text: "Automated security compliance, vulnerability scanning, and operational governance built directly into engineering pipelines.",
   },
   {
     icon: Activity,
-    title: "Production visibility",
-    text: "Monitoring and observability that help teams understand what is happening.",
+    title: "Production Visibility & Uptime",
+    text: "Kubernetes orchestration, Infrastructure as Code, and 24/7 observability that maintain 99.99% system reliability.",
   },
 ];
 
@@ -129,36 +129,65 @@ const Service = () => {
   return (
     <>
       <Helmet>
-        {/* SEO Tags: AI First */}
+        {/* SEO Tags: IT Solutions, Cloud & DevOps */}
         <title>
-          AI Development & Cloud Solutions | DevOps Minders AI & Cloud Solution
+          DevOps Minders IT Solutions | Cloud Solutions &amp; DevOps Consulting
         </title>
 
         <meta
           name="description"
-          content="DevOps Minders provides AI development, custom AI agents, LLM applications, and intelligent automation, alongside expert Cloud, DevOps, and MLOps services."
+          content="DevOps Minders provides enterprise IT solutions, AWS and Azure cloud solutions, Kubernetes orchestration, CI/CD automation, and expert DevOps consulting."
         />
 
         <meta
           name="keywords"
-          content="AI Development Company, AI Automation Services, Custom AI Agents, LLM Development, Cloud Migration, Kubernetes, CI/CD, DevSecOps, MLOps, DevOps Minders"
+          content="DevOps Minders IT Solutions, DevOps Minders Cloud Solutions, DevOps Minders DevOps Consulting, IT Solutions Company, Cloud Solutions Company, DevOps Consulting Company, DevOps Minders"
         />
 
         <link rel="canonical" href="https://www.devopsminders.com/services" />
 
-        <meta property="og:title" content="AI & Cloud Solutions | DevOps Minders" />
-
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="DevOps Minders" />
+        <meta property="og:title" content="DevOps Minders IT Solutions | Cloud Solutions &amp; DevOps Consulting" />
         <meta
           property="og:description"
-          content="AI development, custom AI agents, LLM applications, intelligent automation, Cloud, DevOps, and MLOps services."
+          content="DevOps Minders provides enterprise IT solutions, AWS and Azure cloud solutions, Kubernetes orchestration, CI/CD automation, and expert DevOps consulting."
         />
-
         <meta
           property="og:url"
           content="https://www.devopsminders.com/services"
         />
+        <meta
+          property="og:image"
+          content="https://www.devopsminders.com/assets/og-image.png"
+        />
 
-        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@devopsminders" />
+        <meta name="twitter:title" content="DevOps Minders IT Solutions | Cloud Solutions &amp; DevOps Consulting" />
+        <meta
+          name="twitter:description"
+          content="DevOps Minders provides enterprise IT solutions, AWS and Azure cloud solutions, Kubernetes orchestration, CI/CD automation, and expert DevOps consulting."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.devopsminders.com/assets/og-image.png"
+        />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "IT Solutions, Cloud Solutions & DevOps Consulting",
+            "provider": {
+              "@type": "Organization",
+              "name": "DevOps Minders",
+              "url": "https://www.devopsminders.com"
+            },
+            "areaServed": "Global",
+            "description": "DevOps Minders delivers enterprise IT solutions, cloud migration, Kubernetes orchestration, CI/CD automation, and expert DevOps consulting."
+          })}
+        </script>
       </Helmet>
       <main
         id="services"
@@ -196,24 +225,24 @@ GLOBAL BACKGROUND
                   <span className="h-px w-7 bg-[#E80112]" />
 
                   <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#E80112]">
-                    What we do
+                    DevOps Minders IT Solutions &amp; Consulting
                   </span>
                 </div>
 
-                {/* H1 UPDATED: AI First */}
+                {/* H1 */}
                 <h1 className="max-w-3xl text-[2.65rem] font-semibold leading-[1.04] tracking-[-0.05em] text-slate-900 sm:text-5xl lg:text-[3.75rem] xl:text-[4.15rem]">
-                  AI & Cloud Solutions that
+                  Cloud Solutions, DevOps Consulting &amp;
                   <span className="text-[#E80112]">
                     {" "}
-                    work for your business.
+                    Enterprise IT.
                   </span>
                 </h1>
 
                 <p className="mt-6 max-w-2xl text-[15px] leading-7 text-slate-600 sm:text-base sm:leading-8">
                   DevOps Minders helps businesses build, modernize, and operate
-                  the technology behind their products. We bring together
-                  AI development, intelligent automation, cloud infrastructure, and DevOps
-                  to solve real technical challenges.
+                  the technology behind their mission-critical products. We provide
+                  comprehensive IT solutions, AWS/Azure cloud solutions, AI development,
+                  and expert DevOps consulting to solve complex technical challenges.
                 </p>
 
                 {/* Bullets UPDATED: AI First */}
@@ -244,8 +273,10 @@ GLOBAL BACKGROUND
                 className="relative hidden lg:mt-8 lg:block"
               >
                 <img
-                  src="../../assets/services-hero.png"
+                  src="/assets/services-hero.webp"
                   alt="AI Development and Cloud Infrastructure Services"
+                  loading="lazy"
+                  decoding="async"
                   className="relative mx-auto h-auto max-h-[420px] w-full max-w-md object-contain"
                 />
               </motion.div>

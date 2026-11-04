@@ -90,39 +90,69 @@ const focusAreas = [
 export function AboutUs() {
   return (
    <>
-      <Helmet>
-    {/* SEO Tags: AI First */}
-    <title>About Us | AI Development & Cloud Company | DevOps Minders</title>
+    <Helmet>
+      <title>About DevOps Minders | IT Solutions, Cloud &amp; AI Engineering</title>
 
-    <meta
-      name="description"
-      content="DevOps Minders AI & Cloud Solution is an AI development and automation company building AI agents, LLM applications, and intelligent workflows, supported by cloud and DevOps expertise."
-    />
+      <meta
+        name="description"
+        content="Learn about DevOps Minders, a premier IT solutions, cloud architecture, and AI development company delivering scalable technology solutions globally."
+      />
 
-    <meta
-      name="keywords"
-      content="About DevOps Minders, AI Development Company India, AI Automation Company, Cloud Solutions India, DevOps Consulting, Founded in 2019"
-    />
+      <meta
+        name="keywords"
+        content="About DevOps Minders, DevOps Minders IT Solutions, DevOps Minders Cloud Solutions, DevOps Minders DevOps Consulting, IT Solutions Company, Cloud Solutions Company"
+      />
 
-    <link
-      rel="canonical"
-      href="https://www.devopsminders.com/about-us"
-    />
+      <link
+        rel="canonical"
+        href="https://www.devopsminders.com/about-us"
+      />
 
-    <meta property="og:title" content="About Us | AI & Cloud Company | DevOps Minders" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="DevOps Minders" />
+      <meta property="og:title" content="About DevOps Minders | IT Solutions, Cloud &amp; AI Engineering" />
 
-    <meta
-      property="og:description"
-      content="Learn about DevOps Minders AI & Cloud Solution, an AI development and automation company building intelligent workflows and scalable cloud infrastructure."
-    />
+      <meta
+        property="og:description"
+        content="Learn about DevOps Minders, a premier IT solutions, cloud architecture, and AI development company delivering scalable technology solutions globally."
+      />
 
-    <meta
-      property="og:url"
-      content="https://www.devopsminders.com/about-us"
-    />
+      <meta
+        property="og:url"
+        content="https://www.devopsminders.com/about-us"
+      />
+      <meta
+        property="og:image"
+        content="https://www.devopsminders.com/assets/og-image.png"
+      />
 
-    <meta property="og:type" content="website" />
-  </Helmet>
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@devopsminders" />
+      <meta name="twitter:title" content="About DevOps Minders | IT Solutions, Cloud &amp; AI Engineering" />
+      <meta
+        name="twitter:description"
+        content="Learn about DevOps Minders, a premier IT solutions, cloud architecture, and AI development company delivering scalable technology solutions globally."
+      />
+      <meta
+        name="twitter:image"
+        content="https://www.devopsminders.com/assets/og-image.png"
+      />
+
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "name": "About DevOps Minders",
+          "description": "DevOps Minders is an IT solutions, cloud architecture, and AI development company delivering scalable technology solutions globally.",
+          "url": "https://www.devopsminders.com/about-us",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "DevOps Minders",
+            "url": "https://www.devopsminders.com"
+          }
+        })}
+      </script>
+    </Helmet>
     <section
       id="about"
       aria-labelledby="about-heading"
@@ -190,14 +220,14 @@ export function AboutUs() {
               </span>
             </div>
 
-            {/* H2 Updated: AI Focus */}
-            <h2
+            {/* H1 Main Heading */}
+            <h1
               id="about-heading"
               className="text-4xl font-semibold leading-[1.08] tracking-[-0.045em] sm:text-5xl lg:text-6xl"
             >
-              Engineering AI & Cloud infrastructure
-              <span className="text-[#E80112]"> behind modern software.</span>
-            </h2>
+              About DevOps Minders:
+              <span className="text-[#E80112]"> IT Solutions &amp; Cloud Engineering.</span>
+            </h1>
 
             <p className="mt-7 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
               DevOps Minders helps businesses build, modernize, and operate
@@ -223,8 +253,10 @@ export function AboutUs() {
             className="relative hidden lg:mt-8 lg:block"
           >
             <img
-              src="/assets/about-image.png"
+              src="/assets/about-image.webp"
               alt="DevOps Minders AI and Cloud engineering team"
+              loading="lazy"
+              decoding="async"
               className="relative h-auto max-h-[450px] w-full object-contain"
             />
           </motion.div>

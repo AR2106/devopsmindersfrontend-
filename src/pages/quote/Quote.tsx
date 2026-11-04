@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Cloud, Shield, Zap, GitBranch, ArrowRight } from "lucide-react";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 export default function GetQuotePage() {
   const [open, setOpen] = useState(false);
@@ -29,11 +30,44 @@ export default function GetQuotePage() {
   ];
 
   return (
-    <section
-      id="get-quote"
-      aria-label="DevOps Quote Landing Page"
-      className="relative bg-[#0b0b0d] text-white overflow-hidden sm:py-10 md:py-14 mt-0"
-    >
+    <>
+      <Helmet>
+        <title>Get a Project Quote | DevOps Minders</title>
+        <meta
+          name="description"
+          content="Request a proposal for custom software development, cloud infrastructure architecture, DevOps automation, or AI engineering from DevOps Minders."
+        />
+        <meta
+          name="keywords"
+          content="Get a Quote, Software Development Quote, DevOps Consulting Quote, Cloud Migration Pricing, DevOps Minders"
+        />
+        <link rel="canonical" href="https://www.devopsminders.com/quote" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="DevOps Minders" />
+        <meta property="og:title" content="Get a Project Quote | DevOps Minders" />
+        <meta
+          property="og:description"
+          content="Request a proposal for custom software development, cloud infrastructure architecture, DevOps automation, or AI engineering from DevOps Minders."
+        />
+        <meta property="og:url" content="https://www.devopsminders.com/quote" />
+        <meta property="og:image" content="https://www.devopsminders.com/assets/og-image.png" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@devopsminders" />
+        <meta name="twitter:title" content="Get a Project Quote | DevOps Minders" />
+        <meta
+          name="twitter:description"
+          content="Request a proposal for custom software development, cloud infrastructure architecture, DevOps automation, or AI engineering from DevOps Minders."
+        />
+        <meta name="twitter:image" content="https://www.devopsminders.com/assets/og-image.png" />
+      </Helmet>
+
+      <section
+        id="get-quote"
+        aria-label="DevOps Quote Landing Page"
+        className="relative bg-[#0b0b0d] text-white overflow-hidden sm:py-10 md:py-14 mt-0"
+      >
       {/* Background Glow */}
       <div className="absolute inset-0 pointer-events-none opacity-30">
         <div className="absolute top-[-220px] left-1/2 w-[800px] h-[800px] bg-primary blur-[200px] rounded-full -translate-x-1/2" />
@@ -157,5 +191,6 @@ export default function GetQuotePage() {
         </div>
       )}
     </section>
+    </>
   );
 }

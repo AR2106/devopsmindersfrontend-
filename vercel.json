@@ -1,8 +1,11 @@
 {
-  "rewrites": [
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
     {
-      "source": "/((?!sitemap.xml|robots.txt).*)",
-      "destination": "/index.html"
+      "source": "/about",
+      "destination": "/about-us",
+      "permanent": true
     }
   ]
 }

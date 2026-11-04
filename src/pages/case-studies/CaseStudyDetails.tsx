@@ -10,24 +10,34 @@ const CaseStudyDetails = () => {
 
   if (!study) {
     return (
-      <main className="flex min-h-screen items-center justify-center bg-white px-6 text-slate-900">
-        <div className="text-center">
-          <h1 className="text-3xl font-semibold">Project not found</h1>
+      <>
+        <Helmet>
+          <title>Case Study Not Found | DevOps Minders</title>
+          <meta name="robots" content="noindex, follow" />
+        </Helmet>
+        <main className="flex min-h-screen items-center justify-center bg-white px-6 text-slate-900">
+          <div className="text-center">
+            <h1 className="text-3xl font-semibold">Project not found</h1>
 
-          <p className="mt-3 text-slate-500">
-            The case study you are looking for is unavailable.
-          </p>
-        </div>
-      </main>
+            <p className="mt-3 text-slate-500">
+              The case study you are looking for is unavailable.
+            </p>
+          </div>
+        </main>
+      </>
     );
   }
+
+  const fullImageUrl = study.image.startsWith("http")
+    ? study.image
+    : `https://www.devopsminders.com${study.image.startsWith("/") ? "" : "/"}${study.image}`;
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-white text-slate-900 selection:bg-[#E80112] selection:text-white">
       {/* Background */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-[#E80112]/[0.04] blur-[160px]" />
-        
+
         <div className="absolute -right-40 top-[35%] h-[500px] w-[500px] rounded-full bg-slate-100/50 blur-[160px]" />
 
         <div
@@ -43,19 +53,42 @@ const CaseStudyDetails = () => {
       </div>
 
       <Helmet>
-        <title>{study.title} | DevOps Minders</title>
+        <title>{`${study.title} | DevOps Minders`}</title>
 
         <meta name="description" content={study.description} />
+        <link rel="canonical" href={`https://www.devopsminders.com/case-studies/${study.slug}`} />
 
-        <meta property="og:title" content={study.title} />
-        <meta property="og:description" content={study.description} />
-        <meta property="og:image" content={study.image} />
         <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="DevOps Minders" />
+        <meta property="og:url" content={`https://www.devopsminders.com/case-studies/${study.slug}`} />
+        <meta property="og:title" content={`${study.title} | DevOps Minders`} />
+        <meta property="og:description" content={study.description} />
+        <meta property="og:image" content={fullImageUrl} />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={study.title} />
+        <meta name="twitter:site" content="@devopsminders" />
+        <meta name="twitter:title" content={`${study.title} | DevOps Minders`} />
         <meta name="twitter:description" content={study.description} />
-        <meta name="twitter:image" content={study.image} />
+        <meta name="twitter:image" content={fullImageUrl} />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": study.title,
+            "description": study.description,
+            "image": fullImageUrl,
+            "publisher": {
+              "@type": "Organization",
+              "name": "DevOps Minders",
+              "url": "https://www.devopsminders.com"
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://www.devopsminders.com/case-studies/${study.slug}`
+            }
+          })}
+        </script>
       </Helmet>
 
       {/* 
@@ -64,7 +97,7 @@ const CaseStudyDetails = () => {
       */}
       {/* CHANGE: Updated horizontal padding to px-8 sm:px-10 lg:px-10 (40px) */}
       <div className="relative mx-auto 2xxl:max-w-7xl px-8 sm:px-10 lg:px-10 pb-24 pt-10 sm:pt-28 lg:pb-14 lg:pt-14">
-        
+
         {/* Hero - max-w-4xl aligns with the image and content below */}
         <header className="mx-auto xl:max-w-4xl">
           <h1 className="2xx:max-w-4xl text-4xl font-semibold leading-[1.1] tracking-[-0.04em] text-slate-900 sm:text-5xl lg:text-6xl">
@@ -118,6 +151,8 @@ const CaseStudyDetails = () => {
               <img
                 src={study.image}
                 alt={study.title}
+                fetchPriority="high"
+                decoding="async"
                 className="block h-auto w-full max-w-full object-contain"
               />
             </div>

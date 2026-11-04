@@ -70,7 +70,7 @@ export const Footer = () => {
               rel="noopener noreferrer"
             >
               <img
-                src="/assets/icons/github.svg"
+                src="/assets/icons/twitter.svg"
                 alt="DevOps Minders X Profile"
                 className="w-5 h-5 cursor-pointer opacity-70 hover:opacity-100 transition"
               />
@@ -111,34 +111,34 @@ export const Footer = () => {
 
         <div>
           <h3 className="text-base md:text-lg font-semibold mb-4">
-            AI & Cloud Solutions
+            AI &amp; Cloud Solutions
           </h3>
 
-          {/* ADDED LINKS: All pointing to existing App.tsx routes */}
+          {/* ADDED LINKS: All pointing to existing App.tsx routes with targeted anchor text */}
           <ul className="space-y-3 text-slate-600 text-sm">
             <li>
               <Link to="/ai-development" className="hover:text-[#E80112] transition">
-                AI Development & Automation
+                DevOps Minders AI Development
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-[#E80112] transition">
+                DevOps Minders Cloud Solutions
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-[#E80112] transition">
+                DevOps Minders DevOps Consulting
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-[#E80112] transition">
+                DevOps Minders IT Solutions
               </Link>
             </li>
             <li>
               <Link to="/ai-agents" className="hover:text-[#E80112] transition">
-                AI Agents & LLM Applications
-              </Link>
-            </li>
-            <li>
-              <Link to="/ai-solutions" className="hover:text-[#E80112] transition">
-                Generative AI & ML Solutions
-              </Link>
-            </li>
-            <li>
-              <Link to="/services" className="hover:text-[#E80112] transition">
-                Cloud Migration & DevOps
-              </Link>
-            </li>
-            <li>
-              <Link to="/services" className="hover:text-[#E80112] transition">
-                Kubernetes & DevSecOps
+                AI Agents &amp; LLM Applications
               </Link>
             </li>
           </ul>
@@ -185,7 +185,7 @@ export const Footer = () => {
       {/* BOTTOM - Removed Privacy/Terms links as they are not in App.tsx routes */}
       <div className="relative z-10 border-t border-slate-200 py-6">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-4 text-xs text-slate-500">
-          <p>© 2024 DevOps Minders Tech Pvt Ltd. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} DevOps Minders Tech Pvt Ltd. All rights reserved.</p>
         </div>
       </div>
     </footer>

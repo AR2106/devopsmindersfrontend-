@@ -1,14 +1,14 @@
-import bng from "./../assets/caseStudy/bng.png";
-import unpod from "./../assets/caseStudy/unpod.png";
-import pyne from "./../assets/caseStudy/pyne.png";
-import maxwell from "./../assets/caseStudy/maxwell.png";
-import fearless from "./../assets/caseStudy/fearless.png";
-import expertify from "./../assets/caseStudy/experties.png";
-import nestle from "./../assets/caseStudy/nestle.png";
-import cadbury from "./../assets/caseStudy/Cadbury.png";
-import vespa from "./../assets/caseStudy/vespa.jpeg";
-import vintage from "./../assets/caseStudy/vintagewatcholic.png";
-import itsybitsy from "./../assets/caseStudy/itsybitsy.png";
+import bng from "./../assets/caseStudy/bng.webp";
+import unpod from "./../assets/caseStudy/unpod.webp";
+import pyne from "./../assets/caseStudy/pyne.webp";
+import maxwell from "./../assets/caseStudy/maxwell.webp";
+import fearless from "./../assets/caseStudy/fearless.webp";
+import expertify from "./../assets/caseStudy/experties.webp";
+import nestle from "./../assets/caseStudy/nestle.webp";
+import cadbury from "./../assets/caseStudy/Cadbury.webp";
+import vespa from "./../assets/caseStudy/vespa.webp";
+import vintage from "./../assets/caseStudy/vintagewatcholic.webp";
+import itsybitsy from "./../assets/caseStudy/itsybitsy.webp";
 
 export const caseStudies = [
   {

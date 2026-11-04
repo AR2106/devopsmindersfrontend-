@@ -50,7 +50,7 @@ export function ServicesSection() {
                         <Sparkles className="h-4 w-4 text-[#E80112]" />
 
                         <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E80112]">
-                            What We Do
+                            DevOps Minders IT Solutions &amp; Services
                         </span>
                     </div>
 
@@ -64,9 +64,7 @@ export function ServicesSection() {
 
                     {/* Subhead - Dark Gray */}
                     <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 md:text-base">
-                        Comprehensive technology solutions designed to optimize
-                        operations, strengthen security, modernize infrastructure,
-                        and help your business scale with confidence.
+                        DevOps Minders provides comprehensive IT solutions, cloud architecture, and DevOps consulting designed to optimize operations, strengthen security, modernize infrastructure, and help your business scale with confidence.
                     </p>
 
                     {/* Divider - Using Brand Red #E80112 */}

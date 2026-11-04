@@ -171,10 +171,10 @@ export default function ContactForm() {
             </span>
           </div>
 
-          <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-[40px] lg:leading-[1.08]">
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-[40px] lg:leading-[1.08]">
             Let’s talk about
             <span className="text-[#E80112]"> your project.</span>
-          </h1>
+          </h2>
 
           <p className="mt-3 max-w-xl text-sm leading-6 text-slate-600 sm:text-[15px]">
             Tell us a little about what you need. We’ll review your requirements

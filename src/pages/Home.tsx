@@ -5,40 +5,54 @@ import { FAQSection } from "../components/home/FAQSection";
 import { ServicesSection } from "../components/home/ServicesSection";
 import { TestimonialsSection } from "../components/home/TestimonialsSection";
 import { WhyUsSection } from "../components/home/WhyUsSection";
+import { faqs } from "../constants/faqs";
 
 export default function Home() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
       <Helmet>
-        {/* Primary Meta Tags - SEO Team Exact Copy */}
+        {/* Primary Meta Tags */}
         <title>
-          AI Development & Automation Company | DevOps Minders AI & Cloud
-          Solution
+          DevOps Minders | IT Solutions, AI Development &amp; Cloud Solutions
         </title>
         <meta
           name="description"
-          content="DevOps Minders AI & Cloud Solution builds AI-powered applications, intelligent automation systems and scalable digital solutions for businesses, supported by cloud and DevOps expertise."
+          content="DevOps Minders is an IT solutions company delivering custom AI development, enterprise cloud solutions, software engineering, and DevOps consulting."
         />
 
-        {/* Keywords - Ludhiana Local SEO */}
+        {/* Primary Target Keywords */}
         <meta
           name="keywords"
-          content="IT Company in Ludhiana, Software Development Company in Ludhiana, AI Development Company in Ludhiana, AI Automation Company in Ludhiana, DevOps Company in Ludhiana, Cloud Solutions Company in Ludhiana, AI/ML Company in Ludhiana, Custom Software Development Company in Ludhiana, AI Solutions Company in Ludhiana, DevOps and Cloud Company in Ludhiana, DevOps Minders, DevOps Minders AI & Cloud Solution"
+          content="DevOps Minders, DevOps Minders IT Solutions, DevOps Minders AI Development, DevOps Minders Cloud Solutions, DevOps Minders DevOps Consulting, IT Solutions Company, AI Development Company, Cloud Solutions, DevOps Consulting"
         />
 
-        {/* Canonical Tag - YEH RAHNA ZAROORI HAI Homepage ke liye */}
+        {/* Canonical Tag */}
         <link rel="canonical" href="https://www.devopsminders.com/" />
 
         {/* Open Graph / Facebook Tags */}
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="DevOps Minders" />
         <meta property="og:url" content="https://www.devopsminders.com/" />
         <meta
           property="og:title"
-          content="AI Development & Automation Company | DevOps Minders AI & Cloud Solution"
+          content="DevOps Minders | IT Solutions, AI Development &amp; Cloud Solutions"
         />
         <meta
           property="og:description"
-          content="DevOps Minders AI & Cloud Solution builds AI-powered applications, intelligent automation systems and scalable digital solutions for businesses, supported by cloud and DevOps expertise."
+          content="DevOps Minders delivers custom IT solutions, AI development, AWS and Azure cloud solutions, and enterprise DevOps consulting."
         />
         <meta
           property="og:image"
@@ -47,19 +61,25 @@ export default function Home() {
 
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@devopsminders" />
         <meta name="twitter:url" content="https://www.devopsminders.com/" />
         <meta
           name="twitter:title"
-          content="AI Development & Automation Company | DevOps Minders AI & Cloud Solution"
+          content="DevOps Minders | IT Solutions, AI Development &amp; Cloud Solutions"
         />
         <meta
           name="twitter:description"
-          content="DevOps Minders AI & Cloud Solution builds AI-powered applications, intelligent automation systems and scalable digital solutions for businesses, supported by cloud and DevOps expertise."
+          content="DevOps Minders delivers custom IT solutions, AI development, AWS and Azure cloud solutions, and enterprise DevOps consulting."
         />
         <meta
           name="twitter:image"
           content="https://www.devopsminders.com/assets/og-image.png"
         />
+
+        {/* Structured Data: FAQPage */}
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
       </Helmet>
 
       <HeroSection />

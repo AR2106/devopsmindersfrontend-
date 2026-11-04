@@ -47,8 +47,11 @@ const Navbar = () => {
             className="flex flex-shrink-0 items-center"
           >
             <img
-              src="logo.png"
-              alt="DevOpsMinders DevOps Company Logo"
+              src="/logo.webp"
+              alt="DevOps Minders Logo"
+              width="200"
+              height="87"
+              fetchPriority="high"
               className="h-8 w-auto md:h-22 lg:h-22"
             />
           </Link>

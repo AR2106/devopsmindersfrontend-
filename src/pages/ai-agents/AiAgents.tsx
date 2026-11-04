@@ -19,9 +19,28 @@ export default function AiAgents() {
         />
         <meta
           name="keywords"
-          content="AI Agents, Voice AI Agents, Workflow AI Agents, AI Automation Agents, Custom AI Agents India, DevOps Minders"
+          content="AI Agents, Voice AI Agents, Workflow AI Agents, AI Automation Agents, Custom AI Agents, AI Development Company, DevOps Minders"
         />
-        <link rel="canonical" href="https://www.devopsminders.com/ai-agents/" />
+        <link rel="canonical" href="https://www.devopsminders.com/ai-agents" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="DevOps Minders" />
+        <meta property="og:title" content="AI Agents Development | Voice & Workflow AI | DevOps Minders" />
+        <meta
+          property="og:description"
+          content="Build intelligent, autonomous AI agents that handle complex tasks, interact with users, and automate business workflows seamlessly."
+        />
+        <meta property="og:url" content="https://www.devopsminders.com/ai-agents" />
+        <meta property="og:image" content="https://www.devopsminders.com/assets/og-image.png" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@devopsminders" />
+        <meta name="twitter:title" content="AI Agents Development | Voice & Workflow AI | DevOps Minders" />
+        <meta
+          name="twitter:description"
+          content="Build intelligent, autonomous AI agents that handle complex tasks, interact with users, and automate business workflows seamlessly."
+        />
+        <meta name="twitter:image" content="https://www.devopsminders.com/assets/og-image.png" />
       </Helmet>
 
       <main className="relative min-h-screen overflow-hidden bg-white text-slate-900">

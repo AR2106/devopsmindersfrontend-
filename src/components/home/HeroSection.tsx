@@ -1,8 +1,8 @@
-import robotImage from "./../../assets/caseStudy/robot(1).png";
+import robotImage from "./../../assets/caseStudy/robot(1).webp";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import globe from "./../../assets/globe.png";
+import globe from "./../../assets/globe.webp";
 
 const STATS = [
   { value: "200+", label: "PROJECTS" },
@@ -88,51 +88,32 @@ export default function HeroSection() {
       <div className="relative z-20 flex min-h-[80vh] flex-col justify-start px-8 pt-16 pb-24 sm:px-10 lg:px-12">
         <div className="max-w-4xl w-full text-left">
           {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-100 bg-red-50 px-4 py-1.5 backdrop-blur-sm"
-          >
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-100 bg-red-50 px-4 py-1.5 backdrop-blur-sm">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#FF0000] opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[#FF0000]" />
             </span>
             <span className="text-[10px] font-semibold uppercase tracking-widest text-red-700">
-              AI & Cloud Solutions
+              DevOps Minders • IT Solutions, AI & Cloud
             </span>
-          </motion.div>
+          </div>
 
-          {/* Headline - EXACT H1 AS PER SEO TEAM */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-3xl font-extrabold leading-[1.2] tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-5xl"
-          >
-            <span className="text-[#FF0000]">AI Development</span>,{" "}
-            <span className="text-[#FF0000]">AI Agents</span> & Intelligent
-            Automation
-          </motion.h1>
+          {/* Headline */}
+          <h1 className="text-3xl font-extrabold leading-[1.2] tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-5xl">
+            <span className="text-[#FF0000]">IT Solutions</span>,{" "}
+            <span className="text-[#FF0000]">AI Development</span> & Cloud
+            Solutions
+          </h1>
 
           {/* Subhead */}
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-4 max-w-2xl text-base leading-relaxed text-slate-500 sm:text-lg font-normal"
-          >
-            Whether you're transforming an existing business or building
-            something new, we create technology that moves you forward.
-          </motion.p>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-500 sm:text-lg font-normal">
+            DevOps Minders is an IT solutions and software engineering company
+            delivering custom AI development, enterprise cloud solutions, and
+            DevOps consulting that scale seamlessly.
+          </p>
 
           {/* Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-8"
-          >
+          <div className="mt-8">
             <button
               type="button"
               onClick={() => navigate("/ai-solutions")}
@@ -144,15 +125,10 @@ export default function HeroSection() {
                 className="transition-transform group-hover:translate-x-1"
               />
             </button>
-          </motion.div>
+          </div>
 
           {/* Stats Row - EXACT STATS AS PER SEO TEAM */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-12 w-full max-w-2xl"
-          >
+          <div className="mt-12 w-full max-w-2xl">
             <div className="grid grid-cols-2 gap-8 border-t border-slate-200 pt-6 sm:grid-cols-3">
               {STATS.map(({ value, label }) => (
                 <div key={label}>
@@ -165,7 +141,7 @@ export default function HeroSection() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
