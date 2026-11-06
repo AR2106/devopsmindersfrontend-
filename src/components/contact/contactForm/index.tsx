@@ -34,6 +34,7 @@ export default function ContactForm() {
 
   const [step, setStep] = useState<number>(1);
   const [result, setResult] = useState<string>("");
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const next = async () => {
     let isValid = false;
@@ -54,29 +55,35 @@ export default function ContactForm() {
   };
 
   const onSubmit = async (data: FormValues) => {
+    setIsSubmitting(true);
     try {
-      const formData = new FormData();
-
-      Object.entries(data).forEach(([key, value]) => {
-        formData.append(key, value as string);
-      });
-
-      formData.append("access_key", "40275540-7719-45b4-ac94-361b9fefb243");
-
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       });
 
       const responseData = await response.json();
 
-      if (responseData.success) {
-        setResult("Your request has been sent successfully.");
+      if (response.ok && responseData.success) {
+        setResult(
+          responseData.message ||
+            "Your inquiry has been sent successfully. We will get back to you within 24 hours."
+        );
       } else {
-        setResult("Something went wrong. Please try again.");
+        setResult(
+          responseData.message ||
+            "Unable to deliver your inquiry. Please try again or email info@devopsminders.com directly."
+        );
       }
     } catch {
-      setResult("Unable to send your request. Please try again.");
+      setResult(
+        "Network error. Please check your connection or email info@devopsminders.com directly."
+      );
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -290,7 +297,7 @@ export default function ContactForm() {
                   <div className="min-h-[285px] bg-white text-slate-900">
                     {step === 1 && <Step1 next={next} />}
                     {step === 2 && <Step2 next={next} back={back} />}
-                    {step === 3 && <Step3 back={back} />}
+                    {step === 3 && <Step3 back={back} isSubmitting={isSubmitting} />}
                   </div>
                 </form>
               </FormProvider>
@@ -348,6 +355,14 @@ export default function ContactForm() {
                         <p className="mt-2 text-sm leading-6 text-slate-600">
                           {result}
                         </p>
+
+                        <button
+                          type="button"
+                          onClick={() => setResult("")}
+                          className="mt-4 inline-flex items-center justify-center rounded-lg bg-slate-900 px-4 py-2 text-xs font-semibold text-white transition hover:bg-slate-800"
+                        >
+                          Try Again
+                        </button>
                       </>
                     )}
                   </motion.div>

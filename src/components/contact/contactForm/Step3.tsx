@@ -4,9 +4,10 @@ import Button from "../../ui/Button";
 
 type Props = {
     back: () => void;
+    isSubmitting?: boolean;
 };
 
-export default function Step3({ back }: Props) {
+export default function Step3({ back, isSubmitting }: Props) {
     const { getValues } = useFormContext<FormValues>();
     const data = getValues();
 
@@ -46,9 +47,10 @@ export default function Step3({ back }: Props) {
 
             <button
                 type="submit"
-                className="flex w-full items-center justify-center rounded-lg bg-[#E80112] px-6 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#c5010f]"
+                disabled={isSubmitting}
+                className="flex w-full items-center justify-center rounded-lg bg-[#E80112] px-6 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#c5010f] disabled:opacity-60 disabled:cursor-not-allowed"
             >
-                Submit Request
+                {isSubmitting ? "Submitting Inquiry..." : "Submit Request"}
             </button>
 
             <div className="mt-6 flex justify-between gap-4 border-t border-slate-200 pt-6">
